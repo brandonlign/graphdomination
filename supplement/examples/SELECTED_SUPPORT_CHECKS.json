@@ -1,0 +1,66 @@
+{
+  "all_passed": true,
+  "read_only_selected_certificate": true,
+  "not_a_new_certificate_or_full_replay": true,
+  "certificate_sha256": "c6f20f9d56dd89013c8e1b186e1f0614368b7585c3243fa12ddc8b64fbfa0205",
+  "encoding_metrics": {
+    "nonzero_coefficients": 205,
+    "total_integer_bits": 9389,
+    "maximum_integer_bits": 240,
+    "maximum_decimal_digits": 73,
+    "common_denominator_bits": 539,
+    "certificate_json_bytes": 7827
+  },
+  "counts": {
+    "objective_available": 1,
+    "objective_selected": 0,
+    "objective_active": 0,
+    "basic_transport_available": 5,
+    "basic_transport_selected": 0,
+    "basic_transport_active": 0,
+    "reversal_transport_available": 48,
+    "reversal_transport_selected": 24,
+    "reversal_transport_active": 24,
+    "star_transport_available": 60,
+    "star_transport_selected": 41,
+    "star_transport_active": 41,
+    "exterior_available": 20,
+    "exterior_selected": 3,
+    "exterior_active": 1,
+    "association_available": 7,
+    "association_selected": 6,
+    "association_active": 6
+  },
+  "active_inequalities": [
+    "B_3_3_1",
+    "L_2_1",
+    "L_2_2",
+    "L_3_0",
+    "L_3_1",
+    "L_3_2",
+    "L_3_3"
+  ],
+  "selected_inequalities": [
+    "X_3_2_1",
+    "X_3_3_1",
+    "B_3_3_1",
+    "L_2_1",
+    "L_2_2",
+    "L_3_0",
+    "L_3_1",
+    "L_3_2",
+    "L_3_3"
+  ],
+  "selected_zero_polynomials": [
+    "X_3_2_1",
+    "X_3_3_1"
+  ],
+  "selected_polynomials": 74,
+  "active_polynomials": 72,
+  "nonzero_rational_coefficients": 205,
+  "slack_degree": 16,
+  "multiplier_degree": 2,
+  "columns": 9867,
+  "full_views": 231816,
+  "script_sha256": "73a30e7a9ce53d558142e183843d0fabe6e771b6641b0b8151a051690e9dd17c"
+}

@@ -1,0 +1,2388 @@
+{
+  "selected_certificate_sha256": "c6f20f9d56dd89013c8e1b186e1f0614368b7585c3243fa12ddc8b64fbfa0205",
+  "coordinate_count": 141,
+  "zero_based_index": true,
+  "rows": [
+    {
+      "feature_index": 0,
+      "code_name": "normalization",
+      "family": "objective",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "warning": "Stored features6[0]=6 O_C; objective is O_C/Z_C. This file key is NOT the constant normalization feature. The LP normalization is separately sum(pi)=1; its prescribed dual right side is c4."
+    },
+    {
+      "feature_index": 1,
+      "code_name": "m2",
+      "family": "basic_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null
+    },
+    {
+      "feature_index": 2,
+      "code_name": "m3",
+      "family": "basic_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null
+    },
+    {
+      "feature_index": 3,
+      "code_name": "q2",
+      "family": "basic_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null
+    },
+    {
+      "feature_index": 4,
+      "code_name": "q3",
+      "family": "basic_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null
+    },
+    {
+      "feature_index": 5,
+      "code_name": "j",
+      "family": "basic_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null
+    },
+    {
+      "feature_index": 6,
+      "code_name": "R_0_0_0_1",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "139/459",
+        "20503177234529613389/32988529540908346320",
+        "-22514626032199322584335237319/74636692988790667268901018960"
+      ],
+      "indices": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "feature_index": 7,
+      "code_name": "R_0_0_0_2",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "0",
+        "139/918",
+        "-53844781006/86607682299"
+      ],
+      "indices": [
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "feature_index": 8,
+      "code_name": "R_0_0_0_3",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "0",
+        "34042084291512283535501/47011774695626917446480",
+        "-322/547"
+      ],
+      "indices": [
+        0,
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "feature_index": 9,
+      "code_name": "R_0_0_1_1",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-1804/5355",
+        "-1935250595467407624205245336533706515/4330340080743789056890851446475462528",
+        "-1487/878"
+      ],
+      "indices": [
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "feature_index": 10,
+      "code_name": "R_0_0_1_2",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        0,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "feature_index": 11,
+      "code_name": "R_0_0_1_3",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-201/973",
+        "-403/687",
+        "-498/413"
+      ],
+      "indices": [
+        0,
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "feature_index": 12,
+      "code_name": "R_0_0_2_1",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-12569/795420",
+        "-240812233522213150241121506998863345358075618942791878978012183811348103/1040339160439254887844254252884960621037587949678885840662858109006841600",
+        "-17138049143490116736483225244388886215079589347098053/23035100366657730320468575684536022906815504976374900"
+      ],
+      "indices": [
+        0,
+        0,
+        2,
+        1
+      ]
+    },
+    {
+      "feature_index": 13,
+      "code_name": "R_0_0_2_2",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "0",
+        "2755862457089/67516377025680",
+        "-6816657598443839/11696208215513085"
+      ],
+      "indices": [
+        0,
+        0,
+        2,
+        2
+      ]
+    },
+    {
+      "feature_index": 14,
+      "code_name": "R_0_0_2_3",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "289/1620",
+        "4455719879586077437/15268474150465626000",
+        "-31648999250977562017115658101175534506108205013/358094973500543444944893043736540960249172842700"
+      ],
+      "indices": [
+        0,
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "feature_index": 15,
+      "code_name": "R_0_0_3_1",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-996737107459212161769882445890111153964618097530983644979595895310127/7326332115769400618621508823133525500264703870978069300442662739484800",
+        "-787/960",
+        "-2826172724224541273562036453385475558155457539713964/1919591697221477526705714640378001908901292081364575"
+      ],
+      "indices": [
+        0,
+        0,
+        3,
+        1
+      ]
+    },
+    {
+      "feature_index": 16,
+      "code_name": "R_0_0_3_2",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "43/957",
+        "-195/746",
+        "-152/165"
+      ],
+      "indices": [
+        0,
+        0,
+        3,
+        2
+      ]
+    },
+    {
+      "feature_index": 17,
+      "code_name": "R_0_0_3_3",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "1/1000",
+        "-48/101",
+        "-451/695"
+      ],
+      "indices": [
+        0,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "feature_index": 18,
+      "code_name": "R_0_1_0_2",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-139/459",
+        "-1854573143618946957249954590744028994751966389/7399559197499238595681042484504561937859710720",
+        "8668001479876669094193286795117711550989/11107088810898970304766144588682743535680"
+      ],
+      "indices": [
+        0,
+        1,
+        0,
+        2
+      ]
+    },
+    {
+      "feature_index": 19,
+      "code_name": "R_0_1_0_3",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-161/461",
+        "148/591",
+        "697/934"
+      ],
+      "indices": [
+        0,
+        1,
+        0,
+        3
+      ]
+    },
+    {
+      "feature_index": 20,
+      "code_name": "R_0_1_1_2",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-640858434793057973650857404816348261/8866886831999187116490791057068804224",
+        "2/439",
+        "730/559"
+      ],
+      "indices": [
+        0,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "feature_index": 21,
+      "code_name": "R_0_1_1_3",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        0,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "feature_index": 22,
+      "code_name": "R_0_1_2_2",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "12569/795420",
+        "5013265307431/20485760919030",
+        "5/433"
+      ],
+      "indices": [
+        0,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "feature_index": 23,
+      "code_name": "R_0_1_2_3",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "105/653",
+        "491/957",
+        "136/191"
+      ],
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "feature_index": 24,
+      "code_name": "R_0_1_3_2",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "245/909",
+        "21/26",
+        "1689/850"
+      ],
+      "indices": [
+        0,
+        1,
+        3,
+        2
+      ]
+    },
+    {
+      "feature_index": 25,
+      "code_name": "R_0_1_3_3",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        0,
+        1,
+        3,
+        3
+      ]
+    },
+    {
+      "feature_index": 26,
+      "code_name": "R_0_2_0_3",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-3/1204",
+        "814338652842621305963/1765069905457053547200",
+        "-1470/923"
+      ],
+      "indices": [
+        0,
+        2,
+        0,
+        3
+      ]
+    },
+    {
+      "feature_index": 27,
+      "code_name": "R_0_2_1_3",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        0,
+        2,
+        1,
+        3
+      ]
+    },
+    {
+      "feature_index": 28,
+      "code_name": "R_0_2_2_3",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "289/1620",
+        "2065053/22188160",
+        "16/23"
+      ],
+      "indices": [
+        0,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "feature_index": 29,
+      "code_name": "R_0_2_3_3",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "229/960",
+        "-314/953",
+        "-757/892"
+      ],
+      "indices": [
+        0,
+        2,
+        3,
+        3
+      ]
+    },
+    {
+      "feature_index": 30,
+      "code_name": "R_1_0_0_1",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "feature_index": 31,
+      "code_name": "R_1_0_0_2",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "feature_index": 32,
+      "code_name": "R_1_0_0_3",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "feature_index": 33,
+      "code_name": "R_1_0_1_1",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "feature_index": 34,
+      "code_name": "R_1_0_1_2",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "feature_index": 35,
+      "code_name": "R_1_0_1_3",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "feature_index": 36,
+      "code_name": "R_1_0_2_1",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        0,
+        2,
+        1
+      ]
+    },
+    {
+      "feature_index": 37,
+      "code_name": "R_1_0_2_2",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        0,
+        2,
+        2
+      ]
+    },
+    {
+      "feature_index": 38,
+      "code_name": "R_1_0_2_3",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "feature_index": 39,
+      "code_name": "R_1_0_3_1",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        0,
+        3,
+        1
+      ]
+    },
+    {
+      "feature_index": 40,
+      "code_name": "R_1_0_3_2",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "30000492522697/93528172437768",
+        "132833466996345699863/552954455241398836560",
+        "-427/948"
+      ],
+      "indices": [
+        1,
+        0,
+        3,
+        2
+      ]
+    },
+    {
+      "feature_index": 41,
+      "code_name": "R_1_0_3_3",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "feature_index": 42,
+      "code_name": "R_1_1_0_2",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        1,
+        0,
+        2
+      ]
+    },
+    {
+      "feature_index": 43,
+      "code_name": "R_1_1_0_3",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        1,
+        0,
+        3
+      ]
+    },
+    {
+      "feature_index": 44,
+      "code_name": "R_1_1_1_2",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "feature_index": 45,
+      "code_name": "R_1_1_1_3",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "feature_index": 46,
+      "code_name": "R_1_1_2_2",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "feature_index": 47,
+      "code_name": "R_1_1_2_3",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "feature_index": 48,
+      "code_name": "R_1_1_3_2",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        1,
+        3,
+        2
+      ]
+    },
+    {
+      "feature_index": 49,
+      "code_name": "R_1_1_3_3",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        1,
+        3,
+        3
+      ]
+    },
+    {
+      "feature_index": 50,
+      "code_name": "R_1_2_0_3",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "145/909",
+        "587/596",
+        "-655/969"
+      ],
+      "indices": [
+        1,
+        2,
+        0,
+        3
+      ]
+    },
+    {
+      "feature_index": 51,
+      "code_name": "R_1_2_1_3",
+      "family": "reversal_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        1,
+        2,
+        1,
+        3
+      ]
+    },
+    {
+      "feature_index": 52,
+      "code_name": "R_1_2_2_3",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-22/489",
+        "825/887",
+        "106/67"
+      ],
+      "indices": [
+        1,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "feature_index": 53,
+      "code_name": "R_1_2_3_3",
+      "family": "reversal_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-305/889",
+        "-851/672",
+        "-1291/982"
+      ],
+      "indices": [
+        1,
+        2,
+        3,
+        3
+      ]
+    },
+    {
+      "feature_index": 54,
+      "code_name": "S_2_0_00",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "0",
+        "-912269847368633/883321628578920",
+        "5737784178682542789101/2937171687998991749460"
+      ],
+      "indices": [
+        2,
+        0,
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "feature_index": 55,
+      "code_name": "S_2_0_01",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "278/459",
+        "-23/71",
+        "129/736"
+      ],
+      "indices": [
+        2,
+        0,
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "feature_index": 56,
+      "code_name": "S_2_0_02",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "0",
+        "-1934314729213939/2649964885736760",
+        "48136232941967057277248227/54199645112864232335575980"
+      ],
+      "indices": [
+        2,
+        0,
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 57,
+      "code_name": "S_2_0_03",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        0,
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 58,
+      "code_name": "S_2_0_11",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "281/263",
+        "176/133",
+        "225/319"
+      ],
+      "indices": [
+        2,
+        0,
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "feature_index": 59,
+      "code_name": "S_2_0_12",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "278/459",
+        "137/727",
+        "191/137"
+      ],
+      "indices": [
+        2,
+        0,
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 60,
+      "code_name": "S_2_0_13",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "51/83",
+        "131/101",
+        "625/482"
+      ],
+      "indices": [
+        2,
+        0,
+        [
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 61,
+      "code_name": "S_2_0_22",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "0",
+        "-19806049852018267/46919966506280280",
+        "-3136841649111259251240559/8885079758505189265996200"
+      ],
+      "indices": [
+        2,
+        0,
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 62,
+      "code_name": "S_2_0_23",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-3/602",
+        "248/475",
+        "170/139"
+      ],
+      "indices": [
+        2,
+        0,
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 63,
+      "code_name": "S_2_0_33",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "47/951",
+        "87/77",
+        "1553/710"
+      ],
+      "indices": [
+        2,
+        0,
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 64,
+      "code_name": "S_2_1_00",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        1,
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "feature_index": 65,
+      "code_name": "S_2_1_01",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "508/945",
+        "696/845",
+        "1651/998"
+      ],
+      "indices": [
+        2,
+        1,
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "feature_index": 66,
+      "code_name": "S_2_1_02",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        1,
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 67,
+      "code_name": "S_2_1_03",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "178/563",
+        "763/925",
+        "1321/483"
+      ],
+      "indices": [
+        2,
+        1,
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 68,
+      "code_name": "S_2_1_11",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        1,
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "feature_index": 69,
+      "code_name": "S_2_1_12",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        1,
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 70,
+      "code_name": "S_2_1_13",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        1,
+        [
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 71,
+      "code_name": "S_2_1_22",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        1,
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 72,
+      "code_name": "S_2_1_23",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-77/752",
+        "43/967",
+        "1229/980"
+      ],
+      "indices": [
+        2,
+        1,
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 73,
+      "code_name": "S_2_1_33",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        1,
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 74,
+      "code_name": "S_3_0_000",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "0",
+        "-13394006471/23516676080",
+        "7611/757"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "feature_index": 75,
+      "code_name": "S_3_0_001",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-12569/265140",
+        "-100383213069343/107694618108360",
+        "-76/877"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "feature_index": 76,
+      "code_name": "S_3_0_002",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "0",
+        "-13394006471/35275014120",
+        "5074/757"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          0,
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 77,
+      "code_name": "S_3_0_003",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "289/540",
+        "32672580262943/27585061041840",
+        "2415/883"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          0,
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 78,
+      "code_name": "S_3_0_011",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-12569/132570",
+        "-95/87",
+        "-1/4"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          0,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "feature_index": 79,
+      "code_name": "S_3_0_012",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-12569/265140",
+        "-10802915317680197/10964814839032560",
+        "-121/63"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          0,
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 80,
+      "code_name": "S_3_0_013",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "479/982",
+        "-14/387",
+        "762/569"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          0,
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 81,
+      "code_name": "S_3_0_022",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "0",
+        "-13394006471/70550028240",
+        "2537/757"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          0,
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 82,
+      "code_name": "S_3_0_023",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "289/540",
+        "596/695",
+        "200/999"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          0,
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 83,
+      "code_name": "S_3_0_033",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "289/270",
+        "281/115",
+        "135/59"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          0,
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 84,
+      "code_name": "S_3_0_111",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-133/226",
+        "-1911/890",
+        "-3120/739"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "feature_index": 85,
+      "code_name": "S_3_0_112",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-12569/132570",
+        "-1",
+        "-3497/999"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          1,
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 86,
+      "code_name": "S_3_0_113",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "61/386",
+        "-1051/892",
+        "-174/299"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          1,
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 87,
+      "code_name": "S_3_0_122",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-12569/265140",
+        "-850/781",
+        "-112/25"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          1,
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 88,
+      "code_name": "S_3_0_123",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "479/982",
+        "2/17",
+        "-1158/883"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 89,
+      "code_name": "S_3_0_133",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "93/187",
+        "542/385",
+        "1046/709"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          1,
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 90,
+      "code_name": "S_3_0_222",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        0,
+        [
+          2,
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 91,
+      "code_name": "S_3_0_223",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "289/540",
+        "54/937",
+        "-964/451"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          2,
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 92,
+      "code_name": "S_3_0_233",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "289/270",
+        "235/124",
+        "103/686"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          2,
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 93,
+      "code_name": "S_3_0_333",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "577/487",
+        "905/216",
+        "227/43"
+      ],
+      "indices": [
+        3,
+        0,
+        [
+          3,
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 94,
+      "code_name": "S_3_1_000",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        1,
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "feature_index": 95,
+      "code_name": "S_3_1_001",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-507/473",
+        "289/379",
+        "134/85"
+      ],
+      "indices": [
+        3,
+        1,
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "feature_index": 96,
+      "code_name": "S_3_1_002",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        1,
+        [
+          0,
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 97,
+      "code_name": "S_3_1_003",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-725/391",
+        "507/671",
+        "401/132"
+      ],
+      "indices": [
+        3,
+        1,
+        [
+          0,
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 98,
+      "code_name": "S_3_1_011",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-1700/983",
+        "-831/517",
+        "-1745/997"
+      ],
+      "indices": [
+        3,
+        1,
+        [
+          0,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "feature_index": 99,
+      "code_name": "S_3_1_012",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-583/995",
+        "44/351",
+        "8/151"
+      ],
+      "indices": [
+        3,
+        1,
+        [
+          0,
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 100,
+      "code_name": "S_3_1_013",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-325/573",
+        "29/113",
+        "-131/290"
+      ],
+      "indices": [
+        3,
+        1,
+        [
+          0,
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 101,
+      "code_name": "S_3_1_022",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        1,
+        [
+          0,
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 102,
+      "code_name": "S_3_1_023",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-751/915",
+        "284/369",
+        "1696/923"
+      ],
+      "indices": [
+        3,
+        1,
+        [
+          0,
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 103,
+      "code_name": "S_3_1_033",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-1675/912",
+        "-241/845",
+        "1910/621"
+      ],
+      "indices": [
+        3,
+        1,
+        [
+          0,
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 104,
+      "code_name": "S_3_1_111",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        1,
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "feature_index": 105,
+      "code_name": "S_3_1_112",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-1013/964",
+        "-629/874",
+        "-497/746"
+      ],
+      "indices": [
+        3,
+        1,
+        [
+          1,
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 106,
+      "code_name": "S_3_1_113",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        1,
+        [
+          1,
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 107,
+      "code_name": "S_3_1_122",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        1,
+        [
+          1,
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 108,
+      "code_name": "S_3_1_123",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        1,
+        [
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 109,
+      "code_name": "S_3_1_133",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        1,
+        [
+          1,
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 110,
+      "code_name": "S_3_1_222",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        1,
+        [
+          2,
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "feature_index": 111,
+      "code_name": "S_3_1_223",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "343/296",
+        "1059/772",
+        "96/181"
+      ],
+      "indices": [
+        3,
+        1,
+        [
+          2,
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 112,
+      "code_name": "S_3_1_233",
+      "family": "star_transport",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "-307/641",
+        "41/801",
+        "2651/1000"
+      ],
+      "indices": [
+        3,
+        1,
+        [
+          2,
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 113,
+      "code_name": "S_3_1_333",
+      "family": "star_transport",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        1,
+        [
+          3,
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "feature_index": 114,
+      "code_name": "X_2_2_1",
+      "family": "exterior",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        2,
+        1
+      ],
+      "kind": "q N-X"
+    },
+    {
+      "feature_index": 115,
+      "code_name": "B_2_2_1",
+      "family": "exterior",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        2,
+        1
+      ],
+      "kind": "q^(h-k) X-B"
+    },
+    {
+      "feature_index": 116,
+      "code_name": "X_2_2_2",
+      "family": "exterior",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        2,
+        2
+      ],
+      "kind": "q N-X"
+    },
+    {
+      "feature_index": 117,
+      "code_name": "B_2_2_2",
+      "family": "exterior",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        2,
+        2
+      ],
+      "kind": "q^(h-k) X-B"
+    },
+    {
+      "feature_index": 118,
+      "code_name": "X_2_3_1",
+      "family": "exterior",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        3,
+        1
+      ],
+      "kind": "q N-X"
+    },
+    {
+      "feature_index": 119,
+      "code_name": "B_2_3_1",
+      "family": "exterior",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        3,
+        1
+      ],
+      "kind": "q^(h-k) X-B"
+    },
+    {
+      "feature_index": 120,
+      "code_name": "X_2_3_2",
+      "family": "exterior",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        3,
+        2
+      ],
+      "kind": "q N-X"
+    },
+    {
+      "feature_index": 121,
+      "code_name": "B_2_3_2",
+      "family": "exterior",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        3,
+        2
+      ],
+      "kind": "q^(h-k) X-B"
+    },
+    {
+      "feature_index": 122,
+      "code_name": "X_2_3_3",
+      "family": "exterior",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        3,
+        3
+      ],
+      "kind": "q N-X"
+    },
+    {
+      "feature_index": 123,
+      "code_name": "B_2_3_3",
+      "family": "exterior",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        3,
+        3
+      ],
+      "kind": "q^(h-k) X-B"
+    },
+    {
+      "feature_index": 124,
+      "code_name": "X_3_2_1",
+      "family": "exterior",
+      "selected": true,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": [
+        "0",
+        "0",
+        "0"
+      ],
+      "indices": [
+        3,
+        2,
+        1
+      ],
+      "kind": "q N-X"
+    },
+    {
+      "feature_index": 125,
+      "code_name": "B_3_2_1",
+      "family": "exterior",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        2,
+        1
+      ],
+      "kind": "q^(h-k) X-B"
+    },
+    {
+      "feature_index": 126,
+      "code_name": "X_3_2_2",
+      "family": "exterior",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        2,
+        2
+      ],
+      "kind": "q N-X"
+    },
+    {
+      "feature_index": 127,
+      "code_name": "B_3_2_2",
+      "family": "exterior",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        2,
+        2
+      ],
+      "kind": "q^(h-k) X-B"
+    },
+    {
+      "feature_index": 128,
+      "code_name": "X_3_3_1",
+      "family": "exterior",
+      "selected": true,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": [
+        "0",
+        "0",
+        "0"
+      ],
+      "indices": [
+        3,
+        3,
+        1
+      ],
+      "kind": "q N-X"
+    },
+    {
+      "feature_index": 129,
+      "code_name": "B_3_3_1",
+      "family": "exterior",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "9/806",
+        "3/883",
+        "0"
+      ],
+      "indices": [
+        3,
+        3,
+        1
+      ],
+      "kind": "q^(h-k) X-B"
+    },
+    {
+      "feature_index": 130,
+      "code_name": "X_3_3_2",
+      "family": "exterior",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        3,
+        2
+      ],
+      "kind": "q N-X"
+    },
+    {
+      "feature_index": 131,
+      "code_name": "B_3_3_2",
+      "family": "exterior",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        3,
+        2
+      ],
+      "kind": "q^(h-k) X-B"
+    },
+    {
+      "feature_index": 132,
+      "code_name": "X_3_3_3",
+      "family": "exterior",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        3,
+        3
+      ],
+      "kind": "q N-X"
+    },
+    {
+      "feature_index": 133,
+      "code_name": "B_3_3_3",
+      "family": "exterior",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        3,
+        3,
+        3
+      ],
+      "kind": "q^(h-k) X-B"
+    },
+    {
+      "feature_index": 134,
+      "code_name": "L_2_0",
+      "family": "association",
+      "selected": false,
+      "active_nonzero_polynomial": false,
+      "multiplier_bernstein": null,
+      "indices": [
+        2,
+        0
+      ]
+    },
+    {
+      "feature_index": 135,
+      "code_name": "L_2_1",
+      "family": "association",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "0",
+        "5/177",
+        "801855430672961302886914755675433971682687696498313/16353025350010947974446104718352961530424457733911680"
+      ],
+      "indices": [
+        2,
+        1
+      ]
+    },
+    {
+      "feature_index": 136,
+      "code_name": "L_2_2",
+      "family": "association",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "1/503",
+        "19/400",
+        "29934730913668338509770595479919642045461/342966295645724573787294818351638305854400"
+      ],
+      "indices": [
+        2,
+        2
+      ]
+    },
+    {
+      "feature_index": 137,
+      "code_name": "L_3_0",
+      "family": "association",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "7/254",
+        "11/753",
+        "5/518"
+      ],
+      "indices": [
+        3,
+        0
+      ]
+    },
+    {
+      "feature_index": 138,
+      "code_name": "L_3_1",
+      "family": "association",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "7/340",
+        "4/309",
+        "6061704630187439/691099970422862000"
+      ],
+      "indices": [
+        3,
+        1
+      ]
+    },
+    {
+      "feature_index": 139,
+      "code_name": "L_3_2",
+      "family": "association",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "1/47",
+        "11/595",
+        "9/509"
+      ],
+      "indices": [
+        3,
+        2
+      ]
+    },
+    {
+      "feature_index": 140,
+      "code_name": "L_3_3",
+      "family": "association",
+      "selected": true,
+      "active_nonzero_polynomial": true,
+      "multiplier_bernstein": [
+        "7/360",
+        "17/903",
+        "7/199"
+      ],
+      "indices": [
+        3,
+        3
+      ]
+    }
+  ]
+}

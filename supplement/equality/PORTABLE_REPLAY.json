@@ -1,0 +1,9 @@
+{
+  "all_passed": true,
+  "fresh_directory_replay": true,
+  "project_source_imports": false,
+  "full_relaxation_replay": false,
+  "reproduced_cycle_results_sha256": "5f5a6ae4a5edef752f4d458bbfadd3992efe03e10c4685a9a75e079d186785d8",
+  "normal_returncode": 0,
+  "optimizer_used": false
+}

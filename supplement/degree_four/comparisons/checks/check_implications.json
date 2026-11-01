@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "degree3_product_numerator": [
+    0,
+    0,
+    0,
+    4,
+    -7,
+    0,
+    0,
+    0,
+    6,
+    0,
+    0,
+    0,
+    -4,
+    0,
+    0,
+    0,
+    1
+  ],
+  "degree2_degree4_pair_numerator": [
+    0,
+    0,
+    0,
+    2,
+    -3,
+    -2,
+    1,
+    0,
+    4,
+    0,
+    1,
+    -2,
+    0,
+    -2,
+    0,
+    0,
+    1
+  ],
+  "wagner_factor_checks": {
+    "2": {
+      "left": 243,
+      "right": 289
+    },
+    "3": {
+      "left": 3125,
+      "right": 4913
+    },
+    "4": {
+      "left": 59049,
+      "right": 83521
+    },
+    "5": {
+      "left": 1419857,
+      "right": 1419857
+    }
+  },
+  "wagner_target_comparison": {
+    "17^4": 83521,
+    "11^5": 161051
+  },
+  "all_edge_minimal_product_failure": {
+    "degree2_gap": 415,
+    "degree3_plus_1.5_degree2_gap": 9858121268852468831,
+    "degree4_plus_2_degree2_gap": 392686686655
+  },
+  "once_subdivided_4regular": {
+    "mean_bound": "436/651",
+    "product_base": "1519/256",
+    "integer_gap": 392686686655
+  },
+  "limits": "Symbolic source-implication checks only; not a new universal graph theorem or solver result."
+}

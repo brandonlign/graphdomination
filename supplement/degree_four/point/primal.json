@@ -1,0 +1,15 @@
+{
+  "activity": "1",
+  "generation_sha256": "af0020c5efce7b021f901e798013b34aa7967c019c4e5c98b8352e0e2985f021",
+  "objective": "4/11",
+  "support": [
+    {
+      "id": 6,
+      "weight": "4/11"
+    },
+    {
+      "id": 43,
+      "weight": "7/11"
+    }
+  ]
+}

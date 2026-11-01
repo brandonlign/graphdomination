@@ -1,0 +1,461 @@
+{
+  "all_checks_passed": true,
+  "full_views": 231816,
+  "columns": 9853,
+  "full_views_by_degree": {
+    "2": 2713,
+    "3": 229103
+  },
+  "distinct_combinatorial_structures": 52609,
+  "certificates": {
+    "primary": {
+      "objective": "4/11",
+      "dual_objective": "4/11",
+      "tight_columns": 383,
+      "minimum_slack": "0",
+      "degree3_support_mass": "0",
+      "nonzero_inequality_multipliers": 6,
+      "face_multiplier": null,
+      "normalization_multiplier": "4/11"
+    },
+    "secondary": {
+      "objective": "0",
+      "dual_objective": "0",
+      "tight_columns": 483,
+      "minimum_slack": "0",
+      "degree3_support_mass": "0",
+      "nonzero_inequality_multipliers": 5,
+      "face_multiplier": "-5483104214893041/76202104704133",
+      "normalization_multiplier": "1993856078142924/76202104704133"
+    }
+  },
+  "fixtures": [
+    {
+      "name": "C5: adjacent distance-two vertices",
+      "vertices": 5,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "admissible_sets": 21,
+      "exposures": 20,
+      "occupied_fraction": "8/21",
+      "dominating_mean": "65/21",
+      "degree3_fraction": "0",
+      "roots_with_adjacent_boundary": 5,
+      "roots_with_shared_boundary": 0,
+      "roots_with_far_centers": 0,
+      "views_violating_pointwise_exterior_bound": 5,
+      "views_violating_pointwise_association_bound": 0,
+      "inequality_means": [
+        "5/21",
+        "4/21",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/21",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "pointwise_counterexamples": {
+        "exterior": {
+          "root": 0,
+          "exterior": [
+            2,
+            3
+          ],
+          "root_occupancy": "1/2",
+          "negative_features": [
+            {
+              "name": "X_2_2_1",
+              "value": "-1"
+            },
+            {
+              "name": "B_2_2_1",
+              "value": "-1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Triangular prism with one matching edge subdivided",
+      "vertices": 7,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ]
+      ],
+      "admissible_sets": 93,
+      "exposures": 64,
+      "occupied_fraction": "92/217",
+      "dominating_mean": "125/31",
+      "degree3_fraction": "6/7",
+      "roots_with_adjacent_boundary": 7,
+      "roots_with_shared_boundary": 4,
+      "roots_with_far_centers": 0,
+      "views_violating_pointwise_exterior_bound": 41,
+      "views_violating_pointwise_association_bound": 12,
+      "inequality_means": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "22/651",
+        "17/651",
+        "0",
+        "0",
+        "0",
+        "0",
+        "26/651",
+        "32/651",
+        "0",
+        "0",
+        "85/651",
+        "67/651",
+        "22/651",
+        "10/217",
+        "0",
+        "0",
+        "0",
+        "0",
+        "55/8463",
+        "1520/44919",
+        "450/42749",
+        "0",
+        "0"
+      ],
+      "pointwise_counterexamples": {
+        "exterior": {
+          "root": 0,
+          "exterior": [
+            4,
+            5
+          ],
+          "root_occupancy": "3/7",
+          "negative_features": [
+            {
+              "name": "X_3_3_1",
+              "value": "-1/2"
+            }
+          ]
+        },
+        "association": {
+          "root": 0,
+          "exterior": [
+            3
+          ],
+          "root_occupancy": "1/3",
+          "negative_features": [
+            {
+              "name": "L_3_1",
+              "value": "-10/591"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "C4 disjoint union C5: remote components",
+      "vertices": 9,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          4
+        ]
+      ],
+      "admissible_sets": 231,
+      "exposures": 388,
+      "occupied_fraction": "776/2079",
+      "dominating_mean": "1303/231",
+      "degree3_fraction": "0",
+      "roots_with_adjacent_boundary": 5,
+      "roots_with_shared_boundary": 4,
+      "roots_with_far_centers": 9,
+      "views_violating_pointwise_exterior_bound": 139,
+      "views_violating_pointwise_association_bound": 84,
+      "inequality_means": [
+        "25/189",
+        "20/189",
+        "2/33",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "83/2079",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "pointwise_counterexamples": {
+        "exterior": {
+          "root": 0,
+          "exterior": [
+            2
+          ],
+          "root_occupancy": "1/4",
+          "negative_features": [
+            {
+              "name": "X_2_2_2",
+              "value": "-1/2"
+            }
+          ]
+        },
+        "association": {
+          "root": 0,
+          "exterior": [
+            2
+          ],
+          "root_occupancy": "1/4",
+          "negative_features": [
+            {
+              "name": "L_2_0",
+              "value": "-1/12"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "scalar_checks": {
+    "association_constants": [
+      {
+        "pattern": [
+          2,
+          0
+        ],
+        "ratio": "1/2",
+        "occupancy": "1/3"
+      },
+      {
+        "pattern": [
+          2,
+          1
+        ],
+        "ratio": "9/16",
+        "occupancy": "9/25"
+      },
+      {
+        "pattern": [
+          2,
+          2
+        ],
+        "ratio": "5/8",
+        "occupancy": "5/13"
+      },
+      {
+        "pattern": [
+          3,
+          0
+        ],
+        "ratio": "79/128",
+        "occupancy": "79/207"
+      },
+      {
+        "pattern": [
+          3,
+          1
+        ],
+        "ratio": "69/128",
+        "occupancy": "69/197"
+      },
+      {
+        "pattern": [
+          3,
+          2
+        ],
+        "ratio": "15/32",
+        "occupancy": "15/47"
+      },
+      {
+        "pattern": [
+          3,
+          3
+        ],
+        "ratio": "13/32",
+        "occupancy": "13/45"
+      }
+    ],
+    "cycle_base_checks": [
+      {
+        "n": 3,
+        "Z": 7,
+        "W": 12,
+        "E": 15
+      },
+      {
+        "n": 4,
+        "Z": 11,
+        "W": 28,
+        "E": 0
+      },
+      {
+        "n": 5,
+        "Z": 21,
+        "W": 65,
+        "E": 20
+      },
+      {
+        "n": 6,
+        "Z": 39,
+        "W": 144,
+        "E": 54
+      },
+      {
+        "n": 7,
+        "Z": 71,
+        "W": 308,
+        "E": 91
+      },
+      {
+        "n": 8,
+        "Z": 131,
+        "W": 648,
+        "E": 208
+      },
+      {
+        "n": 9,
+        "Z": 241,
+        "W": 1341,
+        "E": 432
+      },
+      {
+        "n": 10,
+        "Z": 443,
+        "W": 2740,
+        "E": 870
+      }
+    ]
+  },
+  "input_hashes": {
+    "views_v3.json.gz": "b2650de229fd82d21ddc8993716673c80f34e977a3714fa040cf43abf6d4533d",
+    "certificate_primary_v3.json": "1ba2228c406722a4c50389f1b81a5153623c286c39e04e6597eef174e3d1e941",
+    "certificate_secondary_v3.json": "f2dc992b489230a0b629864aedad97525e39e876b234bf04cdc0fb10e8b71172",
+    "local_views_v3.py": "99caa4767f51f3d3d39338796ef807fec330419f8fc45fee7ac40c6c3654bcf7",
+    "v1_universe_snapshot.py": "a8a20e4126ac80fa57f43b45349edea4b3c45a17ecdee9675fe91605fcbbabd6",
+    "v2_features_snapshot.py": "c317d038a26e36c0d62a0443ff8966a58598974ef00d80565e64afb975c26738"
+  },
+  "elapsed_seconds": 8.575915575027466
+}

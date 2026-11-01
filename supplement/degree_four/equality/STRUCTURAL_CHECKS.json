@@ -1,0 +1,25 @@
+{
+  "all_passed": true,
+  "degree4_empty_boundary_indices": [
+    17372,
+    17462,
+    17552
+  ],
+  "degree4_empty_views": 370,
+  "description": "Two shared-boundary C4 views; nine ordered separate-boundary all-unselected views",
+  "existing_full_views_tested": 17553,
+  "no_new_enumeration": true,
+  "zero_predicate_indices": [
+    0,
+    1,
+    8,
+    11,
+    14,
+    35,
+    38,
+    41,
+    62,
+    65,
+    68
+  ]
+}

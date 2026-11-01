@@ -1,0 +1,2 @@
+# Exact proof replay; tested with Python 3.12.
+sympy==1.14.0

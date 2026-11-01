@@ -1,0 +1,125 @@
+{
+  "all_passed": true,
+  "checks": [
+    {
+      "file": "challenge/check_exact.py",
+      "flag": "-O",
+      "rejected": true
+    },
+    {
+      "file": "challenge/check_exact.py",
+      "flag": "-OO",
+      "rejected": true
+    },
+    {
+      "file": "independent/base_views_v1_copy.py",
+      "flag": "-O",
+      "rejected": true
+    },
+    {
+      "file": "independent/base_views_v1_copy.py",
+      "flag": "-OO",
+      "rejected": true
+    },
+    {
+      "file": "independent/enumerate_v2_independent.py",
+      "flag": "-O",
+      "rejected": true
+    },
+    {
+      "file": "independent/enumerate_v2_independent.py",
+      "flag": "-OO",
+      "rejected": true
+    },
+    {
+      "file": "independent/enumerate_v3_independent.py",
+      "flag": "-O",
+      "rejected": true
+    },
+    {
+      "file": "independent/enumerate_v3_independent.py",
+      "flag": "-OO",
+      "rejected": true
+    },
+    {
+      "file": "independent/features_v3_independent.py",
+      "flag": "-O",
+      "rejected": true
+    },
+    {
+      "file": "independent/features_v3_independent.py",
+      "flag": "-OO",
+      "rejected": true
+    },
+    {
+      "file": "independent/validate_v2.py",
+      "flag": "-O",
+      "rejected": true
+    },
+    {
+      "file": "independent/validate_v2.py",
+      "flag": "-OO",
+      "rejected": true
+    },
+    {
+      "file": "independent/validate_v3.py",
+      "flag": "-O",
+      "rejected": true
+    },
+    {
+      "file": "independent/validate_v3.py",
+      "flag": "-OO",
+      "rejected": true
+    },
+    {
+      "file": "independent/verify_v3.py",
+      "flag": "-O",
+      "rejected": true
+    },
+    {
+      "file": "independent/verify_v3.py",
+      "flag": "-OO",
+      "rejected": true
+    },
+    {
+      "file": "local_views_v3.py",
+      "flag": "-O",
+      "rejected": true
+    },
+    {
+      "file": "local_views_v3.py",
+      "flag": "-OO",
+      "rejected": true
+    },
+    {
+      "file": "replay_primary.py",
+      "flag": "-O",
+      "rejected": true
+    },
+    {
+      "file": "replay_primary.py",
+      "flag": "-OO",
+      "rejected": true
+    },
+    {
+      "file": "v1_universe_snapshot.py",
+      "flag": "-O",
+      "rejected": true
+    },
+    {
+      "file": "v1_universe_snapshot.py",
+      "flag": "-OO",
+      "rejected": true
+    },
+    {
+      "file": "v2_features_snapshot.py",
+      "flag": "-O",
+      "rejected": true
+    },
+    {
+      "file": "v2_features_snapshot.py",
+      "flag": "-OO",
+      "rejected": true
+    }
+  ]
+}

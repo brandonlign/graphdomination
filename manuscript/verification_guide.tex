@@ -1,0 +1,125 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array,enumitem,microtype,placeins}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\input{article_references.tex}
+\newcommand{\E}{\mathbb E}\newcommand{\Prob}{\mathbb P}
+\newcommand{\ind}{\mathbf1}\newcommand{\F}{\mathcal F}\newcommand{\V}{\mathcal V}
+\newcommand{\file}[1]{\nolinkurl{#1}}
+\setlength{\emergencystretch}{3em}
+\title{Verification guide\\\large Supplement to \emph{Mean order and counts of dominating sets in graphs of small degree}}
+\author{Brandon Li}\date{}
+\begin{document}\raggedbottom\maketitle
+This guide connects the definitions in the article to the supplied calculation files. References to numbered equations, lemmas and sections refer to the article. The guide records the file formats, indexing conventions and commands needed to reproduce the calculations.
+
+\section{Interval and endpoint calculations}
+
+The supplement contains the rational certificates, feature descriptions and exact-arithmetic programs for both graph classes. Its manifest lists $127$ input files. The subcubic certificate is \file{subcubic_certificate.json} in \file{interval_certificate/}; the reduced-class certificate is \file{certificate.json} in \file{degree_four/interval/}. Checksums are in \file{PROOF_MANIFEST.sha256}, and \file{README.md} shows which folder checks which result. The certificates for Proposition~\artref{prop:subdivision} are described in the last section of this guide.
+
+\subsection{Association polynomials}
+A vector $[a_0,\ldots,a_k]$ denotes $\sum_i a_i z^i$. In Table~\artref{tab:patterns}, $r$ counts degree-three neighbors when $d=2$ and degree-two neighbors when $d=3$. Both tables use the common construction \arteqref{eq:Rpattern}.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{ccll}\toprule
+$d$&$r$&$N_P$ (coefficients)&$D_P$ (coefficients)\\\midrule
+2&0&$[0,1,3]$&$[1,4,6,1]$\\
+2&1&$[0,1,4,4]$&$[1,5,10,8,1]$\\
+2&2&$[0,1,4,5]$&$[1,5,10,9,1]$\\
+3&0&$[0,1,7,21,31,19]$&$[1,8,28,56,66,40,7,1]$\\
+3&1&$[0,1,7,20,27,14]$&$[1,8,28,55,62,35,7,1]$\\
+3&2&$[0,1,6,13,10]$&$[1,7,21,33,25,6,1]$\\
+3&3&$[0,1,5,7]$&$[1,6,15,17,5,1]$\\\bottomrule
+\end{tabular}
+\caption{The seven exact rational association bounds $L_P=N_P/D_P$.}\label{tab:patterns}
+\end{table}
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{clcl}\toprule
+$d$ & sorted neighbor degrees & $M$ & $R_P$ (coefficient vector)\\\midrule
+2 & $2,2$ &3&$[1,3]$\\
+2 & $2,3$ &4&$[1,4,4]$\\
+2 & $2,4$ &5&$[1,5,8,5]$\\
+2 & $3,3$ &4&$[1,4,5]$\\
+2 & $3,4$ &5&$[1,5,9,6]$\\
+2 & $4,4$ &5&$[1,5,9,7]$\\
+3 & $2,2,2$ &5&$[1,5,7]$\\
+4 & $2,2,2,2$ &7&$[1,7,17,15]$\\\bottomrule
+\end{tabular}
+\caption{Eight reduced-class formulas; in every row $N_P=zR_P$ and $D_P=(1+z)^M+zR_P$.}\label{tab:reducedpatterns}
+\end{table}
+
+At $z=1$, the rows of Table~\artref{tab:reducedpatterns} give $L_P=1/3,\allowbreak9/25,\allowbreak19/51,\allowbreak5/13,\allowbreak21/53,\allowbreak11/27,\allowbreak13/45,\allowbreak5/21$, respectively.
+
+\FloatBarrier
+\subsection{Subcubic feature dictionary and column keys}
+Names in typewriter font are keys in the supplementary data files. They are file labels, not mathematical notation. All indices are zero-based. For each index, the machine-readable dictionary gives its tuple of parameters, whether its multiplier is selected (used by the certificate) and active (selected, with a polynomial that is not identically zero), and the exact multiplier coefficients.
+\begin{center}\small
+\begin{tabular}{lll}\toprule
+Indices&Names&Contents\\\midrule
+0&\texttt{normalization} (file key)&occupancy numerator $6O_C$\\
+1--5&$m_2,m_3,q_2,q_3,j$&five basic counting-identity numerators\\
+6--53&$R_{\epsilon,a,b,c}$&$48$ reversal numerators\\
+54--113&$S_{d,x,T}$&$60$ star numerators\\
+114--133&$X_{d,h,k},B_{d,h,k}$&$20$ exterior inequalities\\
+134--140&$L_{d,r}$&seven association-pattern rows\\\bottomrule
+\end{tabular}
+\end{center}
+For counting-identity indices $1$--$113$, the stored vectors are coefficients of $6Z_Cf_{C,j}$, not their values at $z=1$. Index zero stores the occupancy numerator $6O_C$, which enters the objective $c_C$. Despite its file key \texttt{normalization}, it is unrelated to the normalization $\sum_C\pi_C=1$ of the relaxation, whose dual contribution is the prescribed constant $c_4$.
+
+Reversals are ordered by $\epsilon=0,1$, then $a,b=0,\ldots,3$, then $c=a+1,\ldots,3$. Stars are ordered by degree $2,3$, bit $0,1$, and lexicographic nondecreasing symbol tuples. Exterior classes are ordered by $(d,h,k)$, with $X$ before $B$. The seven patterns are $(2,0),(2,1),(2,2),(3,0),(3,1),(3,2),(3,3)$, with $r$ interpreted as in Section~\artref{sec:association}. The \emph{key} of a full view consists of its root degree, $Z_C$, all $114$ numerator vectors, the ten exterior triples $(N,X,B)$ and its association pattern. Two full views lie in the same column exactly when their keys are equal, and each column records the number of full views it contains.
+
+\subsection{Subcubic generator and slack-check pseudocode}
+The following procedure generates the full views with their multiplicities. It does not replace the coverage proof of Lemma~\artref{lem:coverage}, and it does not fix the order in which views are written to file for checksums.
+\begin{enumerate}[itemsep=3pt]
+\item Choose $d\in\{2,3\}$, every simple graph $F$ on the labeled neighbors, and every neighbor-degree tuple $h\in\{2,3\}^d$. Form $h_u-1-d_F(u)$ distinct stub instances at neighbor $u$, rejecting negative numbers.
+\item Enumerate their partitions in first-appearance block order. A block has at most three instances and cannot repeat a neighbor label. Distinct blocks remain distinct even if their incidence sets coincide.
+\item For each block $T_w$, choose degree $h_w\in\{2,3\}$ with $h_w\ge|T_w|$, and $(x_w,b_w)\in\{(0,0),(1,0),(1,1)\}$; require $x_w=b_w$ if $h_w=|T_w|$.
+\item Enumerate every inside subset, and reject those that contain one of the forbidden sets (1)--(3) of Lemma~\artref{lem:coverage}. A neighbor with no exterior blocks meets the condition in (2) vacuously. Record the key of the resulting view and its multiplicity.
+\end{enumerate}
+There are at most six stubs and four inside vertices. The output has $2\,713$ degree-two-root and $229\,103$ degree-three-root records, which have $9\,867$ distinct keys and so form $9\,867$ columns. These are counts of full views, not of graph-isomorphism classes, and they are not probabilities.
+
+For each selected multiplier, parse its rational strings exactly and convert \arteqref{eq:P} to the power basis. Check every inequality multiplier's three Bernstein coefficients are nonnegative. For each key $C$, verify $Z_C(0)=1$ and its nonnegative coefficients, form \arteqref{eq:cleared}, and check
+\[
+ \deg H_C\le12,\qquad
+ \sum_{k\le i}[z^k]H_C\,\frac{\binom{i}{k}}{\binom{16}{k}}\ge0
+ \quad(i=0,\ldots,16).
+\]
+The other cleared denominators have the positive forms already proved. Generate every full view again and check that its key and multiplicity match a column. For the equality argument, recompute the zero polynomials independently. Then check, on every full view, that the view satisfies the description (i)--(ii) of Section~\artref{sec:equality} exactly when its column has zero slack. Positive common-denominator scaling permits integer arithmetic without changing any sign.
+
+The two implementations use different column orders, so equality checks compare complete keys rather than column indices.
+
+\subsection{Reduced-class dictionary and checks}
+The data for $\mathcal R$ are organized separately. The $224$ multipliers for $\mathcal R$ are ordered as follows: $3$ degree masses, $3$ occupied degree masses, $2$ mixed edges, $56$ walk reversals, $60$ star identities, $46$ boundary-pair reversals, $46$ deletion inequalities and $8$ patterns. The complete keys retain $d$, $Z_C$, $O_C$, all $170$ integer numerator polynomials $12Z_Cf_j$, every exterior triple, and the pattern. Classes $(d,h,k)$ are lexicographic with $1\le k\le\min(d,h)$; reversal pairs are $X$ then $B$. Pattern order is Table~\artref{tab:reducedpatterns}. For each full view the data record its column, and for each column they record the list of its full views. Every statement about zero-slack columns is therefore checked on all full views, not on one representative per column.
+
+The same generator procedure is used with degrees $2,3,4$ and the degree-two-endpoint restrictions of Section~\artref{sec:views}; there are at most five inside vertices. Both generators, the primary one and the separately written enumerator of ordinary sets, reconstruct every key. The verification forms \arteqref{eq:reducedcleared} and checks the $29\,274+162$ signs, the exact $C_4$ exposure identities and every map between full views and columns. It independently reconstructs the eleven interior zero-slack views and the $370$ degree-four views with all boundary flags $(0,0)$ used at $z=1$. It checks the description (i)--(ii) of Section~\artref{sec:equality} on all full views, and it includes tests that reject deliberately invalid data. The exact algebra of Appendix~\artref{app:prior} is also checked. These checks supplement rather than replace the universal analytic arguments.
+
+
+\subsection{Nonzero multipliers in the subcubic certificate}
+All $65$ selected counting-identity polynomials are nonzero. The seven active inequality polynomials are $B_{3,3,1}$ and $L_{2,1},L_{2,2},L_{3,0},L_{3,1},L_{3,2},L_{3,3}$. The first is the averaged sum of $q^2x_w-b_w$ over degree-three boundary vertices incident to one root-neighbor, restricted to degree-three roots; the other six are the corresponding association-pattern rows. The selected $X_{3,2,1}$ and $X_{3,3,1}$ polynomials vanish. The $27$ multiplier sign checks still include all three coefficients of each of nine selected inequalities, including zeros.
+
+\subsection{Running the checks}
+With Python 3.12 and SymPy installed, run
+\begin{quote}\ttfamily\small
+python replay\_proof.py --destination NEW\_DIRECTORY
+\end{quote}
+from the \file{supplement} folder. The destination must not already exist. The program checks the input manifest, copies the files into a new folder, disables numerical optimizers and runs the interval, equality and comparison checks. It writes a report and one log per check group. No network connection is needed. We tested it with Python 3.12.15 and SymPy 1.14.0 on macOS (Apple silicon). Licence terms are in \file{LICENSE}.
+
+The $42$ check groups include complete enumeration by both implementations, exact coefficient signs, reconstruction of the zero-slack views, the endpoint checks, the algebraic comparisons and tests that reject invalid input. The subcubic endpoint certificate has $9\,853$ columns at $z=1$, covering the same $231\,816$ full views as the interval certificate. Count equality at $z=1$ uses interior strictness and integration, not the endpoint certificate. The graph examples and finite cycle checks test the programs; the statements about all graphs depend on the arguments in the article.
+
+
+\section{Subdivision calculations}
+The note \emph{Scalar inequalities for subdivision counts} proves the scalar inequality used for once-subdivided cores. The coefficients of its two polynomials are in the \file{subdivision_checks} folder:
+\begin{itemize}
+\item \file{middle_interval/CERTIFICATE.json};
+\item \file{upper_interval/CERTIFICATE.json}.
+\end{itemize}
+From that folder, run
+\begin{quote}\ttfamily\small
+python middle\_interval\_check/check\_rational\_independent.py\\
+python upper\_interval\_check/check\_independent.py
+\end{quote}
+These programs use only the Python standard library and rebuild the polynomials by sparse integer arithmetic. Run them without Python's optimization flag. The first also checks eight coefficients at $q=1/2$, which the note does not need. The denominator signs and substitutions are justified in the note.
+\end{document}

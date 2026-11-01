@@ -1,0 +1,34 @@
+{
+  "all_passed": true,
+  "exact": {
+    "all_passed": true,
+    "checked_multiplier_coefficients": 162,
+    "checked_slack_coefficients": 29274,
+    "columns": 1722,
+    "failures": [],
+    "maximum_absolute_bernstein_coefficient": "3085801911148853168411/6405374876658030000000",
+    "maximum_denominator": 968386845630846860441878245904272960000000,
+    "minimum_bernstein": "0",
+    "slack_certificate_sha256": "a9b653f57ecf51d27cbb982bb9f3552d8af405bb68dd4dc1c33457d1063990b3",
+    "tight_columns": [
+      314,
+      409,
+      410,
+      412,
+      413,
+      414,
+      415,
+      416
+    ]
+  },
+  "full_regeneration": {
+    "columns": 1722,
+    "degree_counts": {
+      "2": 5216,
+      "3": 977,
+      "4": 11360
+    },
+    "full_views": 17553,
+    "generation_sha256": "af0020c5efce7b021f901e798013b34aa7967c019c4e5c98b8352e0e2985f021"
+  }
+}

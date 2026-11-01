@@ -1,0 +1,20 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.replay*/
+
+# Local LaTeX builds. The PDFs are in docs/.
+manuscript/*.aux
+manuscript/*.log
+manuscript/*.out
+manuscript/*.toc
+manuscript/*.fls
+manuscript/*.fdb_latexmk
+manuscript/*.synctex.gz
+manuscript/*.pdf
+manuscript/.tex-cache/
+
+# Written by the subdivision checks.
+subdivision_checks/**/INDEPENDENT_EXACT_REPLAY.json
+subdivision_checks/**/rational_independent_audit.json

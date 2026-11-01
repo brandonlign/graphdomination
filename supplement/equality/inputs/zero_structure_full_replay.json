@@ -1,0 +1,191 @@
+{
+  "all_passed": true,
+  "certificate": "subcubic_certificate.json",
+  "certificate_sha256": "c6f20f9d56dd89013c8e1b186e1f0614368b7585c3243fa12ddc8b64fbfa0205",
+  "independently_regenerated_full_views": 231816,
+  "independent_combinatorial_records": 52609,
+  "independent_symbolic_columns": 9867,
+  "all_symbolic_tuples_and_multiplicities_matched": true,
+  "structural_iff_tested_on_every_full_view": true,
+  "zero_columns": [
+    350,
+    464,
+    465,
+    466,
+    467,
+    468
+  ],
+  "zero_full_views": 7,
+  "zero_views": [
+    {
+      "independent_column": 467,
+      "d": 2,
+      "neighbor_degrees": [
+        2,
+        2
+      ],
+      "neighbor_edges": [],
+      "blocks": [
+        {
+          "T": [
+            1
+          ],
+          "degree": 2,
+          "x": 0,
+          "b": 0
+        },
+        {
+          "T": [
+            2
+          ],
+          "degree": 2,
+          "x": 0,
+          "b": 0
+        }
+      ]
+    },
+    {
+      "independent_column": 468,
+      "d": 2,
+      "neighbor_degrees": [
+        2,
+        2
+      ],
+      "neighbor_edges": [],
+      "blocks": [
+        {
+          "T": [
+            1
+          ],
+          "degree": 2,
+          "x": 0,
+          "b": 0
+        },
+        {
+          "T": [
+            2
+          ],
+          "degree": 3,
+          "x": 0,
+          "b": 0
+        }
+      ]
+    },
+    {
+      "independent_column": 468,
+      "d": 2,
+      "neighbor_degrees": [
+        2,
+        2
+      ],
+      "neighbor_edges": [],
+      "blocks": [
+        {
+          "T": [
+            1
+          ],
+          "degree": 3,
+          "x": 0,
+          "b": 0
+        },
+        {
+          "T": [
+            2
+          ],
+          "degree": 2,
+          "x": 0,
+          "b": 0
+        }
+      ]
+    },
+    {
+      "independent_column": 465,
+      "d": 2,
+      "neighbor_degrees": [
+        2,
+        2
+      ],
+      "neighbor_edges": [],
+      "blocks": [
+        {
+          "T": [
+            1
+          ],
+          "degree": 3,
+          "x": 0,
+          "b": 0
+        },
+        {
+          "T": [
+            2
+          ],
+          "degree": 3,
+          "x": 0,
+          "b": 0
+        }
+      ]
+    },
+    {
+      "independent_column": 466,
+      "d": 2,
+      "neighbor_degrees": [
+        2,
+        2
+      ],
+      "neighbor_edges": [],
+      "blocks": [
+        {
+          "T": [
+            1,
+            2
+          ],
+          "degree": 2,
+          "x": 0,
+          "b": 0
+        }
+      ]
+    },
+    {
+      "independent_column": 350,
+      "d": 2,
+      "neighbor_degrees": [
+        2,
+        2
+      ],
+      "neighbor_edges": [],
+      "blocks": [
+        {
+          "T": [
+            1,
+            2
+          ],
+          "degree": 2,
+          "x": 1,
+          "b": 1
+        }
+      ]
+    },
+    {
+      "independent_column": 464,
+      "d": 2,
+      "neighbor_degrees": [
+        2,
+        2
+      ],
+      "neighbor_edges": [],
+      "blocks": [
+        {
+          "T": [
+            1,
+            2
+          ],
+          "degree": 3,
+          "x": 0,
+          "b": 0
+        }
+      ]
+    }
+  ],
+  "optimizer_used": false,
+  "elapsed_seconds": 24.387500762939453
+}

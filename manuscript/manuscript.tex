@@ -1,0 +1,813 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=30mm]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,needspace}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\usepackage{placeins}
+\hypersetup{pdftitle={Mean order and counts of dominating sets in graphs of small degree},pdfauthor={Brandon Li}}
+\setlength{\emergencystretch}{1em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\E}{\mathbb E}\newcommand{\Prob}{\mathbb P}
+\newcommand{\ind}{\mathbf1}\newcommand{\F}{\mathcal F}\newcommand{\V}{\mathcal V}
+\title{Mean order and counts of dominating sets in graphs of small degree}
+\author{Brandon Li\\\small Independent researcher, Great Neck, NY, USA\\\small\texttt{brandon.li.gn@gmail.com}}
+\date{}
+\begin{document}
+\raggedbottom
+\maketitle
+\begin{abstract}
+Let $D_G(t)$ be the domination polynomial of a finite nonempty simple graph $G$, and let $m_G(t)=tD_G'(t)/D_G(t)$ be the mean order of a dominating set chosen with probability proportional to $t$ raised to its order. We prove that the normalized mean $m_G(t)/|V(G)|$ is at most $(t^2+3t+3)/(t^2+4t+6)$ for every $t\ge1$ when every vertex has degree two or three. The same bound holds for graphs of degrees two, three and four in which every edge has a degree-two endpoint. Integration and spanning-subgraph inclusion then give $D_G(t)\ge(t^4+4t^3+6t^2)^{|V(G)|/4}$ for all $t\ge1$ and all graphs of degrees two, three and four. Equality in each bound holds precisely for disjoint unions of $4$-cycles. Separately, the count bound holds strictly at every $t>0$ for the graph obtained by subdividing each edge of a loopless multigraph of minimum degree at least three once. The proof uses a finite linear program for conditional distributions on vertex neighborhoods. Exact polynomial calculations establish its dual inequalities and determine the equality cases. The calculation files and verification programs accompany the paper.
+
+\medskip\noindent\textbf{Keywords:} dominating set, domination polynomial, weighted mean, occupancy fraction, computer-assisted proof.
+
+\smallskip\noindent\textbf{Mathematics Subject Classification (2020):} 05C69, 05C31, 05C35.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+A set $D\subseteq V(G)$ is dominating if every vertex belongs to $D$ or has a neighbor in $D$. Its generating polynomial and weighted mean order are
+\[
+ D_G(t)=\sum_{D\text{ dominating}}t^{|D|},\qquad
+ m_G(t)=\frac{tD_G'(t)}{D_G(t)}\quad(t>0).
+\]
+At $t=1$, these quantities are the number and the average order of dominating sets. Beaton and Brown \cite{BB2021} studied the latter parameter, and Beaton and Cameron \cite[Theorem 2.10]{BC2024} proved the sharp upper bound $2|V(G)|/3$ for graphs without isolated vertices. We consider a sharper comparison under restrictions on the vertex degrees, allowing the activity $t$ to vary.
+
+All graphs are finite, simple and undirected; they need not be connected. Let $\mathcal S$ be the class of graphs whose degrees lie in $\{2,3\}$, and let $\mathcal T$ be the class whose degrees lie in $\{2,3,4\}$. We call $G\in\mathcal T$ \emph{reduced} if every edge has a degree-two endpoint, and write $\mathcal R$ for this subclass. Since
+\[
+ D_{C_4}(t)=t^4+4t^3+6t^2,\qquad
+ \frac{m_{C_4}(t)}4=\frac{t^2+3t+3}{t^2+4t+6},
+\]
+the following bounds are attained by disjoint unions of $4$-cycles.
+
+\begin{theorem}\label{thm:main}
+Let $G$ have $n>0$ vertices, and let $t\ge1$ be finite.
+\begin{enumerate}[label=(\roman*),itemsep=4pt]
+\item If $G\in\mathcal S\cup\mathcal R$, then
+\begin{equation}\label{eq:mean}
+ \frac{m_G(t)}n\le\frac{t^2+3t+3}{t^2+4t+6}.
+\end{equation}
+\item If $G\in\mathcal T$, then
+\begin{equation}\label{eq:partition}
+ D_G(t)\ge(t^4+4t^3+6t^2)^{n/4}.
+\end{equation}
+\end{enumerate}
+Equality in either assertion, within its stated graph class and at any fixed finite $t\ge1$, holds if and only if every component is $C_4$.
+\end{theorem}
+At $t=1$, the bounds become $m_G(1)\le7n/11$ on $\mathcal S\cup\mathcal R$ and $D_G(1)\ge11^{n/4}$ on $\mathcal T$. The mean bound \eqref{eq:mean} is asserted only on $\mathcal S\cup\mathcal R$, and not on all of $\mathcal T$. The right side of \eqref{eq:partition} is a real power of a polynomial. Hence \eqref{eq:partition} compares the two sides as numbers at each $t$ and is not a coefficientwise inequality. The restriction $t\ge1$ comes from the certificates used here: their Bernstein expansions establish the required signs on $0\le z\le1$, where $z=1/t$. They do not establish the signs for $z>1$. Thus the theorem leaves the mixed-degree bounds for $0<t<1$ open; this is a limitation of the present proof, not a counterexample in that range. For once-subdivided cores, Proposition~\ref{prop:subdivision} gives a separate count bound. Equality requires every component to be $C_4$, so it can occur only when $4\mid n$. When $4\nmid n$, the theorem does not identify the extremal graphs of fixed order $n$.
+
+The two parts of the theorem are connected as follows. A dominating set of a spanning subgraph also dominates the whole graph, so the count $D_G(t)$ can only increase when edges are added. Every graph in $\mathcal T$ contains a spanning graph in $\mathcal R$. Integrating the mean bound on $\mathcal R$ over $t$ therefore gives the count bound on all of $\mathcal T$. Means do not transfer to spanning supergraphs in this way, so the mean bound on $\mathcal S$ needs its own proof.
+
+\subsection{Related bounds}
+Beaton and Cameron ask for extremal average orders under minimum-degree restrictions \cite[Section 4, Problem 1]{BC2024}. Theorem~\ref{thm:main} addresses restricted degree classes rather than their full fixed-order question. Polynomial extremality is also distinct from mean-order extremality: Beaton, Brown and Cox \cite{BBC2020} study uniform comparisons of domination polynomials when both order and size are fixed. In the opposite direction, Cutler and Radcliffe \cite{CR2016} use Shearer's lemma to show $D_G(t)\le D_{K_{r+1}}(t)^{n/(r+1)}$ for $r$-regular graphs.
+
+A useful comparison comes from the hitting-family argument of Chen, He, Lai and Li (\emph{On the local average order of dominating sets}, preprint, 2026, Lemma~3.7; \url{https://arxiv.org/abs/2610.11446v1}). Its weighted adaptation, proved in Appendix~\ref{app:prior}, gives
+\begin{equation}\label{eq:prior}
+ m_G(t)\le\frac{tn}{1+t}
+ +\frac1{1+t}\sum_{v\in V(G)}
+       \frac{(d(v)+1)t}{(1+t)^{d(v)+1}-1}.
+\end{equation}
+For minimum degree at least three, this is strictly stronger than \eqref{eq:mean} throughout $t\ge1$, without an upper-degree restriction. Among graphs of minimum degree at least two, it also gives \eqref{eq:mean} whenever the fraction of degree-two vertices is at most $7/187$. Its degree-two term, however, is weaker than the $C_4$ comparison at every positive activity. In $\mathcal S$, the remaining difficulty therefore lies with graphs that mix degree-two and degree-three vertices. Cubic graphs are already covered by \eqref{eq:prior}.
+
+Subdividing every edge of a connected cubic graph on $N$ vertices gives a graph in $\mathcal S$ with $n_3=N$ and $n_2=3N/2$. Its degree-two vertices make up a fraction $3/5$ of all vertices, so the uniform sufficient criterion $n_2/n\le7/187$ does not cover these graphs. Nor can their count bound be obtained by comparison with a spanning union of cycles. Such a comparison would use Lemma~\ref{lem:cycles} for each cycle and spanning-subgraph inclusion as in Section~\ref{sec:integration}. But a subdivided cubic graph is bipartite, with the $N$ original vertices on one side and the $3N/2$ subdivision vertices on the other. Every cycle alternates between the two sides, so a spanning union of cycles would require sides of equal size. These graphs therefore have no spanning $2$-factor.
+
+The cycle recurrence used below is classical \cite[Theorem 4.5]{AP2010}, and its complement-variable form appears explicitly in Arocha and Llano (\emph{The number of dominating $k$-sets of paths, cycles and wheels}, preprint, 2016, Theorem~10; \url{https://arxiv.org/abs/1601.01268v1}). Our cycle lemma follows from that recurrence by differentiation. Spanning-subgraph inclusion for counts is likewise standard; Wagner uses it explicitly \cite{Wagner2013}. Skupie\'n \cite{Skupien2014} studies ordinary-count minimization under upper and lower bounds on the domination number. Appendix~\ref{app:prior} compares Wagner's lower bound with \eqref{eq:partition} and shows that the integrated form of \eqref{eq:prior} already proves \eqref{eq:partition} when $n_2\le n_4$.
+
+We now give the details of the reduction from $\mathcal T$ to $\mathcal R$. Every $G\in\mathcal T$ has a spanning reduced graph, obtained by repeatedly deleting an edge whose endpoints both have current degree at least three. Conversely, no edge of a reduced graph can be deleted while preserving minimum degree two. The count bound on $\mathcal R$ therefore implies the count bound on $\mathcal T$. The same reduction does not transfer means. Beaton \cite[Section 6.2]{Beaton2021} gives explicit examples in which average order is not monotone under edge deletion. The estimates above do not settle the reduced case. Reduced graphs satisfy $2n_2\ge3n_3+4n_4$. For every nonempty such degree profile, the integrated form of \eqref{eq:prior} (Appendix~\ref{app:prior}) gives a lower bound for $D_G(1)$ that is smaller than $11^{n/4}$. The class $\mathcal S$ alone would not suffice for the count bound. Once-subdivided $4$-regular graphs lie in $\mathcal R$ with $n_2=2n_4$, and they have no spanning subgraph in $\mathcal S$.
+
+\subsection{Complement variables and proof outline}
+Put
+\[
+ \F(G)=\{I\subseteq V(G):N[w]\nsubseteq I\text{ for all }w\},\qquad
+ Z_G(z)=\sum_{I\in\F(G)}z^{|I|}.
+\]
+This family is downward closed, and $D_G(t)=t^nZ_G(1/t)$. The complement-variable polynomial $Z_G$ is the convention introduced by Arocha and Llano \cite[Section 3]{AL2000}. If $I$ has probability $z^{|I|}/Z_G(z)$, its normalized occupancy is
+\[
+ \alpha_G(z)=\frac{zZ_G'(z)}{nZ_G(z)}.
+\]
+A set $I$ lies in $\F(G)$ exactly when $V(G)\setminus I$ is dominating, so $\alpha_G$ measures the vertices left out of a random dominating set. Define $A(z)=1+4z+6z^2$ and $c_4(z)=(z+3z^2)/A(z)$. Set $z=1/t$, so that $t\ge1$ corresponds to $0<z\le1$. Differentiating $\log D_G(t)=n\log t+\log Z_G(1/t)$ gives
+\[
+ \frac{m_G(t)}n=1-\alpha_G(1/t).
+\]
+Since $Z_{C_4}=A$, the same identity for $C_4$ reads $m_{C_4}(t)/4=1-c_4(1/t)$. Subtracting both sides of \eqref{eq:mean} from one reverses the inequality, so the mean assertion is equivalent to
+\begin{equation}\label{eq:occupancy}
+ \alpha_G(z)\ge c_4(z),\qquad 0<z\le1.
+\end{equation}
+The occupancy method and the integration of occupancy bounds into partition-function bounds are established techniques \cite{DJPR2017,CPST2021}. The local-configuration linear programs of Perarnau and Perkins \cite{PP2018} provide a related approach: they bound independent-set occupancy and verify the resulting polynomial inequalities by exact computation. Here the constraints must account for closed neighborhoods and for vertices of different degrees, and the feasible sets are the weak independent sets of the closed-neighborhood hypergraph. That hypergraph is generally neither uniform nor linear, so bounds requiring these hypotheses do not apply directly.
+
+The proof of \eqref{eq:occupancy} has four steps.
+\begin{enumerate}[label=(\alph*),itemsep=2pt]
+\item \emph{Finite local views.} Choose a root $v$ uniformly at random, independently of $I$, and reveal the part $E=I\setminus N[v]$ of $I$ outside the closed neighborhood of $v$. Given $E$, the conditional law of $I\cap N[v]$ depends only on a bounded amount of local data, which we call the view $C$. Each view has an occupancy $c_C(z)$, the conditional probability that $v\in I$. Averaging over $v$ and $E$ gives $\alpha_G(z)=\mathbb E[c_C]$. Section~\ref{sec:views} shows that, in each of $\mathcal S$ and $\mathcal R$, every actual exposure produces one of finitely many views.
+\item \emph{Averaged relations.} Counting the same configuration from different roots gives identities $\mathbb E[f_C]=0$ for finitely many functions $f$ of the view. Deletion and product-measure association give further averaged inequalities $\mathbb E[g_C]\ge0$. These relations are proved in Section~\ref{sec:rows}.
+\item \emph{Nonnegative slack.} We find a vector $y(z)$ and a vector $\mu(z)\ge0$ of rational functions such that every view $C$ in the finite list has nonnegative slack
+\[
+ s_C=c_C-c_4-y\cdot f_C-\mu\cdot g_C\ge0.
+\]
+At a fixed activity, finding $y$ and $\mu$ is a linear program. The primal problem minimizes $\sum_Cp_C(c_C-c_4)$ over weights $p_C\ge0$ on views summing to one, subject to $\sum_Cp_Cf_C=0$ and $\sum_Cp_Cg_C\ge0$, and the pair $(y,\mu)$ is a dual solution. The entries are rational functions of $z$, so for each of $\mathcal S$ and $\mathcal R$ a single certificate covers all $0<z\le1$. Section~\ref{sec:certificate} and Appendix~\ref{app:replay} specify the exact-arithmetic checks.
+\item \emph{Averaging and equality.} Taking expectations and using $\mathbb E[f_C]=0$, $\mu\ge0$ and $\mathbb E[g_C]\ge0$ gives
+\[
+ \alpha_G(z)-c_4(z)=\mathbb E[s_C]+\mu\cdot\mathbb E[g_C]\ge0,
+\]
+which is \eqref{eq:occupancy}. Equality forces $\mathbb E[s_C]=0$ and $\mu\cdot\mathbb E[g_C]=0$, so every view of positive probability has zero slack. Section~\ref{sec:equality} uses the zero sets of the certificates in the interior of the interval, together with a separate argument at the endpoint $z=1$, to show that this happens only for disjoint unions of $4$-cycles. Section~\ref{sec:integration} integrates the mean bound in $t$ to obtain \eqref{eq:partition}.
+\end{enumerate}
+Section~\ref{sec:subdivision} gives the separate count bound for once-subdivided cores, valid at all activities.
+
+\paragraph{Averaging over roots.}
+A pointwise comparison at each vertex is false. In $K_{2,3}$, let $a,a'$ have degree three and $b,c,d$ have degree two. Direct counting gives
+\[
+ Z=1+5z+10z^2+7z^3,\quad O_a=z+4z^2+3z^3,\quad O_b=z+4z^2+5z^3,
+\]
+where $O_v/Z=\Prob(v\in I)$. Exact subtraction gives
+\begin{align*}
+ \frac{O_a}{Z}-c_4&=-\frac{z^4(3z+1)}{AZ}<0,\\
+ \alpha_{K_{2,3}}-c_4&=\frac{z^3(21z^2+19z+6)}{5AZ}>0\quad(z>0).
+\end{align*}
+At $z=1$ the vertex marginals are $8/23$ and $10/23$, and the whole-graph occupancy is $2/5>4/11=c_4(1)$. The degree-three vertices fall below the $C_4$ value, and the degree-two vertices more than make up the difference. The proof must therefore use relations between different root types, as in step~(b). 
+
+\section{Local configurations}\label{sec:views}
+Throughout, $\mathcal S$, $\mathcal R$ and $\mathcal T$ denote graph classes. We use $\Lambda$ for the closed neighborhood being exposed and $J$ for its unknown inside subset. The letters $R_{\epsilon,a,b,c}$ and $S_{d,x,T}$ introduced in Section~\ref{sec:rows} label counting identities, not vertex sets.
+
+This section describes the local data seen from a root and shows that these data determine the conditional law near the root. Fix $z>0$, and let $I$ have probability $z^{|I|}/Z_G(z)$ on $\F(G)$. For a vertex $w$, the requirement $N[w]\nsubseteq I$ is called the \emph{closed-neighborhood condition} at $w$. Choose a uniform root $v$ independently of $I$, label its $d$ neighbors $1,\ldots,d$, and put $\Lambda=N[v]$, the closed neighborhood of $v$. We expose the \emph{exterior} $E=I\setminus \Lambda$, which is the part of $I$ outside $\Lambda$. The unknown part is then the inside set $J=I\cap \Lambda$.
+
+The vertices at distance two from $v$ are the \emph{boundary vertices}. Apart from its edge to $v$ and its edges to other neighbors of $v$, each neighbor of $v$ has edges only to boundary vertices. We call these remaining incident half-edges its \emph{stubs}. We group the stubs into blocks by their common boundary endpoint $w$, and identify the block of $w$ with its incidence set $T_w=N(w)\cap N(v)$. The \emph{view} $C$ of the exposure records:
+\begin{enumerate}[label=(\roman*),itemsep=2pt]
+\item each neighbor's degree and every edge among the neighbors;
+\item the partition of their remaining stubs by common distance-two endpoint $w$, with block $T_w=N(w)\cap N(v)$;
+\item $h_w=d(w)$ in the relevant degree set and flags
+\[
+ x_w=\ind[w\in E],\qquad
+ b_w=\ind[\{w\}\cup(N(w)\setminus \Lambda)\subseteq E].
+\]
+\end{enumerate}
+The flag $x_w$ records whether the boundary vertex $w$ is selected. For a neighbor $u$, the flags $x_w$ with $u\in T_w$ show whether every neighbor of $u$ outside $\Lambda$ is selected. The flag $b_w$ records whether $w$ and all its neighbors outside $\Lambda$ are selected. Because $w$ is not adjacent to $v$, we have $N[w]=\{w\}\cup(N(w)\setminus \Lambda)\cup T_w$. When $b_w=1$, the condition at $w$ therefore reduces to $T_w\nsubseteq J$, and when $b_w=0$ it holds automatically. Figure~\ref{fig:neighborhood} shows a degree-three root with two distinct boundary vertices that share one incidence set.
+
+A neighbor $u$ has $d(u)-1-d_{G[N(v)]}(u)$ remaining stubs, required to be nonnegative. In either class a root has at most six stubs. Since $G$ is simple, no neighbor appears twice in a block. Every boundary vertex satisfies $h_w\ge|T_w|$. Its flags $(x_w,b_w)$ take one of the values $(0,0),(1,0),(1,1)$, since $b_w=1$ implies $x_w=1$. If $h_w=|T_w|$, then $w$ has no neighbors outside $\Lambda$, so $b_w=x_w$. Distinct blocks are distinct boundary vertices even if their incidence sets coincide.
+
+For $\mathcal S$, all displayed degrees lie in $\{2,3\}$. For $\mathcal R$, they lie in $\{2,3,4\}$ and \emph{every displayed edge} has a degree-two endpoint, including neighbor--boundary edges. A degree-three or degree-four root therefore has only degree-two neighbors; their induced graph is a matching. A boundary block incident to a high-degree neighbor must have boundary degree two. For a degree-two root, the edge between its two neighbors is forbidden when both neighbors are high, that is, of degree at least three. These restrictions follow from the definition of $\mathcal R$, so every actual configuration satisfies them. In both classes, boundary vertices with equal incidence sets are kept as separate vertices with their own flags. The same holds for boundary vertices whose degree is used up by edges into $N(v)$.
+
+The finite universe $\V_{\mathcal S}$ or $\V_{\mathcal R}$ consists of all views obtained by choosing degrees, neighbor edges, a stub partition, boundary degrees and flags subject to these rules. We impose no further compatibility conditions among boundary vertices or on the graph beyond distance two. Some views in the universe may therefore arise from no graph. Such views only add constraints that the certificate must satisfy, so including them keeps the argument valid.
+
+\input{neighborhood_figure.tex}
+\FloatBarrier
+\Needspace{12\baselineskip}
+
+\begin{lemma}[Coverage and weighted conditional law]\label{lem:coverage}
+For every graph in $\mathcal S$ or $\mathcal R$, every root $v$ and every feasible exterior $E$, the resulting view lies in the corresponding universe. Its feasible inside sets $J\subseteq \Lambda$ are exactly those satisfying:
+\begin{enumerate}[label=(\arabic*),itemsep=2pt]
+\item $\Lambda\nsubseteq J$;
+\item for each neighbor $u$ all of whose exterior-neighbor $x$ flags are one,
+$\{v,u\}\cup(N(u)\cap N(v))\nsubseteq J$;
+\item for each boundary vertex $w$ with $b_w=1$, $T_w\nsubseteq J$.
+\end{enumerate}
+Writing $Z_C(z)=\sum_{J\text{ feasible}}z^{|J|}$ for a view $C$, the conditional probability of $J$ is $z^{|J|}/Z_C(z)$.
+\end{lemma}
+\begin{proof}
+Actual configurations obey every enumerated restriction. The closed-neighborhood condition at $v$ is (1). The condition at a neighbor $u$ holds automatically unless every neighbor of $u$ outside $\Lambda$ lies in $E$, and in that case it is exactly (2). The condition at a boundary vertex $w$ holds automatically unless $b_w=1$, and then it is exactly (3). Every other center $w'$ lies at distance at least three from $v$, possibly in another component. Then $N[w']$ is disjoint from $\Lambda$, so the condition at $w'$ depends only on $E$. Since $E$ is the exterior of a feasible set $I$, we have $N[w']\cap I=N[w']\cap E$ and $N[w']\nsubseteq E$. The condition at $w'$ therefore holds for every inside set $J$. These cases cover all centers, including other connected components, and prove necessity and sufficiency.
+
+Each feasible $J$ has total-set weight $z^{|E|+|J|}$; the common exterior factor cancels. Exteriors with the same recorded view have the same conditional law, so aggregating them preserves it. The empty inside set is always feasible, whence $Z_C(0)=1$ and $Z_C(z)>0$ for $z\ge0$.
+\end{proof}
+Let $\langle\varphi\rangle_C$ denote this conditional average, with boundary flags held fixed, and set
+\[
+ O_C(z)=\sum_{J\text{ feasible},\ v\in J}z^{|J|},\qquad c_C(z)=O_C(z)/Z_C(z).
+\]
+The probability of an actual pair $(v,E)$ is
+\begin{equation}\label{eq:exposure}
+ \frac{z^{|E|}Z_C(z)}{nZ_G(z)}.
+\end{equation}
+These weights are not uniform over exposures or over views. Because the root is uniform and independent of $I$, averaging $c_C$ under this law gives
+\[
+ \mathbb E[c_C]=\frac1n\sum_{v\in V(G)}\Prob(v\in I)=\alpha_G(z).
+\]
+
+\paragraph{Worked mixed-degree exposure.}\label{par:worked}
+In $K_{2,3}$, take root $b$ and $\Lambda=\{b,a,a'\}$. The two boundary vertices $c,d$ both have degree two and incidence set $\{a,a'\}$, but they are distinct vertices with their own flags. For the exterior $E=\{c\}$, their flags $(x,b)$ are $(1,1)$ and $(0,0)$. The closed-neighborhood condition at $c$ therefore forbids $\{a,a'\}\subseteq J$. The conditions at $a$ and $a'$ hold automatically because their exterior neighbor $d$ is not selected, and the condition at $d$ holds because $d\notin I$. Together with $\Lambda\nsubseteq J$, this leaves exactly the inside sets
+\[
+ \varnothing,\ \{a\},\ \{a'\},\ \{b\},\ \{b,a\},\ \{b,a'\}.
+\]
+Hence $Z_C=1+3z+2z^2$ and $O_C=z+2z^2$. By \eqref{eq:exposure}, the pair $(b,\{c\})$ has probability $zZ_C/(5Z)$.
+
+With the root fixed at $b$, an exterior $E$ has probability $z^{|E|}Z_C(z)/Z(z)$, where $C$ is the view of $E$. The four possible exteriors $\varnothing,\{c\},\{d\},\{c,d\}$ have local partition polynomials $1+3z+3z^2$, $1+3z+2z^2$, $1+3z+2z^2$ and $1+3z$, respectively. At $z=1$ their probabilities are $7/23,6/23,6/23,4/23$. Summing $z^{|E|}Z_C$ over the four exteriors recovers $Z$. Section~\ref{sec:rows} evaluates one of the averaged relations on the exposure $E=\{c\}$ and lists its values on the six inside sets in the order above.
+
+
+There are $231\,816$ views for $\mathcal S$ and $17\,553$ for $\mathcal R$. To reduce the number of inequalities, we identify views that have the same root degree, polynomials $Z_C,O_C$, conditional counting functions, exterior counts and association pattern from Section~\ref{sec:rows}. Such views give identical terms in the linear program. There are $9\,867$ resulting classes for $\mathcal S$ and $1\,722$ for $\mathcal R$; we call these the \emph{columns} of the program. A \emph{full view} means an individual view before this identification. All identifications are polynomial identities in $z$. This grouping preserves all expectations used in the linear program. Appendix~\ref{app:replay} describes the enumeration.
+
+\Needspace{14\baselineskip}
+\section{Identities and inequalities}\label{sec:rows}
+This section proves the linear constraints that the certificate of Section~\ref{sec:certificate} combines. Throughout, write $X_u=\ind[u\in I]$ and $q=z/(1+z)$. A \emph{counting identity} is a function $\varphi(v,I)$ of a root $v$ and a set $I$ such that $\sum_{v\in V(G)}\varphi(v,I)=0$ for every fixed $I$. Each counting identity below is proved by double counting this sum. The coordinates of $f_C$ will be conditional averages of these identities. The coordinates of $g_C$ will have nonnegative expectation. We refer to these coordinate functions as \emph{features}; each supplies a constraint in the linear program. Every identity and inequality is proved on the original graph $G$, before conditioning on a view.
+\begin{center}\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{>{\raggedright\arraybackslash}p{3.0cm}rr>{\raggedright\arraybackslash}p{5.4cm}}\toprule
+Family&$\mathcal S$&$\mathcal R$&Proof idea\\\midrule
+Counting identities&$113$&$170$&Double counting: the sum over roots is zero for every $I$.\\
+Exterior deletion inequalities&$20$&$46$&Weight comparison by deleting subsets of a fixed vertex set; see \eqref{eq:deletion}.\\
+Association inequalities&$7$&$8$&Harris association for an independent product measure (Lemma~\ref{lem:association}).\\\bottomrule
+\end{tabular}
+\end{center}
+
+For a counting identity $\varphi_j(v,I)$, its conditional average is $f_{C,j}(z)=\langle\varphi_j(v,I)\rangle_C$. Here the brackets average over the inside set with the view $C$ fixed. Let $f_C$ be the vector of these conditional averages, and let $g_C$ be the vector of inequality features. Expectations of view features are taken with respect to the actual exposure probabilities of the views, given by the root/exposure law \eqref{eq:exposure}. This section proves
+\[
+ \E f_C=0,\qquad \E g_C\ge0\quad\text{(coordinatewise)}.
+\]
+These are statements about averages over views. They do not assert $f_C=0$ or $g_C\ge0$ for an individual view. These constraints let views whose local occupancy is below the target be compensated by views above it. Section~\ref{sec:certificate} combines them with multipliers as in step~(c) of Section~\ref{sec:intro}.
+
+\subsection{Counting identities}
+We begin with the class $\mathcal S$. For $k=2,3$, define
+\begin{align*}
+ m_k&=\ind[d(v)=k]-\sum_{u\sim v,\ d(u)=k}1/k,\\
+ q_k&=\ind[d(v)=k]X_v-\sum_{u\sim v,\ d(u)=k}X_u/k,\\
+ j&=\ind[d(v)=2]\sum_{u\sim v,\ d(u)=3}X_vX_u
+ -\ind[d(v)=3]\sum_{u\sim v,\ d(u)=2}X_vX_u.
+\end{align*}
+Each of these functions is a counting identity. In the sums of $m_k$ and $q_k$ over roots, a vertex $u$ of degree $k$ is counted once as a root and $d(u)$ times, each with divisor $d(u)$, as a neighbor. In the sum of $j$, an occupied edge joining a degree-two vertex to a degree-three vertex is counted once in each orientation, with opposite signs. The divisor is the degree of the counted neighbor $u$, not the degree of the root.
+
+Code a vertex by $\sigma(u)=2(d(u)-2)+X_u\in\{0,1,2,3\}$. For $a<c$, $b\in\{0,1,2,3\}$ and $\epsilon\in\{0,1\}$, define $R_{\epsilon,a,b,c}$ by counting ordered walks $v-u-w$ with $w\ne v$, symbols $(a,b,c)$, and $\ind[v\sim w]=\epsilon$, minus those with symbols $(c,b,a)$ and the same $\epsilon$. Reversing each walk shows that the sum over roots is zero, which gives $48$ counting identities. The endpoint $w$ is either a neighbor of $v$ in a triangle or a recorded boundary vertex. Distinct walks reaching the same endpoint are counted separately.
+For the worked $K_{2,3}$ exposure above, the identity $R_{0,0,2,1}$, which the certificate uses, has raw values $2,1,1,-2,-1,-1$ on inside sets ordered as $\varnothing,\{a\},\{a'\},\{b\},\{b,a\},\{b,a'\}$. Its conditional value $\langle R_{0,0,2,1}\rangle_C$ is $2(1-z^2)/Z_C$, so clearing the denominator gives $6Z_C\langle R_{0,0,2,1}\rangle_C=12(1-z^2)$. The two walks through $a$ and $a'$ to a common endpoint count separately: walks are counted with multiplicity even when they share vertices or endpoints.
+
+
+A rooted-star signature is
+\[
+ \tau(u)=\bigl(d(u),X_u,\{\!\{\sigma(w):w\sim u\}\!\}\bigr).
+\]
+For each signature $s$, use the row
+\begin{equation}\label{eq:star}
+ \ind[\tau(v)=s]-\sum_{u\sim v}\frac{\ind[\tau(u)=s]}{d(u)}.
+\end{equation}
+The signatures of $v$ and of its neighbors are determined by the view and the inside set. Each vertex $u$ appears in the second term once for each of its $d(u)$ neighbors, with divisor $d(u)$. Hence the sum over roots of the second term is $\sum_u\ind[\tau(u)=s]$, and \eqref{eq:star} is a counting identity. There are $2\binom52=20$ degree-two and $2\binom63=40$ degree-three signatures. All $60$ are used. Since every counting identity has zero sum over roots for each $I$, the tower property gives $\E f_C(z)=0$ under the exposure law of every graph in the class, for every $z>0$.
+
+\paragraph{The $170$ counting identities for $\mathcal R$.}
+The same double counts give three identities of the form $m_k$, three of the form $q_k$, and two occupied-edge antisymmetries $j_{2,3},j_{2,4}$. Now $\sigma(u)=2(d(u)-2)+X_u\in\{0,\ldots,5\}$. We use every reversal identity $R_{\epsilon,a,b,c}$ whose walks satisfy the defining rule of $\mathcal R$ that every edge has an endpoint of degree two, applying the rule also to the edge $vw$ when $\epsilon=1$. There are $56$ such identities. The star signatures number $2\binom72=42$ at degree two, $2\cdot4$ at degree three and $2\cdot5$ at degree four, again $60$. These give $124$ identities.
+
+For the remaining $46$, let $c=(d,h,k)$ with $d,h\in\{2,3,4\}$ and $1\le k\le\min(d,h)$, and $c^*=(h,d,k)$. At root $v$, let $W_c(v)$ be its distinct distance-two vertices $w$ with $d(v)=d$, $d(w)=h$ and $|T(v,w)|=k$, where $T(v,w)=N(v)\cap N(w)$. Define
+\begin{align*}
+ \mathrm{BR}_{X,c}&=\sum_{w\in W_c(v)}X_w-X_v|W_{c^*}(v)|,\\
+ \mathrm{BR}_{B,c}&=\sum_{w\in W_c(v)}b(v,w)
+ -\sum_{w\in W_{c^*}(v)}X_v\prod_{u\in N(v)\setminus T(v,w)}X_u,
+\end{align*}
+where $b(v,w)=X_w\prod_{u\in N(w)\setminus N[v]}X_u$. Reversing the ordered pair $(v,w)$ is a bijection, preserves $T$, and interchanges $c,c^*$. Because distance-two vertices are nonadjacent, the reversed $b$ is exactly the inside product displayed above: there is no additional boundary bit and no division by $k$. Thus both sums over roots vanish for every fixed $I$. The $23$ classes yield $46$ identities. The neighbor divisors $2,3,4$ all divide $12$, but $4$ does not divide $6$. For this reason the reduced certificate clears denominators with the factor $12$ rather than $6$. All $170$ identities are kept, including $19$ that vanish identically. Their conditional averages have zero expectation; they need not vanish in each view.
+
+\subsection{Exterior deletion inequalities}
+In any nonempty downward-closed family with $z$-weighted law, for a fixed $m$-set $U$,
+\begin{equation}\label{eq:deletion}
+ \Prob(U\subseteq I)\le q^m.
+\end{equation}
+Indeed, $(J,B)\mapsto J\setminus B$, for feasible $J\supseteq U$ and $B\subseteq U$, is injective: recover $J$ by adjoining $U$, then recover $B$. All images are feasible. Their total weight for each $J$ is $z^{|J|}(1+z^{-1})^m=z^{|J|}q^{-m}$; comparison with the total family weight proves \eqref{eq:deletion}. Conditional on $w\in I$, the residual family on other vertices is again downward closed with the same activity. Thus, for $U$ disjoint from $w$,
+\[
+ \Prob(\{w\}\cup U\subseteq I)\le q^{|U|}\Prob(w\in I),
+\]
+also when the latter probability is zero.
+
+A root $v$ and a vertex $w$ at distance two from $v$ have structural class $(d,h,k)$ when $d(v)=d$, $d(w)=h$ and $|T(v,w)|=k$. For each class, count such boundary vertices $w$ once each, not once per edge joining them to $N(v)$. Write $N,X,B$ for the number of such vertices, the sum of their values $X_w$, and the sum of their values $b(v,w)$. Apply the preceding bounds at each fixed root and boundary vertex, with $U=N(w)\setminus N[v]$ of size $h-k$, and average over roots. This proves
+\begin{equation}\label{eq:exterior}
+ \E(qN-X)\ge0,\qquad \E(q^{h-k}X-B)\ge0.
+\end{equation}
+For $\mathcal S$ the classes have $d,h\in\{2,3\}$ and $1\le k\le h$, giving ten classes and twenty inequalities; the impossible class $(2,3,3)$ contributes zero. For $\mathcal R$ we use the $23$ classes above and $46$ inequalities. When $h=k$, the set $U$ is empty, so $B=X$ and the second inequality in \eqref{eq:exterior} is identically zero; this happens for six classes of $\mathcal R$. Class membership depends only on $G$, not on $I$. The inequalities \eqref{eq:exterior} hold on average; they are not claimed after conditioning on the values $X_w$.
+
+\subsection{Association inequalities}\label{sec:association}
+The next lemma bounds the occupation probability of a vertex from below by a quantity that depends only on the degrees of the vertex and its neighbors. Its proof uses association only for an independent product measure, not for the law on $\F(G)$.
+\begin{lemma}[Insertion lower bound]\label{lem:association}
+For a fixed vertex $v$, put $d=d(v)$, $a_u=1-q^{d(u)-1}$ for $u\sim v$, and
+\[
+ T_v=\prod_{u\sim v}(1-q+qa_u)-q^d\prod_{u\sim v}a_u.
+\]
+Then $p_v=\Prob(v\in I)$ satisfies $p_v\ge L_v:=zT_v/(1+zT_v)$.
+\end{lemma}
+\begin{proof}
+We first express $p_v$ through its odds. Sample independent Bernoulli($q$) bits on $V(G)\setminus\{v\}$. Let $A_0$ mean that these bits are feasible with $v$ absent. Let $B_0$ mean that every closed-neighborhood condition centered in $N[v]$ still holds after $v$ is inserted. Since $q/(1-q)=z$, the product measure conditioned on $A_0$ is the $z$-weighted law on feasible sets not containing $v$. Every feasible set containing $v$ is obtained by adding $v$ to a set satisfying $A_0$ and $B_0$. This addition multiplies the weight by $z$, so
+\[
+ \frac{p_v}{1-p_v}=z\,\Prob_q(B_0\mid A_0).
+\]
+It remains to bound this conditional probability from below. Both $A_0$ and $B_0$ are decreasing events, and $\Prob_q(A_0)>0$. Product-measure (Harris) association gives
+\[
+ r_v:=\Prob_q(B_0\mid A_0)\ge\Prob_q(B_0).
+\]
+For completeness, association follows by induction on the number of bits: conditional covariance is nonnegative by induction, and the covariance of conditional means for the last bit is
+$q(1-q)(F(0)-F(1))(G(0)-G(1))\ge0$
+for decreasing functions. Thus $p_v/(1-p_v)=zr_v\ge z\Prob_q(B_0)$, and it remains to bound $\Prob_q(B_0)$ from below.
+
+Splitting a bit shared by two groups of decreasing conditions into independent copies cannot increase their conjunction probability. Conditional on all other bits, let the two group indicators be $f(x),g(x)$ and let $H$ indicate that all other conditions hold. The common-bit contribution minus the split contribution is
+\[
+ Hq(1-q)(f(0)-f(1))(g(0)-g(1))\ge0.
+\]
+Groups may share other variables; conditioning makes the calculation valid.
+
+The condition at the root forbids all neighbor bits being one. For each neighbor $u$, its condition after $v$ is inserted consists of its own bit and $d(u)-1$ other bits. Retain its own bit jointly in the root condition and its own condition, but split its appearances in every other neighbor condition into private copies. Split all remaining shared bits between neighbor conditions too. Repeated use of the preceding inequality handles triangles and shared boundary vertices without dropping any condition or changing its size. Let $J\subseteq N(v)$ be the set of neighbors whose own bits are one. Conditional on $J$, the root condition is $J\subsetneq N(v)$, and the remaining conditions hold with probability $\prod_{u\in J}a_u$. The private blocks are independent after splitting, so
+\[
+ \Prob_q(B_0)\ge\sum_{J\subsetneq N(v)}q^{|J|}(1-q)^{d-|J|}
+                \prod_{u\in J}a_u=T_v.
+\]
+The increasing function $r\mapsto zr/(1+zr)$ completes the proof.
+\end{proof}
+For $\mathcal S$, there are seven root/neighbor-degree patterns $P=(d,r)$: for $d=2$, $r$ counts degree-three neighbors; for $d=3$, it counts degree-two neighbors. Since each $a_u$ depends only on $d(u)$, the bound $L_v$ depends only on the degree pattern $P$ of $v$; write $L_P$. Summing Lemma~\ref{lem:association} over roots of pattern $P$ yields seven unconditional inequalities
+\begin{equation}\label{eq:associationrows}
+ \E\bigl[\ind[P(C)=P](c_C-L_P)\bigr]\ge0.
+\end{equation}
+The inequality $c_C\ge L_P$ fails for some individual views; only the average \eqref{eq:associationrows} is used. For $\mathcal R$, the eight patterns are $(2;2,2)$, $(2;2,3)$, $(2;2,4)$, $(2;3,3)$, $(2;3,4)$, $(2;4,4)$, $(3;2,2,2)$ and $(4;2,2,2,2)$, with neighbor degrees sorted. Grouping by these patterns gives eight inequalities by the same proof. The inequality vector $g_C(z)$ consists of these $20+7=27$ features for $\mathcal S$, or $46+8=54$ for $\mathcal R$. Explicitly, the two exterior coordinates for a class $c=(d,h,k)$ are $qN_c-X_c$ and $q^{h-k}X_c-B_c$, whose values are fixed by $C$; an association coordinate is $\ind[P(C)=P](c_C-L_P)$. For both classes we have proved $\E g_C(z)\ge0$ coordinatewise; no inequality is claimed for an individual view.
+
+\section{Proof of the occupancy bound}\label{sec:certificate}
+Fix $z>0$. For a graph in the class, let $\pi_C$ be the exposure probability of the view $C$. By Section~\ref{sec:rows}, every such distribution lies in the relaxation
+\[
+ \pi_C\ge0,\quad\sum_C\pi_C=1,\quad
+ \sum_C\pi_C f_C(z)=0,\quad\sum_C\pi_C g_C(z)\ge0.
+\]
+We seek a dual inequality
+\begin{equation}\label{eq:dual}
+ s_C(z):=c_C(z)-c_4(z)-y(z)\cdot f_C(z)-\mu(z)\cdot g_C(z)\ge0,
+ \qquad \mu(z)\ge0.
+\end{equation}
+If \eqref{eq:dual} holds for every view, then averaging against the exposure probabilities of any graph $G$ in the class gives
+\[
+ \alpha_G-c_4=\E s_C+y\cdot\E f_C+\mu\cdot\E g_C=\E s_C+\mu\cdot\E g_C\ge0,
+\]
+which is \eqref{eq:occupancy}. The multipliers $y$ may have any sign because $\E f_C=0$. The multipliers $\mu$ must be nonnegative because only $\E g_C\ge0$ is known. Every graph induces a feasible distribution, so a lower bound for this linear program is also a lower bound for graph occupancy.
+
+\subsection{The subcubic dual solution}
+The association bounds for both graph classes have the same denominator construction. For pattern $P=(d;h_1,\ldots,h_d)$ put $a_i=h_i-1$ and
+\[
+ M=d+\sum_i a_i-\min_i a_i,
+\]
+\begin{equation}\label{eq:Rpattern}
+ R_P=\sum_{J\subsetneq[d]}z^{|J|}
+       \prod_{i\in J}\bigl((1+z)^{a_i}-z^{a_i}\bigr)
+       (1+z)^{M-d-\sum_{i\in J}a_i}.
+\end{equation}
+Each exponent is nonnegative, since $J$ omits at least one index. Substitution in the proper-subset formula in Lemma~\ref{lem:association} gives
+\[
+ T_P=\frac{R_P}{(1+z)^M},\qquad N_P=zR_P,\qquad
+ D_P=(1+z)^M+zR_P,\qquad L_P=\frac{N_P}{D_P}.
+\]
+The differences $(1+z)^{a_i}-z^{a_i}$ have nonnegative integer coefficients. Thus $R_P,N_P,D_P$ do also, and $D_P(0)=1$; every denominator is strictly positive for $z\ge0$. 
+
+The seven subcubic pairs $(N_P,D_P)$, obtained by expanding \eqref{eq:Rpattern}, are listed in Table~\ref{tab:patterns} in Appendix~\ref{app:replay}.
+
+The subcubic dual solution has $72$ nonzero multiplier polynomials: $24$ for reversal identities, $41$ for star identities, one for an exterior inequality and six for association inequalities. The remaining multipliers are zero. The complete rational coefficients are supplied in the supplementary calculation files. Appendix~\ref{app:replay} describes how these coefficients give a finite verification of \eqref{eq:dual}.
+ For rational polynomials $P_j$, write the multipliers as
+\begin{align*}
+ y_j&=P_j/A &&\text{(counting identity)},\\
+ \mu_j&=(1+z)^2P_j/A &&\text{(exterior)},\\
+ \mu_P&=D_PP_P/A &&\text{(association)}.
+\end{align*}
+For each exterior coordinate with a multiplier in this dual solution, the exponent $h-k$ is at most two, so the factor $(1+z)^2$ clears the powers of $1+z$ in that coordinate. Since the factors $A$, $1+z$, $D_P$ are positive, nonnegative inequality-coordinate $P_j$ give the required signs.
+
+For a counting-identity feature, $T_{C,j}=6Z_Cf_{C,j}$ is an integer polynomial, since all counting denominators divide $6$. Multiplying \eqref{eq:dual} by the positive factor $6A Z_C$ gives the polynomial
+\begin{align}
+ H_C={}&6A O_C-6(z+3z^2)Z_C-\sum_{j\text{ counting}}P_jT_{C,j}\notag\\
+ &-6\sum_{j\text{ exterior}}P_j\bigl[(1+z)^2g_{C,j}\bigr]Z_C\notag\\
+ &-6\sum_{P\text{ association}}P_P(D_PO_C-N_PZ_C)\ind[P(C)=P].\label{eq:cleared}
+\end{align}
+Since $O_C=Z_Cc_C$ and $z+3z^2=Ac_4$, the first two terms equal $6AZ_C(c_C-c_4)$. Each subtracted term is $6AZ_C$ times a multiplier-feature product $y_jf_{C,j}$ or $\mu_jg_{C,j}$; for an association feature this uses $D_PO_C-N_PZ_C=D_PZ_C(c_C-L_P)$. Thus $H_C=6AZ_Cs_C$. No sign changes occur in clearing denominators, including at $z=0$.
+
+\subsection{Polynomial nonnegativity on the interval}
+Each multiplier polynomial has the form
+\begin{equation}\label{eq:P}
+ P_j(z)=b_{j,0}(1-z)^2+2b_{j,1}z(1-z)+b_{j,2}z^2,
+ \qquad b_{j,i}\in\mathbb Q.
+\end{equation}
+The dual solution gives explicit multipliers of the form \eqref{eq:P} for nine inequality coordinates, two of them identically zero, and all $27$ of their coefficients $b_{j,i}$ are nonnegative; the multipliers of the other inequality coordinates are zero. Each cleared feature polynomial that multiplies some $P_j$ in \eqref{eq:cleared} has degree at most $10$, and each $P_j$ has degree at most two, so $H_C$ has degree at most $12$. We express $H_C$ in the degree-$16$ Bernstein basis. The exact calculation gives
+\begin{equation}\label{eq:bern}
+ H_C(z)=\sum_{i=0}^{16}\beta_{C,i}\binom{16}{i}z^i(1-z)^{16-i},
+ \qquad \beta_{C,i}\ge0.
+\end{equation}
+For a power polynomial $\sum_k h_kz^k$, the conversion is
+\[
+ \beta_i=\sum_{k\le i}h_k\frac{\binom{i}{k}}{\binom{16}{k}}.
+\]
+It follows from $z^k=\sum_{i=k}^{16}\binom{i}{k}\binom{16}{k}^{-1}
+\binom{16}{i}z^i(1-z)^{16-i}$. Every basis function is nonnegative on $[0,1]$. Consequently, these coefficient signs prove $H_C(z)\ge0$ throughout $0\le z\le1$. Full views with the same polynomial data have the same polynomial $H_C$ and are grouped into one column. Checking the $17$ coefficients of a column therefore checks every full view in it.
+
+\Needspace{14\baselineskip}
+\begin{proposition}[Subcubic dual solution]\label{prop:certificate}
+The subcubic dual solution satisfies \eqref{eq:P}--\eqref{eq:bern} for every full view in $\V_{\mathcal S}$. All $9\,867\cdot17=167\,739$ slack coefficients and all $27$ required multiplier coefficients are nonnegative.
+\end{proposition}
+\begin{proof}[Exact finite verification]
+Enumerate the views of Section~\ref{sec:views}, substitute the supplied rational multipliers into \eqref{eq:cleared}, and convert each resulting polynomial to the basis in \eqref{eq:bern}. All coefficients have the stated signs. This finite calculation was carried out using exact arithmetic and repeated with a separately written enumeration and polynomial evaluation. The two calculations agree on the full views and their multiplicities in each column. Appendix~\ref{app:replay} gives the enumeration and coefficient formula; the supplementary material contains the complete coefficients and programs.
+\end{proof}
+The two actual $C_4$ views have
+\[
+ (Z_C,O_C)=(1+3z,z),\qquad(1+3z+3z^2,z+2z^2).
+\]
+Their exposure weights are respectively $z(1+3z)/A$ and $(1+3z+3z^2)/A$. They are positive for $z>0$, sum to one, and their weighted occupancy is $c_4$. Both slacks vanish identically as polynomials in $z$. Any valid certificate must have this property. Indeed, $C_4\in\mathcal S$ and $\alpha_{C_4}=c_4$, so the averaging identity for $C_4$ gives $0=\E s_C+\mu\cdot\E g_C$ with both terms nonnegative. Both views have positive weight, so both slacks vanish for every $0<z\le1$, hence identically. Averaging Proposition~\ref{prop:certificate} using Sections~\ref{sec:views}--\ref{sec:rows} proves \eqref{eq:occupancy} for $G\in\mathcal S$ and $0<z\le1$.
+
+\subsection{The reduced degree-four class}\label{sec:reducedcert}
+The proofs of Section~\ref{sec:rows} cover $\mathcal R$ directly. Its certificate is computed separately and does not reuse the coefficients for $\mathcal S$. The eight association polynomials follow from \eqref{eq:Rpattern}; their expanded forms appear in Table~\ref{tab:reducedpatterns}.
+
+Let $\Theta=z+3z^2$, so that $\Theta=Ac_4$, and let $F_{C,j}=12Z_Cf_{C,j}$ for all $170$ counting identities. Use multipliers for all $224=170+46+8$ features, with
+\begin{align*}
+ y_j&=P_j/A,&\mu_P&=D_PP_P/A,\\
+ \mu_{X,c}&=(1+z)^3P_{X,c}/A,&\mu_{B,c}&=(1+z)^3P_{B,c}/A.
+\end{align*} The cube is required because $h-k\le3$. Multiplying the slack in \eqref{eq:dual} by $12AZ_C$ gives
+\begin{align}
+ H_C={}&12(AO_C-\Theta Z_C)-\sum_{j=1}^{170}P_jF_{C,j}\notag\\
+ &-12Z_C\sum_c\bigl[P_{X,c}(1+z)^2\{zN_c-(1+z)X_c\}\notag\\
+ &\hspace{35mm}+P_{B,c}\{(1+z)^{3-h+k}z^{h-k}X_c-(1+z)^3B_c\}\bigr]\notag\\
+ &-12\sum_P P_P(D_PO_C-N_PZ_C)\ind[P(C)=P].\label{eq:reducedcleared}
+\end{align}
+As in \eqref{eq:cleared}, the first term equals $12AZ_C(c_C-c_4)$, and each subtracted term is $12AZ_C$ times a multiplier-feature product. All factors are polynomial. Each cleared feature polynomial that multiplies some $P_j$ in \eqref{eq:reducedcleared} has degree at most $11$, so $H_C$ has degree at most $13$. Each $P_j$ has Bernstein degree two as in \eqref{eq:P}; the same exact conversion to degree-$16$ slacks applies. Positivity of $12,A,Z_C,1+z,D_P$ justifies every sign and every clearing step.
+
+\begin{proposition}[Reduced-class dual solution]\label{prop:reducedcert}
+Every full view in $\V_{\mathcal R}$ belongs to one of $1\,722$ columns. For each column, the $17$ coefficients of $H_C$ in the degree-$16$ Bernstein basis are nonnegative ($29\,274$ coefficients in all), and the $54\cdot3=162$ coefficients of the inequality multipliers in \eqref{eq:P} are nonnegative. The polynomials $H_C$ of both actual $C_4$ views are zero.
+\end{proposition}
+\begin{proof}[Exact finite verification]
+The calculation follows the subcubic case, using the degree and edge restrictions for $\mathcal R$. Enumerate all full views, evaluate the functions of Section~\ref{sec:rows}, form \eqref{eq:reducedcleared}, and convert to the degree-$16$ Bernstein basis. Every coefficient has the required sign. A separately written calculation gives the same functions on all full views and the same grouping into columns. Both calculations also give zero polynomials for the two $C_4$ views. The rational data and programs accompany the paper.
+\end{proof}
+Dividing by the positive clearing factor and averaging, using only $\E f_C=0$ and $\E g_C\ge0$, proves \eqref{eq:occupancy} on $\mathcal R$. In particular, nonnegativity is not assumed for each view's inequality features.
+
+\section{Cycles and equality}\label{sec:equality}
+\subsection{Occupancy of cycles}
+The equality arguments below first show that an extremal graph has only vertices of degree two, and hence is a disjoint union of cycles. Because $Z$ is multiplicative over components, the occupancy of a disjoint union is the average of the occupancies of its components, weighted by their orders. Lemma~\ref{lem:cycles} shows that $C_4$ is the only cycle whose occupancy equals $c_4$. At the endpoint $z=1$ this lemma is the step that identifies the components. At interior activities the lists of zero-slack views give an alternative argument. The lemma follows from the classical cycle recurrence by differentiation.
+\begin{lemma}\label{lem:cycles}
+For every simple cycle $C_m$, $m\ge3$, and every $z>0$,
+\[
+ \frac{zZ_{C_m}'(z)}{mZ_{C_m}(z)}\ge c_4(z),
+\]
+strictly unless $m=4$.
+\end{lemma}
+\begin{proof}
+Let $Z_m=Z_{C_m}$ for $m\ge3$. Valid cyclic binary words have no three consecutive ones. With states recording the current run length of ones,
+\[
+ \mathsf M(z)=\begin{pmatrix}1&z&0\\1&0&z\\1&0&0\end{pmatrix},\qquad
+ Z_m=\operatorname{tr}(\mathsf M(z)^m).
+\]
+Every valid cyclic word has a zero and hence a unique consistent cyclic state sequence for its labeled vertices. Cayley--Hamilton gives the classical recurrence
+\begin{equation}\label{eq:cyclerec}
+ Z_m=Z_{m-1}+zZ_{m-2}+z^2Z_{m-3}\quad(m\ge4),
+\end{equation}
+with formal traces $Z_1=1$, $Z_2=1+2z$, $Z_3=1+3z+3z^2$. The first two are not polynomials of simple cycles of length one or two. These exact initial polynomials and complement-variable recurrence already occur in Theorem~10 of the Arocha--Llano preprint identified in Section~1.1; see also \cite[Theorem 4.5]{AP2010}.
+
+Put $\mathfrak b=1+3z$ and $H_m=AZ_m'-m\mathfrak b Z_m$, formally also for $m=1,2$. Differentiating \eqref{eq:cyclerec} gives
+\begin{align*}
+ &H_m-H_{m-1}-zH_{m-2}-z^2H_{m-3}\\
+ &\qquad=-\mathfrak b Z_{m-1}+(1+2z)Z_{m-2}+(2z+5z^2+3z^3)Z_{m-3}.
+\end{align*}
+For $m\ge7$, three uses of \eqref{eq:cyclerec} rewrite the right side as
+\begin{align*}
+ &-zZ_{m-2}+(z+2z^2+3z^3)Z_{m-3}-z^2(1+3z)Z_{m-4}\\
+ &=z^2(2+3z)(Z_{m-3}-Z_{m-4})-z^3Z_{m-5}\\
+ &=z^3(1+3z)Z_{m-5}+z^4(2+3z)Z_{m-6}.
+\end{align*}
+Thus
+\begin{equation}\label{eq:forcing}
+ H_m=H_{m-1}+zH_{m-2}+z^2H_{m-3}
+       +z^3(1+3z)Z_{m-5}+z^4(2+3z)Z_{m-6}.
+\end{equation}
+For $m=7,8$ the forcing terms involve the formal traces $Z_1$ and $Z_2$. These traces also satisfy \eqref{eq:cyclerec}, so \eqref{eq:forcing} holds for $m=7,8$ as well. Direct substitution gives
+\[
+ H_3=3z^2(2+3z),\quad H_4=0,\quad
+ H_5=5z^3(1+3z),\quad H_6=6z^3(1+5z+3z^2).
+\]
+Every $Z_j$ has nonnegative coefficients and positive constant term. The bases and \eqref{eq:forcing} prove coefficientwise nonnegativity for all $m\ge3$ and strict positivity at every $z>0$ unless $m=4$. Dividing by the positive $mAZ_m/z$ proves the assertion.
+\end{proof}
+
+
+\Needspace{11\baselineskip}
+\subsection{Equality at interior activities}
+Fix $0<z<1$. All seventeen basis functions in \eqref{eq:bern} are strictly positive at $z$, and all coefficients $\beta_{C,i}$ are nonnegative. Hence $s_C(z)=0$ if and only if $H_C$ is the zero polynomial. We call a full view with $H_C\equiv0$ a \emph{zero-slack view}; every other view has $s_C>0$ throughout $0<z<1$. For the $\mathcal S$ certificate, exact computation finds six columns whose polynomial $H_C$ is zero, and together they contain seven full views. A separate enumeration of all $231\,816$ full views confirms that a full view has zero slack if and only if it is of one of the following two kinds:
+\begin{enumerate}[label=(\roman*),itemsep=2pt]
+\item the root and both neighbors have degree two, the neighbors are nonadjacent, and every boundary flag is $(0,0)$ (six full views);
+\item the root has degree two and two nonadjacent degree-two neighbors, whose remaining stubs meet one degree-two boundary vertex flagged $(1,1)$ (the occupied-boundary $C_4$ view).
+\end{enumerate}
+In (i), either the two remaining stubs end at two distinct boundary vertices, with any ordered pair of degrees in $\{2,3\}^2$, or both end at one common boundary vertex of degree two or three. This gives six full views. The two assignments of the degrees $2$ and $3$ to distinct boundary vertices lie in the same column, which accounts for six columns containing seven views. In particular, no zero-slack view has a root of degree three, so every view with a cubic root has $s_C>0$ throughout $0<z<1$.
+
+For the $\mathcal R$ certificate, exact computation finds eight columns with zero polynomial $H_C$, containing eleven of the $17\,553$ full views. Enumeration of all $17\,553$ full views confirms that a full view has zero slack if and only if one of the following holds:
+\begin{enumerate}[label=(\roman*),itemsep=2pt]
+\item the root and its two nonadjacent neighbors all have degree two; their two remaining stubs meet one degree-two boundary vertex, flagged $(0,0)$ or $(1,1)$ (two views); or
+\item the same root and neighbor degrees hold, but the stubs meet two distinct boundary vertices of any ordered degrees in $\{2,3,4\}^2$, both flagged $(0,0)$ (nine views).
+\end{enumerate}
+In case (i), the root, its two neighbors and the boundary vertex have used their full degrees, so they form a $C_4$ component. Case (ii) says only that the root is the middle vertex of an induced path of three degree-two vertices; it does not determine a component. Every other column has a positive Bernstein coefficient, and hence positive slack throughout $0<z<1$. In particular, no view whose root has degree three or four has zero slack. This list is not obtained from the subcubic list by relabeling degrees; it is computed and checked separately for the $\mathcal R$ certificate.
+
+These lists determine what equality means for an actual graph $G$. Averaging over the exposure law of $G$ gives
+\[
+ \alpha_G-c_4=\E s_C+\mu\cdot\E g_C\ge\E s_C\ge0.
+\]
+If equality holds at some $0<z<1$, then $\E s_C=0$, so every view of positive probability has zero slack. In $\mathcal S$, the views with a cubic root have total probability $n_3/n$ and positive slack, so equality forces $n_3=0$. In $\mathcal R$, any degree-three or degree-four root has a feasible empty exterior of positive mass $Z_C/(nZ_G)$ and positive slack, so equality excludes both degrees. Thus in either case $G$ is a union of cycles. The lists of zero-slack views exclude every cycle other than $C_4$ directly, without Lemma~\ref{lem:cycles}. In $C_3$ the root neighbors are adjacent, so every view has positive slack. In a cycle $C_m$, $m\ge5$, label consecutive vertices $0,1,2,\ldots,m-1$ and choose root $0$. The globally feasible singleton $I=\{2\}$ gives exterior $E=\{2\}$. Boundary vertex $2$ has singleton incidence block $\{1\}$ and flag $(1,0)$: its other neighbor $3$ is outside $N[0]$ and absent. This remains true for $m=5$, even though the two boundary vertices are adjacent. No zero-slack view in either list has a boundary flag $(1,0)$, so this view has positive slack. Since it has positive probability $zZ_C/(nZ_G)$, the inequality is strict. In a disconnected graph choose all other vertices absent to obtain the same feasible exterior event. Conversely, $C_4$ unions attain equality. 
+
+A graph may contain zero-slack views without attaining equality. For example, with empty exterior, every cycle $C_m$ with $m\ge5$ produces a view of kind (i) in the $\mathcal S$ list and of kind (ii) in the $\mathcal R$ list.
+
+\subsection{The endpoint \texorpdfstring{$z=1$}{z=1}}
+At $z=1$, every basis function in \eqref{eq:bern} except $z^{16}$ vanishes, so $H_C(1)=\beta_{C,16}$. A view can therefore have zero slack at $z=1$ even though $H_C$ is not the zero polynomial. The interior classification does not determine which views have zero slack there, and in particular it does not exclude cubic roots from equality at $z=1$. For $\mathcal S$ we therefore use a second certificate. It is valid only at $z=1$, and its left side is minus the indicator of a cubic root. It consists of a rational number $K>0$, a vector $y^{\ast}$ and a vector $\nu^{\ast}\ge0$ such that every full view $C$ satisfies
+\begin{samepage}
+\begin{equation}\label{eq:endpoint}
+ -\ind[d(v)=3]\ge K\bigl(4/11-c_C(1)\bigr)
+                 +y^{\ast}\cdot f_C(1)+\nu^{\ast}\cdot g_C(1),
+ \quad \nu^{\ast}\ge0,
+\end{equation}
+where
+\[
+ K=\frac{5483104214893041}{76202104704133}>0.
+\]
+\end{samepage}
+Here $K\approx71.95$. The rational vectors $y^{\ast},\nu^{\ast}$ are supplied with the supplementary calculation files. The constant term is
+\[
+ \frac{4K}{11}=\frac{1993856078142924}{76202104704133}.
+\]
+For this check, full views are grouped by their values at $z=1$. Distinct columns of rational functions may take equal values at $z=1$, so the grouping has $9\,853$ columns, covering the same $231\,816$ full views. Two exact implementations verify \eqref{eq:endpoint} on every column and verify the signs $\nu^{\ast}\ge0$.
+
+Now let $G\in\mathcal S$, and take expectations in \eqref{eq:endpoint} under the exposure law \eqref{eq:exposure} at $z=1$. The root is uniform, so the left side has expectation $-n_3/n$; also $\E c_C(1)=\alpha_G(1)$. Since $\E f_C(1)=0$, $\E g_C(1)\ge0$ and $\nu^{\ast}\ge0$,
+\[
+ -\frac{n_3}n\ \ge\ K\Bigl(\frac4{11}-\alpha_G(1)\Bigr)+\nu^{\ast}\cdot\E g_C(1)
+ \ \ge\ K\Bigl(\frac4{11}-\alpha_G(1)\Bigr).
+\]
+If $\alpha_G(1)=4/11$, the right side vanishes, so $n_3=0$. Thus $G$ is $2$-regular, and Lemma~\ref{lem:cycles} at $z=1$ shows that every component is $C_4$. 
+
+
+For $\mathcal R$, the interior classification is again insufficient at $z=1$, because it does not show that views whose root has degree three or four have positive slack there. It suffices to treat roots of degree four. Evaluating the $\mathcal R$ interval certificate at $z=1$ on all $370$ degree-four views in which every boundary flag is $(0,0)$, including the three with no boundary vertices, gives $H_C(1)>0$ in every case. Suppose $G\in\mathcal R$ has a vertex $v$ of degree four. The empty exterior is feasible and gives every boundary vertex of $v$ the flag $(0,0)$, so it produces at $v$ one of these views, with positive mass $Z_C/(nZ_G)$. Hence $\E s_C>0$ at $z=1$, and $\alpha_G(1)>4/11$. Consequently, a graph in $\mathcal R$ with $\alpha_G(1)=4/11$ has no vertex of degree four. Such a graph lies in $\mathcal S$, and the subcubic endpoint argument shows that it is a $C_4$ union. 
+
+\section{Integration and completion of the theorem}\label{sec:integration}
+For $G\in\mathcal S\cup\mathcal R$, let
+\[
+ Q_G(z)=\frac1n\log Z_G(z)-\frac14\log A(z).
+\]
+Since $c_4(z)=zA'(z)/(4A(z))$, \eqref{eq:occupancy} gives
+\[
+ Q_G'(z)=\frac{\alpha_G(z)-c_4(z)}z\ge0\quad(0<z\le1).
+\]
+Both logarithms tend to zero as $z\downarrow0$. Integrating from zero yields $Z_G(z)\ge A(z)^{n/4}$ throughout $0\le z\le1$.
+
+If $G$ is not a $C_4$ union, Section~\ref{sec:equality} gives strict derivative inequality throughout $(0,1)$. The integral over any nonempty compact subinterval of $(0,z)$ is positive, and the remainder is nonnegative. Thus $Z_G(z)>A(z)^{n/4}$ for every $0<z\le1$. This proof of strict count inequality, including at $z=1$, uses only interior strictness and integration, not the endpoint certificate \eqref{eq:endpoint}. At $z=0$ every graph satisfies $Z_G(0)=A(0)^{n/4}=1$ and $\alpha_G(0)=c_4(0)=0$, so equality holds trivially there. Under $z=1/t$, the point $z=0$ corresponds to the limit $t\to\infty$. This is why Theorem~\ref{thm:main} classifies equality only at finite $t\ge1$, which correspond to $0<z\le1$.
+
+Finally $D_G(t)=t^nZ_G(1/t)$ gives
+\[
+ \frac{m_G(t)}n=1-\alpha_G(1/t),\qquad
+ t^nA(1/t)^{n/4}=(t^4+4t^3+6t^2)^{n/4}.
+\]
+This proves the mean assertion and the count assertion on $\mathcal S\cup\mathcal R$, with equality as stated. 
+
+\paragraph{Count transfer and strictness on $\mathcal T$.}
+Choose a spanning reduced graph $H\in\mathcal R$ by the current-degree deletion procedure of Section~\ref{sec:intro}. Every dominating set of $H$ dominates $G$, so
+\[
+ D_G(t)\ge D_H(t)\ge(t^4+4t^3+6t^2)^{n/4}\qquad(t\ge1).
+\]
+The first comparison is coefficientwise between the two graph polynomials. If $H$ is not a $C_4$ union, strict integration already makes the second comparison strict, including at $t=1$.
+
+If $H$ is a $C_4$ union and $G$ has an added edge $vw$, then $w\notin N_H[v]$. Put $D=V\setminus N_H[v]$. The set $D$ fails to dominate $v$ in $H$. It contains $w$, so it dominates $v$ in $G$. For every $u\ne v$, the size-three closed neighborhoods $N_H[u]$ and $N_H[v]$ are distinct, so $N_H[u]\not\subseteq N_H[v]$ and $N_H[u]\cap D\ne\varnothing$. Thus $D$ dominates all other vertices already in $H$. Consequently
+\[
+ D_G(t)-D_H(t)\ge t^{n-3}>0\qquad(t>0).
+\]
+This covers both a chord of a $4$-cycle and an edge joining two components. The argument uses the structure of $H$, namely that its closed neighborhoods are distinct sets of size three. In other graphs an added edge need not create a dominating set; for example, an edge joining two disjoint triangles creates none. Equality in the full count theorem therefore forces $G=H$ to be a $C_4$ union, proving the remaining assertion of Theorem~\ref{thm:main}.
+
+Edge inclusion gives no corresponding comparison of means. With $B=D_G-D_H\ne0$, direct algebra gives
+\[
+ m_G-m_H=\frac{B}{D_H+B}\left(\frac{tB'}B-m_H\right).
+\]
+The coefficients of $B$ are nonnegative, but they do not determine the sign of the bracket, so the count comparison does not yield a mean comparison. This is why \eqref{eq:mean} is proved on $\mathcal S\cup\mathcal R$ and not on all of $\mathcal T$. 
+
+\section{A count bound for once-subdivided cores}\label{sec:subdivision}
+The count comparison has a second extension in which the maximum degree is
+unrestricted but the arrangement of degree-two vertices is prescribed. Unlike
+Theorem~\ref{thm:main}, this extension holds at every positive activity.
+
+\begin{proposition}\label{prop:subdivision}
+Let $K$ be a finite nonempty loopless multigraph of minimum degree at least
+three. Form $G=S(K)$ by inserting one distinct vertex on every edge of $K$,
+and put $n=|V(G)|$. Then $G$ is simple and
+\[
+ D_G(t)>(t^4+4t^3+6t^2)^{n/4}\qquad(t>0).
+\]
+Parallel edges of $K$ are allowed; the conclusion is a numerical inequality,
+not a coefficientwise comparison.
+\end{proposition}
+\begin{proof}
+We work with the complement polynomial $Z_G(z)$, where $z>0$. Write
+$m=|E(K)|$, $d_v=\deg_K(v)$, $q=z/(1+z)$ and $L=\log(1+z)$.
+For $J\subseteq V(K)$, let $e_K(J)$ count the edges of $K[J]$ with
+multiplicity. Conditioning on the selected core set gives the exact identity
+\begin{equation}\label{eq:subdivisioncore}
+ Z_G(z)=(1+z)^m\sum_{J\subseteq V(K)}
+ z^{|J|}(1+z)^{-e_K(J)}
+ \prod_{\substack{v\in J\\v\text{ isolated in }K[J]}}(1-q^{d_v}).
+\end{equation}
+Indeed, the inserted vertex of an edge internal to $J$ must be absent. For
+an isolated selected core vertex, its incident inserted vertices may be any
+set except the full star. These stars are disjoint and do not meet the
+forced-absent vertices.
+
+Replacing the product in \eqref{eq:subdivisioncore} by the product over all
+$v\in J$ cannot increase a summand. We bound the resulting sum from below by the Gibbs variational inequality. For positive weights $w_J$ and a probability law $\nu$ on the subsets $J$, Jensen's inequality for the concave logarithm gives
+\[
+ \log\sum_J w_J\ \ge\ \sum_{J:\,\nu(J)>0}\nu(J)\log\frac{w_J}{\nu(J)}
+ =\E_\nu\log w_J+\operatorname{Ent}(\nu),
+\]
+where $\operatorname{Ent}(\nu)=-\sum_J\nu(J)\log\nu(J)$. Let $\nu$ be the product law under which each core vertex $v$ is selected independently with probability $p_v\in(0,1)$. With
+$h(p)=-p\log p-(1-p)\log(1-p)$, its entropy is $\sum_vh(p_v)$, and the expected number of edges of $K[J]$, counted with multiplicity, is $\sum_{uv\in E(K)}p_up_v$. This gives
+\begin{align*}
+ \log Z_G(z)\ge{}&mL+\sum_v\{h(p_v)+p_v\log[z(1-q^{d_v})]\}
+                  -L\sum_{uv\in E(K)}p_up_v\\
+ \ge{}&\sum_v\left\{\frac{d_vL}{2}+h(p_v)
+       +p_v\log[z(1-q^{d_v})]-\frac{d_vp_v^2L}{2}\right\},
+\end{align*}
+where the last step uses $2p_up_v\le p_u^2+p_v^2$.
+
+Choose $p_v=q/(1+d_vq^2)$. For real $d\ge3$, define $p=q/(1+dq^2)$,
+$T=-\log(1-4q^3+3q^4)$, and
+\begin{equation}\label{eq:subdivisiongap}
+ \Phi_d(q)=\frac{d+2}{8}T
+ -\operatorname{KL}(\operatorname{Ber}(p)\Vert\operatorname{Ber}(q))
+ +p\log(1-q^d)-\frac{dp^2L}{2}.
+\end{equation}
+Here $\operatorname{KL}(\operatorname{Ber}(p)\Vert\operatorname{Ber}(q))
+=p\log(p/q)+(1-p)\log[(1-p)/(1-q)]$.
+The scalar inequality
+\begin{equation}\label{eq:subdivisionpositive}
+ \Phi_d(q)>0\qquad(d\ge3,\ 0<q<1)
+\end{equation}
+is proved in the supplementary note on subdivision counts. Its proof uses
+an elementary estimate for $q\le1/4$ and two rational-polynomial
+certificates on the remaining intervals; all denominators are positive and
+the coefficients are checked exactly.
+
+Since $h(p)+p\log z=L-\operatorname{KL}(\operatorname{Ber}(p)\Vert
+\operatorname{Ber}(q))$ and $\log A(z)=4L-T$, the degree-$d_v$ summand
+above equals $(d_v+2)\log A(z)/8+\Phi_{d_v}(q)$. Also
+$\sum_v(d_v+2)/8=n/4$. The core is nonempty, so
+$\log Z_G(z)>n\log A(z)/4$. Complementation proves the proposition.
+\end{proof}
+
+For cores of maximum degree at most four and $t\ge1$, strictness already
+follows from Theorem~\ref{thm:main}, since such a subdivision is not a union
+of $C_4$'s. Proposition~\ref{prop:subdivision} adds the interval $0<t<1$
+on this overlap and allows arbitrary larger core degrees. It gives no
+weighted-mean comparison, and it does not cover loops or arbitrary
+subdivision lengths. In particular, it does not resolve the general
+minimum-degree-two problem.
+
+\appendix
+\section{Weighted adaptation of the hitting-family estimate}\label{app:prior}
+We give the weighted form of the hitting-family argument in Lemma~3.7 of the Chen--He--Lai--Li preprint identified in Section~1.1. Let $\mathcal H$ be the family of all subsets of an $m$-element ground set that hit every one of the nonempty sets $C_i$, with activity $t>0$. For $T\in\mathcal H$, let $c(T)$ count elements whose deletion exits $\mathcal H$. Weighted double counting of one-element additions gives
+\[
+ (1+t)\E_t|T|=tm+\E_tc(T).
+\]
+Indeed, the number of allowed deletions is $|T|-c(T)$, while every absent element may be added, with the additional weight $t$. Every critical element uniquely hits some $C_i$, so $c(T)\le\sum_i\ind[|T\cap C_i|=1]$.
+
+Fix the exterior of a $k$-set $C_i$. Its conditional upward family inside $C_i$ excludes the empty set. If it has $s$ singleton members, it contains every subset meeting those $s$ elements. Thus its singleton probability is at most
+\[
+ \frac{st}{(1+t)^k-(1+t)^{k-s}}
+ \le\frac{kt}{(1+t)^k-1}.
+\]
+For $s=0$ the claim is immediate. Otherwise put $x=(1+t)^{-1}$; $s/(1-x^s)$ increases with $s$, since $(1-x^s)/s$ is $(1-x)$ times the decreasing average of $1,x,\ldots,x^{s-1}$. Averaging under the actual exterior law and taking $C_i=N[v]$ proves \eqref{eq:prior}.
+
+For a vertex $v$, put $k=d(v)+1=|N[v]|$. Then \eqref{eq:prior} reads $m_G(t)\le\sum_vU_{d(v)+1}(t)$, where
+\[
+ U_k(t)=\frac t{1+t}+\frac{kt}{(1+t)((1+t)^k-1)}.
+\]
+Thus $U_3$ is the bound for a degree-two vertex and $U_4$ is the bound for a degree-three vertex. Put $B(t)=(t^2+3t+3)/(t^2+4t+6)$, the per-vertex target in \eqref{eq:mean}. Exact simplification gives
+\begin{align*}
+ B-U_3&=\frac{-3(t+3)}{(t+1)(t^2+3t+3)(t^2+4t+6)}<0,\\
+ B-U_4&=\frac{3t^3+8t^2+2t-12}{(t+1)(t+2)(t^2+2t+2)(t^2+4t+6)}>0
+ \quad(t\ge1).
+\end{align*}
+The last numerator is $1$ at $t=1$ and strictly increasing for $t>0$. Hence \eqref{eq:prior} already implies \eqref{eq:mean} for cubic graphs throughout $t\ge1$. The degree-two bound $U_3$, however, exceeds the target, so arbitrary mixtures of degrees two and three are not covered. More precisely, for graphs of minimum degree at least two and $z=1/t$, the target follows when $n_2/n\le\rho(z)$, where direct algebra gives
+\[
+ \rho(z)=\frac{(3z^2+3z+1)(3+8z+2z^2-12z^3)}{A(z)(6z^2+8z+3)}.
+\]
+At $z=1$ this gives $\rho(1)=7/187$. The exact identity below shows that this value is a valid threshold for all $0<z\le1$, with no monotonicity assumption on $\rho$:
+\[
+ \rho(z)-\frac7{187}=\frac{3(1-z)(2244z^4+4198z^3+3244z^2+1193z+180)}{187A(z)(6z^2+8z+3)}\ge0
+ \quad(0<z\le1).
+\]
+
+The minimum-degree-three observation does not require regularity: writing $q=z/(1+z)$, the complement lower bound is a sum of
+\[
+ L_k(z)=q-\frac{k(1-q)q^k}{1-q^k},\qquad k=d(v)+1.
+\]
+The function $kq^k/(1-q^k)$ decreases with positive integer $k$, because $(q^{-k}-1)/k$ is $(q^{-1}-1)$ times an increasing geometric average. Thus $L_k$ increases in $k$, extending both the cubic comparison and the sufficient $n_2/n\le7/187$ profile to arbitrary higher degrees while retaining minimum degree at least two. 
+
+\subsection{The elementary product bound and covered count profiles}
+Put $F_d(z)=(1+z)(1-q^{d+1})$. Direct differentiation gives $z(\log F_d)'=L_{d+1}$, and $Z_G(0)=F_d(0)=1$. Integration of the preceding adapted bound therefore gives, for all $z>0$,
+\begin{equation}\label{eq:product}
+ Z_G(z)\ge\prod_{v\in V(G)}F_{d(v)}(z).
+\end{equation}
+To compare on $0<z\le1$, write $0<q\le1/2$ and
+\[
+ A=\frac{1+2q+3q^2}{(1-q)^2},\qquad F_d=\frac{1-q^{d+1}}{1-q}.
+\]
+The exact identities
+\begin{align*}
+ &(1-q^4)^4-(1-q)^2(1+2q+3q^2)\\
+ &\quad=q^3\{4-7q+2q^5(3-2q^4)+q^{13}\}>0,\\
+ &(1-q^3)^2(1-q^5)^2-(1-q)^2(1+2q+3q^2)\\
+ &\quad=q^3\{(1-2q)(q+2)+q^3+2q^5(2-q^3-q^5)+q^7+q^{13}\}>0
+\end{align*}
+give $F_3>A^{1/4}$ and $F_2F_4>A^{1/2}$; also $F_4>F_3$. Pairing each degree-two factor with a degree-four factor proves the count target whenever $n_2\le n_4$ in $\mathcal T$. This is not a mean assertion for that entire region. At $t=1$ the more general immediate sufficient condition is
+\[
+ (7/4)^{n_2}(15/8)^{n_3}(31/16)^{n_4}\ge11^{n/4};
+\]
+this condition concerns $t=1$ only and gives no bound at other activities.
+
+For every nonempty reduced profile, this product expression is instead strictly \emph{below} the target. Set $a_d=\log F_d(1)-\frac14\log11$. Exact integer comparisons give
+\[
+ a_2<0,\qquad \tfrac32a_2+a_3<0,\qquad 2a_2+a_4<0,
+\]
+since $7^4<11\cdot4^4$, $7^{12}15^8<11^5 4^{12}8^8$, and $1519^4<11^3 256^4$. The latter two integer gaps are $9\,858\,121\,268\,852\,468\,831$ and $392\,686\,686\,655$. As $2n_2\ge3n_3+4n_4$,
+\begin{align*}
+ \sum_dn_da_d={}&(n_2-\tfrac32n_3-2n_4)a_2\\
+ &+n_3(\tfrac32a_2+a_3)+n_4(2a_2+a_4)<0.
+\end{align*}
+At least one term is strictly negative for a nonempty profile. Thus this product estimate alone does not yield the reduced-class count bound.
+
+\subsection{Wagner's bound in the enlarged degree range}
+Wagner's activity-one bound \cite[Theorem 4 and proof]{Wagner2013}, with $k=\gamma(G)$ and $n=ak+b$, $0\le b<k$, is
+\[
+ W=(2^{a-1}+1)^{k-b}(2^a+1)^b.
+\]
+For $G\in\mathcal T$, $n/5\le k\le n/2$, so its block sizes are in $\{2,3,4,5\}$ (when $a=5$, $b=0$). Direct integer comparisons give $(2^{s-1}+1)^5\le17^s$ for each of these sizes. Hence
+\[
+ W\le17^{n/5}<11^{n/4},\qquad17^4=83\,521<161\,051=11^5.
+\]
+Wagner's bound therefore falls short of \eqref{eq:partition} by an exponential factor. The fact that it is strict away from his extremal graphs, which have leaves, does not recover that factor. His explicit spanning-count observation is an antecedent for the transfer in Section~\ref{sec:integration}; no weighted mean theorem is attributed to it.
+
+\section{Finite calculations}\label{app:replay}
+The computer-assisted steps in Sections~\ref{sec:certificate} and~\ref{sec:equality} consist of enumerating finitely many local views, evaluating explicit polynomials, and checking rational coefficient signs. We describe these calculations here. The complete rational multiplier lists and programs are supplied separately, together with a verification guide that identifies the files and gives instructions for running them.
+
+\subsection{Association polynomials}
+
+A vector $[a_0,\ldots,a_k]$ denotes $\sum_i a_i z^i$. In Table~\ref{tab:patterns}, $r$ counts degree-three neighbors when $d=2$ and degree-two neighbors when $d=3$. Both tables use the common construction \eqref{eq:Rpattern}.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{ccll}\toprule
+$d$&$r$&$N_P$ (coefficients)&$D_P$ (coefficients)\\\midrule
+2&0&$[0,1,3]$&$[1,4,6,1]$\\
+2&1&$[0,1,4,4]$&$[1,5,10,8,1]$\\
+2&2&$[0,1,4,5]$&$[1,5,10,9,1]$\\
+3&0&$[0,1,7,21,31,19]$&$[1,8,28,56,66,40,7,1]$\\
+3&1&$[0,1,7,20,27,14]$&$[1,8,28,55,62,35,7,1]$\\
+3&2&$[0,1,6,13,10]$&$[1,7,21,33,25,6,1]$\\
+3&3&$[0,1,5,7]$&$[1,6,15,17,5,1]$\\\bottomrule
+\end{tabular}
+\caption{The seven exact rational association bounds $L_P=N_P/D_P$.}\label{tab:patterns}
+\end{table}
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{clcl}\toprule
+$d$ & sorted neighbor degrees & $M$ & $R_P$ (coefficient vector)\\\midrule
+2 & $2,2$ &3&$[1,3]$\\
+2 & $2,3$ &4&$[1,4,4]$\\
+2 & $2,4$ &5&$[1,5,8,5]$\\
+2 & $3,3$ &4&$[1,4,5]$\\
+2 & $3,4$ &5&$[1,5,9,6]$\\
+2 & $4,4$ &5&$[1,5,9,7]$\\
+3 & $2,2,2$ &5&$[1,5,7]$\\
+4 & $2,2,2,2$ &7&$[1,7,17,15]$\\\bottomrule
+\end{tabular}
+\caption{Eight reduced-class formulas; in every row $N_P=zR_P$ and $D_P=(1+z)^M+zR_P$.}\label{tab:reducedpatterns}
+\end{table}
+
+At $z=1$, the rows of Table~\ref{tab:reducedpatterns} give $L_P=1/3,\allowbreak9/25,\allowbreak19/51,\allowbreak5/13,\allowbreak21/53,\allowbreak11/27,\allowbreak13/45,\allowbreak5/21$, respectively.
+
+
+\FloatBarrier
+\subsection{Enumeration of the local views}
+For $\mathcal S$, generate the views as follows.
+\begin{enumerate}[itemsep=3pt]
+\item Choose $d\in\{2,3\}$, every simple graph $F$ on the labeled neighbors, and every neighbor-degree tuple $h\in\{2,3\}^d$. Form $h_u-1-d_F(u)$ distinct stub instances at neighbor $u$, rejecting negative numbers.
+\item Enumerate their partitions in first-appearance block order. A block has at most three instances and cannot repeat a neighbor label. Distinct blocks remain distinct even if their incidence sets coincide.
+\item For each block $T_w$, choose degree $h_w\in\{2,3\}$ with $h_w\ge|T_w|$, and $(x_w,b_w)\in\{(0,0),(1,0),(1,1)\}$; require $x_w=b_w$ if $h_w=|T_w|$.
+\item Enumerate every inside subset, and reject those that contain one of the forbidden sets (1)--(3) of Lemma~\ref{lem:coverage}. A neighbor with no exterior blocks meets the condition in (2) vacuously. Evaluate $Z_C,O_C$ and the functions of Section~\ref{sec:rows}, and group views with identical polynomial data.
+\end{enumerate}
+There are at most six stubs and four inside vertices. The output has $2\,713$ degree-two-root and $229\,103$ degree-three-root views, which form $9\,867$ columns. These are counts of full views, not of graph-isomorphism classes, and they are not probabilities.
+
+
+For $\mathcal R$, use degrees $2,3,4$ and impose the degree-two-endpoint condition on every displayed edge. There are at most five inside vertices. The enumeration gives $17\,553$ full views and $1\,722$ columns. Lemma~\ref{lem:coverage} proves that these enumerations include every exposure arising from a graph in the relevant class.
+
+\subsection{Polynomial signs and equality cases}
+Substitute the rational multipliers of \eqref{eq:P} into \eqref{eq:cleared}. The subcubic calculation checks
+\[
+ \deg H_C\le12,\qquad
+ \sum_{k\le i}[z^k]H_C\,\frac{\binom{i}{k}}{\binom{16}{k}}\ge0
+ \quad(i=0,\ldots,16).
+\]
+The denominators are positive by the formulas in Section~\ref{sec:certificate}. For the equality argument, identify the columns for which $H_C$ is the zero polynomial and verify that their full views are exactly those described in Section~\ref{sec:equality}. All calculations use rational arithmetic, or integer arithmetic after multiplication by a positive common denominator.
+
+
+For $\mathcal R$, use \eqref{eq:reducedcleared} and the same Bernstein conversion, with $\deg H_C\le13$. This gives $29\,274$ nonnegative slack coefficients and $162$ nonnegative inequality-multiplier coefficients. The equality calculation yields the eleven full views described in Section~\ref{sec:equality}. At $z=1$, a further calculation checks that the $370$ degree-four views with all boundary flags $(0,0)$ have positive slack. For $\mathcal S$, evaluate the separate endpoint inequality \eqref{eq:endpoint} on its $9\,853$ columns and check every coefficient of $\nu^{\ast}$ is nonnegative.
+
+The enumeration and polynomial evaluation were each implemented twice from the same mathematical definitions. The implementations agree on the polynomial data and on the number of full views in every column. These finite calculations establish the computational assertions; the conditional-law, averaging and equality arguments in the article explain why those assertions imply the graph inequalities.
+
+\begin{thebibliography}{99}
+\bibitem{AP2010} Alikhani, S., Peng, Y.-h.: Dominating sets and domination polynomials of certain graphs, II. Opuscula Math. \textbf{30}(1), 37--51 (2010). \url{https://doi.org/10.7494/OpMath.2010.30.1.37}
+\bibitem{AL2000} Arocha, J.L., Llano, B.: Mean value for the matching and dominating polynomial. Discuss. Math. Graph Theory \textbf{20}(1), 57--69 (2000). \url{https://doi.org/10.7151/dmgt.1106}
+\bibitem{Beaton2021} Beaton, I.A.C.: On Dominating Sets and the Domination Polynomial. PhD thesis, Dalhousie University (2021). \url{https://hdl.handle.net/10222/80765}
+\bibitem{BB2021} Beaton, I., Brown, J.I.: The average order of dominating sets of a graph. Discrete Math. \textbf{344}(12), 112595 (2021). \url{https://doi.org/10.1016/j.disc.2021.112595}
+\bibitem{BBC2020} Beaton, I., Brown, J.I., Cox, D.: Optimal domination polynomials. Graphs Combin. \textbf{36}, 1477--1487 (2020). \url{https://doi.org/10.1007/s00373-020-02202-8}
+\bibitem{BC2024} Beaton, I., Cameron, B.: A tight upper bound on the average order of dominating sets of a graph. J. Graph Theory \textbf{107}(3), 463--477 (2024). \url{https://doi.org/10.1002/jgt.23143}
+\bibitem{CPST2021} Cohen, E., Perkins, W., Sarantis, M., Tetali, P.: On the number of independent sets in uniform, regular, linear hypergraphs. Eur. J. Combin. \textbf{99}, 103401 (2022). \url{https://doi.org/10.1016/j.ejc.2021.103401}
+\bibitem{CR2016} Cutler, J., Radcliffe, A.J.: Counting dominating sets and related structures in graphs. Discrete Math. \textbf{339}(5), 1593--1599 (2016). \url{https://doi.org/10.1016/j.disc.2015.12.011}
+\bibitem{DJPR2017} Davies, E., Jenssen, M., Perkins, W., Roberts, B.: Independent sets, matchings, and occupancy fractions. J. Lond. Math. Soc. \textbf{96}, 47--66 (2017). \url{https://doi.org/10.1112/jlms.12056}
+\bibitem{PP2018} Perarnau, G., Perkins, W.: Counting independent sets in cubic graphs of given girth. J. Combin. Theory Ser. B \textbf{133}, 211--242 (2018). \url{https://doi.org/10.1016/j.jctb.2018.04.009}
+\bibitem{Skupien2014} Skupie\'n, Z.: Majorization and the minimum number of dominating sets. Discrete Appl. Math. \textbf{165}, 295--302 (2014). \url{https://doi.org/10.1016/j.dam.2013.05.002}
+\bibitem{Wagner2013} Wagner, S.: A note on the number of dominating sets of a graph. Util. Math. \textbf{92}, 25--31 (2013).
+\end{thebibliography}
+
+\Needspace{16\baselineskip}
+\section*{Statements and declarations}
+\paragraph{Funding.}
+No external funding was received for this work.
+\paragraph{Competing interests.}
+The author declares no competing interests.
+\paragraph{Data and code availability.}
+The rational certificates, enumeration data and exact verification programs are included in the supplementary material, under the licence terms stated there. They are archived at \url{https://doi.org/10.5281/zenodo.23844235}. Appendix~\ref{app:replay} gives the verification procedure.
+\paragraph{Use of generative AI.}
+Generative AI tools were used to assist with mathematical reasoning, computational work, and manuscript preparation and revision. The author takes responsibility for the content.
+\end{document}

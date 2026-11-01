@@ -1,0 +1,21 @@
+{
+  "all_passed": true,
+  "bernstein_degree": 16,
+  "c4_calibration_full_views": [
+    0,
+    1
+  ],
+  "checked_multiplier_coefficients": 162,
+  "checked_slack_coefficients": 29274,
+  "common_coefficient_denominator": "2905160536892540581325634737712818880000000",
+  "degree": 2,
+  "elapsed_seconds": 27.24092715900042,
+  "full_views": 17553,
+  "minimum_scaled_bernstein": "0",
+  "optimizer_free": true,
+  "slack_bernstein_sha256": "a9b653f57ecf51d27cbb982bb9f3552d8af405bb68dd4dc1c33457d1063990b3",
+  "stage": "global_d2",
+  "symbolic_columns": 1722,
+  "tight_columns": 8,
+  "tight_full_views": 11
+}

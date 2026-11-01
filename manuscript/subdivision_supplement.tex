@@ -1,0 +1,193 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\newcommand{\E}{\mathbb E}
+\hypersetup{pdftitle={Scalar inequalities for subdivision counts},pdfauthor={Brandon Li}}
+\title{Scalar inequalities for subdivision counts\\\large Supplementary material}
+\author{Brandon Li\\\small Independent researcher\\\small\texttt{brandon.li.gn@gmail.com}}
+\date{}
+\setlength{\emergencystretch}{2em}
+\begin{document}\raggedbottom\maketitle
+\begin{center}\small
+Supplement to \emph{Mean order and counts of dominating sets in graphs of small degree}
+\end{center}
+\section{Scalar inequality for subdivision counts}\label{sec:scalarsupp}
+This note proves the scalar inequality used in the once-subdivided-core
+count proposition of the accompanying article. All logarithms are natural. Fix real $d\ge3$ and
+$0<q<1$, and write
+\[
+ x=dq^2,\quad r=1+x,\quad p=q/r,\quad L=-\log(1-q),\quad
+ T=-\log(1-4q^3+3q^4).
+\]
+The quantity to be bounded is
+\[
+ \Phi_d(q)=\frac{d+2}{8}T-\operatorname{KL}(p\Vert q)
+                  +p\log(1-q^d)-\frac{dp^2L}{2},
+\]
+where $\operatorname{KL}$ denotes binary relative entropy. We also write
+$h(p)=-p\log p-(1-p)\log(1-p)$ for the binary entropy. The argument
+below proves $\Phi_d(q)>0$ on the whole stated domain. The real-$d$
+formulation is convenient for the certificates; graph degrees are integers.
+
+\subsection{The interval \texorpdfstring{$0<q\le1/4$}{0 < q <= 1/4}}
+The integral representation
+\[
+ \operatorname{KL}(p\Vert q)=\int_p^q\frac{t-p}{t(1-t)}\,dt
+\]
+and $\log(1+x)\ge2x/(2+x)$ give
+\[
+ \operatorname{KL}(p\Vert q)
+ \le\frac{qx^2}{r(x+2)}+\frac{q^2x^2}{2r^2(1-q)}.
+\]
+To see this, split $1/[t(1-t)]=1/t+1/(1-t)$. The first integral is
+$q[x-\log(1+x)]/r$; in the second, bound $1/(1-t)$ by $1/(1-q)$.
+Moreover,
+\[
+ T\ge4q^3-3q^4,\qquad
+ L\le q+\frac{q^2}{2(1-q)},\qquad
+ p\log(1-q^d)\ge-\frac{q^4}{r(1-q^3)}.
+\]
+Substitution gives
+\begin{align*}
+ \frac{r^2\Phi_d(q)}q\ge{}&
+ \frac{x^2(x^2+2x+2)}{2(x+2)}-\frac{3xqr^2}{8}
+ +q^2r^2\left(1-\frac{3q}{4}\right)\\
+ &-\frac{qx^2}{2(1-q)}-\frac{xq}{4(1-q)}
+ -\frac{q^3r}{1-q^3}.
+\end{align*}
+Use $x^2(x^2+2x+2)/[2(x+2)]\ge x^2/2+x^3/4$,
+$1/(1-q)\le4/3$, $1/(1-q^3)\le64/63$, and
+$1-3q/4\ge13/16$. The resulting lower bound is
+\[
+ \left(\frac14-\frac{3q}{8}\right)x^3
+       +a(q)x^2-b(q)qx+c(q)q^2,
+\]
+where
+\begin{align*}
+ a(q)&=\frac12-\frac{17q}{12}+\frac{13q^2}{16},\\
+ b(q)&=\frac{17}{24}-\frac{13q}{8}+\frac{64q^2}{63},\qquad
+ c(q)=\frac{13}{16}-\frac{64q}{63}.
+\end{align*}
+All three are positive here, and the cubic coefficient is at least $5/32$.
+For $q\le1/8$, the bounds $a\ge31/96$, $c\ge691/1008$ and
+$b\le17/24$ give $4ac-b^2\ge9283/24192>0$.
+For $1/8\le q\le1/4$, use $a\ge7/48$, $c\ge563/1008$ and
+$b\le2293/4032$ to obtain
+$4ac-b^2\ge38855/16257024>0$.
+Thus the quadratic is positive, proving the claim on this interval.
+
+\subsection{The interval \texorpdfstring{$1/4\le q<1/2$}{1/4 <= q < 1/2}}
+Put $w=q^3(4-3q)$ and $y=x/(x+2)$. Keeping additional terms gives
+\begin{align*}
+ T&\ge w+w^2/2,&
+ L&\le q+q^2/2+\frac{q^3}{3(1-q)},\\
+ \log(1-q^d)&\ge-q^3-\frac{q^6}{2(1-q^3)},\\
+ \operatorname{KL}(p\Vert q)&\le
+ \frac qr\left[x-2\left(y+\frac{y^3}{3}\right)\right]
+ +\frac{q^2x^2}{6r^2}\left[\frac r{r-q}+\frac2{1-q}\right].
+\end{align*}
+The logarithmic estimates follow from the power series with geometric tail
+bounds. In the entropy estimate, use the first two terms of
+$\log r=2\operatorname{artanh}y$ for the $1/t$ integral. For the
+$1/(1-t)$ integral, convexity puts $1/(1-t)$ below its endpoint secant
+on $[p,q]$; integrating that secant against $t-p$ gives the displayed term.
+
+Let $B(q,x)$ be the resulting rational lower bound, with $d=x/q^2$:
+\begin{align*}
+ B={}&\frac{x/q^2+2}{8}(w+w^2/2)
+ -\frac qr\left[x-2\left(y+\frac{y^3}{3}\right)\right]\\
+ &-\frac{q^2x^2}{6r^2}\left[\frac r{r-q}+\frac2{1-q}\right]
+ -\frac qr\left[q^3+\frac{q^6}{2(1-q^3)}\right]\\
+ &-\frac{x}{2r^2}\left[q+\frac{q^2}{2}+\frac{q^3}{3(1-q)}\right].
+\end{align*}
+Every multiplication preserves the indicated direction, so $\Phi_d(q)\ge B$.
+The positive denominator
+\[
+ D_1=48r^2(x+2)^3(r-q)(1-q)(1-q^3)
+\]
+clears $B/q$: $N_1(q,x)=D_1B(q,x)/q$ is a polynomial with degrees
+$(12,7)$ in $(q,x)$. Substitute
+\[
+ x=3q^2+s,\qquad q=\frac{1+2u}{4(1+u)},\qquad s,u\ge0.
+\]
+Then $M_1(u,s)=[4(1+u)]^{23}N_1(q,3q^2+s)$ has
+\emph{192 nonzero coefficients, all positive}, and constant coefficient
+$794008104013215$. The coefficient list is supplied with an exact
+reconstruction program. For each $d\ge3$ and $1/4\le q<1/2$, the inverse
+parameters are $s=(d-3)q^2\ge0$ and $u=(4q-1)/(2-4q)\ge0$.
+Thus $M_1>0$, whence $N_1>0$, $B>0$ and $\Phi_d(q)>0$.
+The next interval includes $q=1/2$, so no limit at $u=\infty$ is required.
+
+\subsection{The interval \texorpdfstring{$1/2\le q<1$}{1/2 <= q < 1}}
+The separate logarithmic estimates above are not useful near $q=1$.
+Instead, cancel the divergent terms first. Set
+\[
+ V=1+2q+3q^2,\qquad S_d=\frac{1-q^d}{1-q},\qquad
+ c_0=\frac{d-2}{4}-\frac{dp^2}{2}.
+\]
+Factoring $1-4q^3+3q^4=(1-q)^2V$ gives the exact identity
+\begin{equation}\label{eq:logpreserving}
+ \Phi_d(q)=c_0L+h(p)+p\log(qS_d)-\frac{d+2}{8}\log V.
+\end{equation}
+Since $dp^2=x/(1+x)^2\le1/4$, we have $c_0\ge1/8$.
+Also $S_d\ge1+q+q^2$ for real $d\ge3$. Put
+\[
+ U=(r-q)(1+q+q^2),\qquad \eta=\frac{U-1}{U+1}.
+\]
+Here $U>1$, since $r-q\ge5/4$ and $1+q+q^2\ge7/4$.
+The identity
+\[
+ h(p)+p\log(qS_d)=-\log(1-p)+p\log[(r-q)S_d]
+\]
+therefore yields
+\[
+ h(p)+p\log(qS_d)\ge p+p^2/2+2p(\eta+\eta^3/3).
+\]
+For $a=q/(2-q)$ and $b=(V-1)/(V+1)$, both in $(0,1)$, define
+\begin{align*}
+ L_-&=2\sum_{j=0}^3\frac{a^{2j+1}}{2j+1},\\
+ V_+&=2\left\{\sum_{j=0}^3\frac{b^{2j+1}}{2j+1}
+                     +\frac{b^9}{9(1-b^2)}\right\}.
+\end{align*}
+The atanh series gives $L\ge L_-$ and $\log V\le V_+$.
+Because $c_0>0$, \eqref{eq:logpreserving} implies
+\[
+ \Phi_d(q)\ge C(q,x):=
+ c_0L_-+p+p^2/2+2p(\eta+\eta^3/3)-\frac{d+2}{8}V_+.
+\]
+For explicit polynomial clearing, write $a_0=2-q$, $W=V+1$ and
+$U_\pm=U\pm1$, and set
+\begin{align*}
+ L_n&=\sum_{j=0}^3\frac{210}{2j+1}q^{2j+1}a_0^{6-2j},\\
+ V_n&=\sum_{j=0}^3\frac{1260}{2j+1}V(V-1)^{2j+1}W^{6-2j}
+                   +35(V-1)^9,\\
+ C_n&=(x-2q^2)r^2-2xq^2,\\
+ E_n&=2qr\{3U_+^3+6U_-U_+^2+2U_-^3\}+3q^2U_+^3.
+\end{align*}
+Then $L_-=L_n/(105a_0^7)$, $V_+=V_n/(630VW^7)$,
+$c_0=C_n/(4q^2r^2)$, and the entropy lower bound is
+$E_n/(6r^2U_+^3)$. The positive factor
+$D_2=5040q^2r^2a_0^7VW^7U_+^3$ consequently gives
+\begin{align*}
+ P(q,x):=D_2C(q,x)={}&12C_nL_nVW^7U_+^3
+       +840q^2a_0^7VW^7E_n\\
+ &-(x+2q^2)V_nr^2a_0^7U_+^3.
+\end{align*}
+After $x=3q^2+s$, substitute $q=(1+2u)/[2(1+u)]$ and define
+\[
+ M_2(u,s)=[2(1+u)]^{43}P(q,3q^2+s).
+\]
+This polynomial has degrees $(43,6)$ in $(u,s)$ and
+\emph{308 nonzero coefficients, all positive}. Its constant is
+$2916867824861087696175$. For every $d\ge3$ and $1/2\le q<1$,
+$s=(d-3)q^2\ge0$ and $u=(2q-1)/(2-2q)\ge0$ are finite, so
+$M_2>0$, $P>0$, $C>0$ and $\Phi_d(q)>0$. Together the three
+intervals prove the scalar inequality.
+
+\subsection{Verification}
+The complete coefficient lists for $M_1$ and $M_2$ accompany this note. Separate Python programs reconstruct both polynomials using exact integer arithmetic and check every coefficient. The supplementary verification guide identifies the files and gives the commands for these calculations. The denominator signs and domain substitutions above complete the reduction from coefficient positivity to the stated scalar inequality.
+
+The result concerns counts. For cores of degree three or four and $t\ge1$, strictness also follows from the main article's equality classification. The present argument covers arbitrary core degrees at least three and all positive activities on the once-subdivision class.
+\end{document}

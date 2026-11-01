@@ -1,0 +1,1249 @@
+{
+  "status": "finite_fixture_evidence_not_universal_proof",
+  "fixture_sha256": "d44b3e6b07959f47c8445bbe6c7730e01315d5412a7c6fafb225dd355b50a629",
+  "source_gate": "Delegated primary worker reported initial gate complete 2026-10-22 09:53:57 UTC",
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "results": [
+    {
+      "name": "C3",
+      "n": 3,
+      "degrees": [
+        2,
+        2,
+        2
+      ],
+      "Z_coefficients": [
+        1,
+        3,
+        3
+      ],
+      "D_coefficients": [
+        0,
+        3,
+        3,
+        1
+      ],
+      "Z": "3*z**2 + 3*z + 1",
+      "H_coefficients": [
+        0,
+        0,
+        6,
+        9
+      ],
+      "H": "9*z**3 + 6*z**2",
+      "H_factorization": "3*z**2*(3*z + 2)",
+      "admissible_count_at_one": 7,
+      "total_admissible_size_at_one": 9,
+      "sign_certificate": {
+        "method": "nonnegative_integer_coefficients",
+        "nonnegative_all_positive": true,
+        "strict_all_positive": true,
+        "positive_roots": []
+      },
+      "controls": [
+        {
+          "z": "1/4",
+          "Z": "31/16",
+          "D_at_reciprocal": "124",
+          "mean_I": "18/31",
+          "mean_D": "75/31",
+          "normalized_occupancy": "6/31",
+          "c4": "7/38",
+          "gap": "11/1178",
+          "H": "33/64"
+        },
+        {
+          "z": "1/2",
+          "Z": "13/4",
+          "D_at_reciprocal": "26",
+          "mean_I": "12/13",
+          "mean_D": "27/13",
+          "normalized_occupancy": "4/13",
+          "c4": "5/18",
+          "gap": "7/234",
+          "H": "21/8"
+        },
+        {
+          "z": "1",
+          "Z": "7",
+          "D_at_reciprocal": "7",
+          "mean_I": "9/7",
+          "mean_D": "12/7",
+          "normalized_occupancy": "3/7",
+          "c4": "4/11",
+          "gap": "5/77",
+          "H": "15"
+        },
+        {
+          "z": "2",
+          "Z": "19",
+          "D_at_reciprocal": "19/8",
+          "mean_I": "30/19",
+          "mean_D": "27/19",
+          "normalized_occupancy": "10/19",
+          "c4": "14/33",
+          "gap": "64/627",
+          "H": "96"
+        },
+        {
+          "z": "4",
+          "Z": "61",
+          "D_at_reciprocal": "61/64",
+          "mean_I": "108/61",
+          "mean_D": "75/61",
+          "normalized_occupancy": "36/61",
+          "c4": "52/113",
+          "gap": "896/6893",
+          "H": "672"
+        }
+      ]
+    },
+    {
+      "name": "C4",
+      "n": 4,
+      "degrees": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "Z_coefficients": [
+        1,
+        4,
+        6
+      ],
+      "D_coefficients": [
+        0,
+        0,
+        6,
+        4,
+        1
+      ],
+      "Z": "6*z**2 + 4*z + 1",
+      "H_coefficients": [
+        0
+      ],
+      "H": "0",
+      "H_factorization": "0",
+      "admissible_count_at_one": 11,
+      "total_admissible_size_at_one": 16,
+      "sign_certificate": {
+        "method": "identically_zero",
+        "nonnegative_all_positive": true,
+        "strict_all_positive": false,
+        "positive_zero_set": "all_positive_reals",
+        "isolated_positive_roots": []
+      },
+      "controls": [
+        {
+          "z": "1/4",
+          "Z": "19/8",
+          "D_at_reciprocal": "608",
+          "mean_I": "14/19",
+          "mean_D": "62/19",
+          "normalized_occupancy": "7/38",
+          "c4": "7/38",
+          "gap": "0",
+          "H": "0"
+        },
+        {
+          "z": "1/2",
+          "Z": "9/2",
+          "D_at_reciprocal": "72",
+          "mean_I": "10/9",
+          "mean_D": "26/9",
+          "normalized_occupancy": "5/18",
+          "c4": "5/18",
+          "gap": "0",
+          "H": "0"
+        },
+        {
+          "z": "1",
+          "Z": "11",
+          "D_at_reciprocal": "11",
+          "mean_I": "16/11",
+          "mean_D": "28/11",
+          "normalized_occupancy": "4/11",
+          "c4": "4/11",
+          "gap": "0",
+          "H": "0"
+        },
+        {
+          "z": "2",
+          "Z": "33",
+          "D_at_reciprocal": "33/16",
+          "mean_I": "56/33",
+          "mean_D": "76/33",
+          "normalized_occupancy": "14/33",
+          "c4": "14/33",
+          "gap": "0",
+          "H": "0"
+        },
+        {
+          "z": "4",
+          "Z": "113",
+          "D_at_reciprocal": "113/256",
+          "mean_I": "208/113",
+          "mean_D": "244/113",
+          "normalized_occupancy": "52/113",
+          "c4": "52/113",
+          "gap": "0",
+          "H": "0"
+        }
+      ]
+    },
+    {
+      "name": "C5",
+      "n": 5,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "Z_coefficients": [
+        1,
+        5,
+        10,
+        5
+      ],
+      "D_coefficients": [
+        0,
+        0,
+        5,
+        10,
+        5,
+        1
+      ],
+      "Z": "5*z**3 + 10*z**2 + 5*z + 1",
+      "H_coefficients": [
+        0,
+        0,
+        0,
+        5,
+        15
+      ],
+      "H": "15*z**4 + 5*z**3",
+      "H_factorization": "5*z**3*(3*z + 1)",
+      "admissible_count_at_one": 21,
+      "total_admissible_size_at_one": 40,
+      "sign_certificate": {
+        "method": "nonnegative_integer_coefficients",
+        "nonnegative_all_positive": true,
+        "strict_all_positive": true,
+        "positive_roots": []
+      },
+      "controls": [
+        {
+          "z": "1/4",
+          "Z": "189/64",
+          "D_at_reciprocal": "3024",
+          "mean_I": "25/27",
+          "mean_D": "110/27",
+          "normalized_occupancy": "5/27",
+          "c4": "7/38",
+          "gap": "1/1026",
+          "H": "35/256"
+        },
+        {
+          "z": "1/2",
+          "Z": "53/8",
+          "D_at_reciprocal": "212",
+          "mean_I": "75/53",
+          "mean_D": "190/53",
+          "normalized_occupancy": "15/53",
+          "c4": "5/18",
+          "gap": "5/954",
+          "H": "25/16"
+        },
+        {
+          "z": "1",
+          "Z": "21",
+          "D_at_reciprocal": "21",
+          "mean_I": "40/21",
+          "mean_D": "65/21",
+          "normalized_occupancy": "8/21",
+          "c4": "4/11",
+          "gap": "4/231",
+          "H": "20"
+        },
+        {
+          "z": "2",
+          "Z": "91",
+          "D_at_reciprocal": "91/32",
+          "mean_I": "30/13",
+          "mean_D": "35/13",
+          "normalized_occupancy": "6/13",
+          "c4": "14/33",
+          "gap": "16/429",
+          "H": "280"
+        },
+        {
+          "z": "4",
+          "Z": "501",
+          "D_at_reciprocal": "501/1024",
+          "mean_I": "1300/501",
+          "mean_D": "1205/501",
+          "normalized_occupancy": "260/501",
+          "c4": "52/113",
+          "gap": "3328/56613",
+          "H": "4160"
+        }
+      ]
+    },
+    {
+      "name": "C6",
+      "n": 6,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "Z_coefficients": [
+        1,
+        6,
+        15,
+        14,
+        3
+      ],
+      "D_coefficients": [
+        0,
+        0,
+        3,
+        14,
+        15,
+        6,
+        1
+      ],
+      "Z": "3*z**4 + 14*z**3 + 15*z**2 + 6*z + 1",
+      "H_coefficients": [
+        0,
+        0,
+        0,
+        6,
+        30,
+        18
+      ],
+      "H": "18*z**5 + 30*z**4 + 6*z**3",
+      "H_factorization": "6*z**3*(3*z**2 + 5*z + 1)",
+      "admissible_count_at_one": 39,
+      "total_admissible_size_at_one": 90,
+      "sign_certificate": {
+        "method": "nonnegative_integer_coefficients",
+        "nonnegative_all_positive": true,
+        "strict_all_positive": true,
+        "positive_roots": []
+      },
+      "controls": [
+        {
+          "z": "1/4",
+          "Z": "939/256",
+          "D_at_reciprocal": "15024",
+          "mean_I": "348/313",
+          "mean_D": "1530/313",
+          "normalized_occupancy": "58/313",
+          "c4": "7/38",
+          "gap": "13/11894",
+          "H": "117/512"
+        },
+        {
+          "z": "1/2",
+          "Z": "155/16",
+          "D_at_reciprocal": "620",
+          "mean_I": "264/155",
+          "mean_D": "666/155",
+          "normalized_occupancy": "44/155",
+          "c4": "5/18",
+          "gap": "17/2790",
+          "H": "51/16"
+        },
+        {
+          "z": "1",
+          "Z": "39",
+          "D_at_reciprocal": "39",
+          "mean_I": "30/13",
+          "mean_D": "48/13",
+          "normalized_occupancy": "5/13",
+          "c4": "4/11",
+          "gap": "3/143",
+          "H": "54"
+        },
+        {
+          "z": "2",
+          "Z": "233",
+          "D_at_reciprocal": "233/64",
+          "mean_I": "660/233",
+          "mean_D": "738/233",
+          "normalized_occupancy": "110/233",
+          "c4": "14/33",
+          "gap": "368/7689",
+          "H": "1104"
+        },
+        {
+          "z": "4",
+          "Z": "1929",
+          "D_at_reciprocal": "1929/4096",
+          "mean_I": "2088/643",
+          "mean_D": "1770/643",
+          "normalized_occupancy": "348/643",
+          "c4": "52/113",
+          "gap": "5888/72659",
+          "H": "26496"
+        }
+      ]
+    },
+    {
+      "name": "C7",
+      "n": 7,
+      "degrees": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "Z_coefficients": [
+        1,
+        7,
+        21,
+        28,
+        14
+      ],
+      "D_coefficients": [
+        0,
+        0,
+        0,
+        14,
+        28,
+        21,
+        7,
+        1
+      ],
+      "Z": "14*z**4 + 28*z**3 + 21*z**2 + 7*z + 1",
+      "H_coefficients": [
+        0,
+        0,
+        0,
+        7,
+        42,
+        42
+      ],
+      "H": "42*z**5 + 42*z**4 + 7*z**3",
+      "H_factorization": "7*z**3*(6*z**2 + 6*z + 1)",
+      "admissible_count_at_one": 71,
+      "total_admissible_size_at_one": 189,
+      "sign_certificate": {
+        "method": "nonnegative_integer_coefficients",
+        "nonnegative_all_positive": true,
+        "strict_all_positive": true,
+        "positive_roots": []
+      },
+      "controls": [
+        {
+          "z": "1/4",
+          "Z": "583/128",
+          "D_at_reciprocal": "74624",
+          "mean_I": "756/583",
+          "mean_D": "3325/583",
+          "normalized_occupancy": "108/583",
+          "c4": "7/38",
+          "gap": "23/22154",
+          "H": "161/512"
+        },
+        {
+          "z": "1/2",
+          "Z": "113/8",
+          "D_at_reciprocal": "1808",
+          "mean_I": "224/113",
+          "mean_D": "567/113",
+          "normalized_occupancy": "32/113",
+          "c4": "5/18",
+          "gap": "11/2034",
+          "H": "77/16"
+        },
+        {
+          "z": "1",
+          "Z": "71",
+          "D_at_reciprocal": "71",
+          "mean_I": "189/71",
+          "mean_D": "308/71",
+          "normalized_occupancy": "27/71",
+          "c4": "4/11",
+          "gap": "13/781",
+          "H": "91"
+        },
+        {
+          "z": "2",
+          "Z": "547",
+          "D_at_reciprocal": "547/128",
+          "mean_I": "1750/547",
+          "mean_D": "2079/547",
+          "normalized_occupancy": "250/547",
+          "c4": "14/33",
+          "gap": "592/18051",
+          "H": "2072"
+        },
+        {
+          "z": "4",
+          "Z": "5741",
+          "D_at_reciprocal": "5741/16384",
+          "mean_I": "20412/5741",
+          "mean_D": "19775/5741",
+          "normalized_occupancy": "2916/5741",
+          "c4": "52/113",
+          "gap": "30976/648733",
+          "H": "54208"
+        }
+      ]
+    },
+    {
+      "name": "K2,3",
+      "n": 5,
+      "degrees": [
+        3,
+        3,
+        2,
+        2,
+        2
+      ],
+      "Z_coefficients": [
+        1,
+        5,
+        10,
+        7
+      ],
+      "D_coefficients": [
+        0,
+        0,
+        7,
+        10,
+        5,
+        1
+      ],
+      "Z": "7*z**3 + 10*z**2 + 5*z + 1",
+      "H_coefficients": [
+        0,
+        0,
+        6,
+        19,
+        21
+      ],
+      "H": "21*z**4 + 19*z**3 + 6*z**2",
+      "H_factorization": "z**2*(21*z**2 + 19*z + 6)",
+      "admissible_count_at_one": 23,
+      "total_admissible_size_at_one": 46,
+      "sign_certificate": {
+        "method": "nonnegative_integer_coefficients",
+        "nonnegative_all_positive": true,
+        "strict_all_positive": true,
+        "positive_roots": []
+      },
+      "controls": [
+        {
+          "z": "1/4",
+          "Z": "191/64",
+          "D_at_reciprocal": "3056",
+          "mean_I": "181/191",
+          "mean_D": "774/191",
+          "normalized_occupancy": "181/955",
+          "c4": "7/38",
+          "gap": "193/36290",
+          "H": "193/256"
+        },
+        {
+          "z": "1/2",
+          "Z": "55/8",
+          "D_at_reciprocal": "220",
+          "mean_I": "81/55",
+          "mean_D": "194/55",
+          "normalized_occupancy": "81/275",
+          "c4": "5/18",
+          "gap": "83/4950",
+          "H": "83/16"
+        },
+        {
+          "z": "1",
+          "Z": "23",
+          "D_at_reciprocal": "23",
+          "mean_I": "2",
+          "mean_D": "3",
+          "normalized_occupancy": "2/5",
+          "c4": "4/11",
+          "gap": "2/55",
+          "H": "46"
+        },
+        {
+          "z": "2",
+          "Z": "107",
+          "D_at_reciprocal": "107/32",
+          "mean_I": "258/107",
+          "mean_D": "277/107",
+          "normalized_occupancy": "258/535",
+          "c4": "14/33",
+          "gap": "1024/17655",
+          "H": "512"
+        },
+        {
+          "z": "4",
+          "Z": "629",
+          "D_at_reciprocal": "629/1024",
+          "mean_I": "1684/629",
+          "mean_D": "1461/629",
+          "normalized_occupancy": "1684/3145",
+          "c4": "52/113",
+          "gap": "26752/355385",
+          "H": "6688"
+        }
+      ]
+    },
+    {
+      "name": "K4",
+      "n": 4,
+      "degrees": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "Z_coefficients": [
+        1,
+        4,
+        6,
+        4
+      ],
+      "D_coefficients": [
+        0,
+        4,
+        6,
+        4,
+        1
+      ],
+      "Z": "4*z**3 + 6*z**2 + 4*z + 1",
+      "H_coefficients": [
+        0,
+        0,
+        12,
+        32,
+        24
+      ],
+      "H": "24*z**4 + 32*z**3 + 12*z**2",
+      "H_factorization": "4*z**2*(6*z**2 + 8*z + 3)",
+      "admissible_count_at_one": 15,
+      "total_admissible_size_at_one": 28,
+      "sign_certificate": {
+        "method": "nonnegative_integer_coefficients",
+        "nonnegative_all_positive": true,
+        "strict_all_positive": true,
+        "positive_roots": []
+      },
+      "controls": [
+        {
+          "z": "1/4",
+          "Z": "39/16",
+          "D_at_reciprocal": "624",
+          "mean_I": "31/39",
+          "mean_D": "125/39",
+          "normalized_occupancy": "31/156",
+          "c4": "7/38",
+          "gap": "43/2964",
+          "H": "43/32"
+        },
+        {
+          "z": "1/2",
+          "Z": "5",
+          "D_at_reciprocal": "80",
+          "mean_I": "13/10",
+          "mean_D": "27/10",
+          "normalized_occupancy": "13/40",
+          "c4": "5/18",
+          "gap": "17/360",
+          "H": "17/2"
+        },
+        {
+          "z": "1",
+          "Z": "15",
+          "D_at_reciprocal": "15",
+          "mean_I": "28/15",
+          "mean_D": "32/15",
+          "normalized_occupancy": "7/15",
+          "c4": "4/11",
+          "gap": "17/165",
+          "H": "68"
+        },
+        {
+          "z": "2",
+          "Z": "65",
+          "D_at_reciprocal": "65/16",
+          "mean_I": "152/65",
+          "mean_D": "108/65",
+          "normalized_occupancy": "38/65",
+          "c4": "14/33",
+          "gap": "344/2145",
+          "H": "688"
+        },
+        {
+          "z": "4",
+          "Z": "369",
+          "D_at_reciprocal": "369/256",
+          "mean_I": "976/369",
+          "mean_D": "500/369",
+          "normalized_occupancy": "244/369",
+          "c4": "52/113",
+          "gap": "8384/41697",
+          "H": "8384"
+        }
+      ]
+    },
+    {
+      "name": "cube_Q3",
+      "n": 8,
+      "degrees": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "Z_coefficients": [
+        1,
+        8,
+        28,
+        56,
+        62,
+        24,
+        4
+      ],
+      "D_coefficients": [
+        0,
+        0,
+        4,
+        24,
+        62,
+        56,
+        28,
+        8,
+        1
+      ],
+      "Z": "4*z**6 + 24*z**5 + 62*z**4 + 56*z**3 + 28*z**2 + 8*z + 1",
+      "H_coefficients": [
+        0,
+        0,
+        24,
+        136,
+        280,
+        312,
+        208,
+        48
+      ],
+      "H": "48*z**7 + 208*z**6 + 312*z**5 + 280*z**4 + 136*z**3 + 24*z**2",
+      "H_factorization": "8*z**2*(6*z**5 + 26*z**4 + 39*z**3 + 35*z**2 + 17*z + 3)",
+      "admissible_count_at_one": 183,
+      "total_admissible_size_at_one": 624,
+      "sign_certificate": {
+        "method": "nonnegative_integer_coefficients",
+        "nonnegative_all_positive": true,
+        "strict_all_positive": true,
+        "positive_roots": []
+      },
+      "controls": [
+        {
+          "z": "1/4",
+          "Z": "6033/1024",
+          "D_at_reciprocal": "386112",
+          "mean_I": "3146/2011",
+          "mean_D": "12942/2011",
+          "normalized_occupancy": "1573/8044",
+          "c4": "7/38",
+          "gap": "1733/152836",
+          "H": "5199/1024"
+        },
+        {
+          "z": "1/2",
+          "Z": "379/16",
+          "D_at_reciprocal": "6064",
+          "mean_I": "938/379",
+          "mean_D": "2094/379",
+          "normalized_occupancy": "469/1516",
+          "c4": "5/18",
+          "gap": "431/13644",
+          "H": "431/8"
+        },
+        {
+          "z": "1",
+          "Z": "183",
+          "D_at_reciprocal": "183",
+          "mean_I": "208/61",
+          "mean_D": "280/61",
+          "normalized_occupancy": "26/61",
+          "c4": "4/11",
+          "gap": "42/671",
+          "H": "1008"
+        },
+        {
+          "z": "2",
+          "Z": "2593",
+          "D_at_reciprocal": "2593/256",
+          "mean_I": "10928/2593",
+          "mean_D": "9816/2593",
+          "normalized_occupancy": "1366/2593",
+          "c4": "14/33",
+          "gap": "8776/85569",
+          "H": "35104"
+        },
+        {
+          "z": "4",
+          "Z": "60897",
+          "D_at_reciprocal": "60897/65536",
+          "mean_I": "98784/20299",
+          "mean_D": "63608/20299",
+          "normalized_occupancy": "12348/20299",
+          "c4": "52/113",
+          "gap": "339776/2293787",
+          "H": "2038656"
+        }
+      ]
+    },
+    {
+      "name": "K4_edge_subdivided_once",
+      "n": 5,
+      "degrees": [
+        3,
+        3,
+        3,
+        3,
+        2
+      ],
+      "Z_coefficients": [
+        1,
+        5,
+        10,
+        9
+      ],
+      "D_coefficients": [
+        0,
+        0,
+        9,
+        10,
+        5,
+        1
+      ],
+      "Z": "9*z**3 + 10*z**2 + 5*z + 1",
+      "H_coefficients": [
+        0,
+        0,
+        12,
+        33,
+        27
+      ],
+      "H": "27*z**4 + 33*z**3 + 12*z**2",
+      "H_factorization": "3*z**2*(9*z**2 + 11*z + 4)",
+      "admissible_count_at_one": 25,
+      "total_admissible_size_at_one": 52,
+      "sign_certificate": {
+        "method": "nonnegative_integer_coefficients",
+        "nonnegative_all_positive": true,
+        "strict_all_positive": true,
+        "positive_roots": []
+      },
+      "controls": [
+        {
+          "z": "1/4",
+          "Z": "193/64",
+          "D_at_reciprocal": "3088",
+          "mean_I": "187/193",
+          "mean_D": "778/193",
+          "normalized_occupancy": "187/965",
+          "c4": "7/38",
+          "gap": "351/36670",
+          "H": "351/256"
+        },
+        {
+          "z": "1/2",
+          "Z": "57/8",
+          "D_at_reciprocal": "228",
+          "mean_I": "29/19",
+          "mean_D": "66/19",
+          "normalized_occupancy": "29/95",
+          "c4": "5/18",
+          "gap": "47/1710",
+          "H": "141/16"
+        },
+        {
+          "z": "1",
+          "Z": "25",
+          "D_at_reciprocal": "25",
+          "mean_I": "52/25",
+          "mean_D": "73/25",
+          "normalized_occupancy": "52/125",
+          "c4": "4/11",
+          "gap": "72/1375",
+          "H": "72"
+        },
+        {
+          "z": "2",
+          "Z": "123",
+          "D_at_reciprocal": "123/32",
+          "mean_I": "102/41",
+          "mean_D": "103/41",
+          "normalized_occupancy": "102/205",
+          "c4": "14/33",
+          "gap": "496/6765",
+          "H": "744"
+        },
+        {
+          "z": "4",
+          "Z": "757",
+          "D_at_reciprocal": "757/1024",
+          "mean_I": "2068/757",
+          "mean_D": "1717/757",
+          "normalized_occupancy": "2068/3785",
+          "c4": "52/113",
+          "gap": "36864/427705",
+          "H": "9216"
+        }
+      ]
+    },
+    {
+      "name": "two_C4_joined_by_edge",
+      "n": 8,
+      "degrees": [
+        3,
+        2,
+        2,
+        2,
+        3,
+        2,
+        2,
+        2
+      ],
+      "Z_coefficients": [
+        1,
+        8,
+        28,
+        50,
+        42,
+        6
+      ],
+      "D_coefficients": [
+        0,
+        0,
+        0,
+        6,
+        42,
+        50,
+        28,
+        8,
+        1
+      ],
+      "Z": "6*z**5 + 42*z**4 + 50*z**3 + 28*z**2 + 8*z + 1",
+      "H_coefficients": [
+        0,
+        0,
+        6,
+        32,
+        66,
+        72,
+        36
+      ],
+      "H": "36*z**6 + 72*z**5 + 66*z**4 + 32*z**3 + 6*z**2",
+      "H_factorization": "2*z**2*(18*z**4 + 36*z**3 + 33*z**2 + 16*z + 3)",
+      "admissible_count_at_one": 135,
+      "total_admissible_size_at_one": 412,
+      "sign_certificate": {
+        "method": "nonnegative_integer_coefficients",
+        "nonnegative_all_positive": true,
+        "strict_all_positive": true,
+        "positive_roots": []
+      },
+      "controls": [
+        {
+          "z": "1/4",
+          "Z": "2919/512",
+          "D_at_reciprocal": "373632",
+          "mean_I": "4367/2919",
+          "mean_D": "18985/2919",
+          "normalized_occupancy": "4367/23352",
+          "c4": "7/38",
+          "gap": "1241/443688",
+          "H": "1241/1024"
+        },
+        {
+          "z": "1/2",
+          "Z": "337/16",
+          "D_at_reciprocal": "5392",
+          "mean_I": "771/337",
+          "mean_D": "1925/337",
+          "normalized_occupancy": "771/2696",
+          "c4": "5/18",
+          "gap": "199/24264",
+          "H": "199/16"
+        },
+        {
+          "z": "1",
+          "Z": "135",
+          "D_at_reciprocal": "135",
+          "mean_I": "412/135",
+          "mean_D": "668/135",
+          "normalized_occupancy": "103/270",
+          "c4": "4/11",
+          "gap": "53/2970",
+          "H": "212"
+        },
+        {
+          "z": "2",
+          "Z": "1393",
+          "D_at_reciprocal": "1393/256",
+          "mean_I": "5088/1393",
+          "mean_D": "6056/1393",
+          "normalized_occupancy": "636/1393",
+          "c4": "14/33",
+          "gap": "1486/45969",
+          "H": "5944"
+        },
+        {
+          "z": "4",
+          "Z": "20577",
+          "D_at_reciprocal": "20577/65536",
+          "mean_I": "84256/20577",
+          "mean_D": "80360/20577",
+          "normalized_occupancy": "10532/20577",
+          "c4": "52/113",
+          "gap": "120112/2325201",
+          "H": "240224"
+        }
+      ]
+    },
+    {
+      "name": "K3,3",
+      "n": 6,
+      "degrees": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "Z_coefficients": [
+        1,
+        6,
+        15,
+        20,
+        9
+      ],
+      "D_coefficients": [
+        0,
+        0,
+        9,
+        20,
+        15,
+        6,
+        1
+      ],
+      "Z": "9*z**4 + 20*z**3 + 15*z**2 + 6*z + 1",
+      "H_coefficients": [
+        0,
+        0,
+        18,
+        66,
+        90,
+        54
+      ],
+      "H": "54*z**5 + 90*z**4 + 66*z**3 + 18*z**2",
+      "H_factorization": "6*z**2*(9*z**3 + 15*z**2 + 11*z + 3)",
+      "admissible_count_at_one": 51,
+      "total_admissible_size_at_one": 132,
+      "sign_certificate": {
+        "method": "nonnegative_integer_coefficients",
+        "nonnegative_all_positive": true,
+        "strict_all_positive": true,
+        "positive_roots": []
+      },
+      "controls": [
+        {
+          "z": "1/4",
+          "Z": "969/256",
+          "D_at_reciprocal": "15504",
+          "mean_I": "20/17",
+          "mean_D": "82/17",
+          "normalized_occupancy": "10/51",
+          "c4": "7/38",
+          "gap": "23/1938",
+          "H": "1311/512"
+        },
+        {
+          "z": "1/2",
+          "Z": "173/16",
+          "D_at_reciprocal": "692",
+          "mean_I": "324/173",
+          "mean_D": "714/173",
+          "normalized_occupancy": "54/173",
+          "c4": "5/18",
+          "gap": "107/3114",
+          "H": "321/16"
+        },
+        {
+          "z": "1",
+          "Z": "51",
+          "D_at_reciprocal": "51",
+          "mean_I": "44/17",
+          "mean_D": "58/17",
+          "normalized_occupancy": "22/51",
+          "c4": "4/11",
+          "gap": "38/561",
+          "H": "228"
+        },
+        {
+          "z": "2",
+          "Z": "377",
+          "D_at_reciprocal": "377/64",
+          "mean_I": "1188/377",
+          "mean_D": "1074/377",
+          "normalized_occupancy": "198/377",
+          "c4": "14/33",
+          "gap": "1256/12441",
+          "H": "3768"
+        },
+        {
+          "z": "4",
+          "Z": "3849",
+          "D_at_reciprocal": "3849/4096",
+          "mean_I": "4520/1283",
+          "mean_D": "3178/1283",
+          "normalized_occupancy": "2260/3849",
+          "c4": "52/113",
+          "gap": "55232/434937",
+          "H": "82848"
+        }
+      ]
+    },
+    {
+      "name": "Petersen",
+      "n": 10,
+      "degrees": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "Z_coefficients": [
+        1,
+        10,
+        45,
+        120,
+        200,
+        192,
+        75,
+        10
+      ],
+      "D_coefficients": [
+        0,
+        0,
+        0,
+        10,
+        75,
+        192,
+        200,
+        120,
+        45,
+        10,
+        1
+      ],
+      "Z": "10*z**7 + 75*z**6 + 192*z**5 + 200*z**4 + 120*z**3 + 45*z**2 + 10*z + 1",
+      "H_coefficients": [
+        0,
+        0,
+        30,
+        230,
+        720,
+        1170,
+        1120,
+        630,
+        120
+      ],
+      "H": "120*z**8 + 630*z**7 + 1120*z**6 + 1170*z**5 + 720*z**4 + 230*z**3 + 30*z**2",
+      "H_factorization": "10*z**2*(12*z**6 + 63*z**5 + 112*z**4 + 117*z**3 + 72*z**2 + 23*z + 3)",
+      "admissible_count_at_one": 653,
+      "total_admissible_size_at_one": 2740,
+      "sign_certificate": {
+        "method": "nonnegative_integer_coefficients",
+        "nonnegative_all_positive": true,
+        "strict_all_positive": true,
+        "positive_roots": []
+      },
+      "controls": [
+        {
+          "z": "1/4",
+          "Z": "75163/8192",
+          "D_at_reciprocal": "9620864",
+          "mean_I": "146855/75163",
+          "mean_D": "604775/75163",
+          "normalized_occupancy": "29371/150326",
+          "c4": "7/38",
+          "gap": "15954/1428097",
+          "H": "39885/4096"
+        },
+        {
+          "z": "1/2",
+          "Z": "52",
+          "D_at_reciprocal": "53248",
+          "mean_I": "10245/3328",
+          "mean_D": "23035/3328",
+          "normalized_occupancy": "2049/6656",
+          "c4": "5/18",
+          "gap": "1801/59904",
+          "H": "9005/64"
+        },
+        {
+          "z": "1",
+          "Z": "653",
+          "D_at_reciprocal": "653",
+          "mean_I": "2740/653",
+          "mean_D": "3790/653",
+          "normalized_occupancy": "274/653",
+          "c4": "4/11",
+          "gap": "402/7183",
+          "H": "4020"
+        },
+        {
+          "z": "2",
+          "Z": "16585",
+          "D_at_reciprocal": "16585/1024",
+          "mean_I": "16908/3317",
+          "mean_D": "16262/3317",
+          "normalized_occupancy": "8454/16585",
+          "c4": "14/33",
+          "gap": "46792/547305",
+          "H": "233960"
+        },
+        {
+          "z": "4",
+          "Z": "727289",
+          "D_at_reciprocal": "727289/1048576",
+          "mean_I": "4202440/727289",
+          "mean_D": "3070450/727289",
+          "normalized_occupancy": "420244/727289",
+          "c4": "52/113",
+          "gap": "9668544/82183657",
+          "H": "24171360"
+        }
+      ]
+    }
+  ]
+}

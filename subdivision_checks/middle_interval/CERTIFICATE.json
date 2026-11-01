@@ -1,0 +1,1014 @@
+{
+  "sympy_version": "1.14.0",
+  "lower_bound": "-q**2*x**2*((x + 1)/(-q + x + 1) + 2/(1 - q))/((x + 1)*(6*x + 6)) - q*(q**6/(2 - 2*q**3) + q**3)/(x + 1) - q*(-2*x**3/(3*(x + 2)**3) + x - 2*x/(x + 2))/(x + 1) - x*(q**3/(3 - 3*q) + q**2/2 + q)/((x + 1)*(2*x + 2)) + (2 + x/q**2)*(q**6*(4 - 3*q)**2/2 + q**3*(4 - 3*q))/8",
+  "positive_denominator": "(1 - q)*(1 - q**3)*(x + 1)*(x + 2)**3*(48*x + 48)*(-q + x + 1)",
+  "numerator_q_degree": 12,
+  "numerator_x_degree": 7,
+  "substitution": "x=3q^2+s, q=(1+2u)/(4(1+u)), s,u>=0",
+  "clearing_power": 23,
+  "transformed_u_degree": 23,
+  "transformed_s_degree": 7,
+  "nonzero_terms": 192,
+  "negative_terms": [],
+  "strict_constant": "794008104013215",
+  "coefficient_certificate_passed": true,
+  "terms": [
+    {
+      "u_degree": 23,
+      "s_degree": 7,
+      "coefficient": "533950334238720"
+    },
+    {
+      "u_degree": 23,
+      "s_degree": 6,
+      "coefficient": "5515322123616256"
+    },
+    {
+      "u_degree": 23,
+      "s_degree": 5,
+      "coefficient": "23814640173580288"
+    },
+    {
+      "u_degree": 23,
+      "s_degree": 4,
+      "coefficient": "53428235668553728"
+    },
+    {
+      "u_degree": 23,
+      "s_degree": 3,
+      "coefficient": "64883168460668928"
+    },
+    {
+      "u_degree": 23,
+      "s_degree": 2,
+      "coefficient": "40609522313592832"
+    },
+    {
+      "u_degree": 23,
+      "s_degree": 1,
+      "coefficient": "11356125425303552"
+    },
+    {
+      "u_degree": 23,
+      "s_degree": 0,
+      "coefficient": "1159039731892224"
+    },
+    {
+      "u_degree": 22,
+      "s_degree": 7,
+      "coefficient": "12735849342959616"
+    },
+    {
+      "u_degree": 22,
+      "s_degree": 6,
+      "coefficient": "129458131141918720"
+    },
+    {
+      "u_degree": 22,
+      "s_degree": 5,
+      "coefficient": "550720631046406144"
+    },
+    {
+      "u_degree": 22,
+      "s_degree": 4,
+      "coefficient": "1217823342753480704"
+    },
+    {
+      "u_degree": 22,
+      "s_degree": 3,
+      "coefficient": "1461222527341690880"
+    },
+    {
+      "u_degree": 22,
+      "s_degree": 2,
+      "coefficient": "913169934878507008"
+    },
+    {
+      "u_degree": 22,
+      "s_degree": 1,
+      "coefficient": "267342230946054144"
+    },
+    {
+      "u_degree": 22,
+      "s_degree": 0,
+      "coefficient": "34174345773318144"
+    },
+    {
+      "u_degree": 21,
+      "s_degree": 7,
+      "coefficient": "145147492055384064"
+    },
+    {
+      "u_degree": 21,
+      "s_degree": 6,
+      "coefficient": "1451804456214593536"
+    },
+    {
+      "u_degree": 21,
+      "s_degree": 5,
+      "coefficient": "6083914062041710592"
+    },
+    {
+      "u_degree": 21,
+      "s_degree": 4,
+      "coefficient": "13255456284410380288"
+    },
+    {
+      "u_degree": 21,
+      "s_degree": 3,
+      "coefficient": "15698603743215878144"
+    },
+    {
+      "u_degree": 21,
+      "s_degree": 2,
+      "coefficient": "9766576018960678912"
+    },
+    {
+      "u_degree": 21,
+      "s_degree": 1,
+      "coefficient": "2954551815191920640"
+    },
+    {
+      "u_degree": 21,
+      "s_degree": 0,
+      "coefficient": "433693951650693120"
+    },
+    {
+      "u_degree": 20,
+      "s_degree": 7,
+      "coefficient": "1051733724380528640"
+    },
+    {
+      "u_degree": 20,
+      "s_degree": 6,
+      "coefficient": "10350991034422394880"
+    },
+    {
+      "u_degree": 20,
+      "s_degree": 5,
+      "coefficient": "42726160128169476096"
+    },
+    {
+      "u_degree": 20,
+      "s_degree": 4,
+      "coefficient": "91691051169899085824"
+    },
+    {
+      "u_degree": 20,
+      "s_degree": 3,
+      "coefficient": "107090869168965156864"
+    },
+    {
+      "u_degree": 20,
+      "s_degree": 2,
+      "coefficient": "66158992360728428544"
+    },
+    {
+      "u_degree": 20,
+      "s_degree": 1,
+      "coefficient": "20482155971702947840"
+    },
+    {
+      "u_degree": 20,
+      "s_degree": 0,
+      "coefficient": "3301806233606946816"
+    },
+    {
+      "u_degree": 19,
+      "s_degree": 7,
+      "coefficient": "5438790324707131392"
+    },
+    {
+      "u_degree": 19,
+      "s_degree": 6,
+      "coefficient": "52668495489065287680"
+    },
+    {
+      "u_degree": 19,
+      "s_degree": 5,
+      "coefficient": "214132772827759116288"
+    },
+    {
+      "u_degree": 19,
+      "s_degree": 4,
+      "coefficient": "452510399416791728128"
+    },
+    {
+      "u_degree": 19,
+      "s_degree": 3,
+      "coefficient": "520824461528427134976"
+    },
+    {
+      "u_degree": 19,
+      "s_degree": 2,
+      "coefficient": "318823574045290659840"
+    },
+    {
+      "u_degree": 19,
+      "s_degree": 1,
+      "coefficient": "100269532439851827200"
+    },
+    {
+      "u_degree": 19,
+      "s_degree": 0,
+      "coefficient": "17293736819003228160"
+    },
+    {
+      "u_degree": 18,
+      "s_degree": 7,
+      "coefficient": "21357929437297901568"
+    },
+    {
+      "u_degree": 18,
+      "s_degree": 6,
+      "coefficient": "203511809596427599872"
+    },
+    {
+      "u_degree": 18,
+      "s_degree": 5,
+      "coefficient": "814974478006855139328"
+    },
+    {
+      "u_degree": 18,
+      "s_degree": 4,
+      "coefficient": "1695581566467370385408"
+    },
+    {
+      "u_degree": 18,
+      "s_degree": 3,
+      "coefficient": "1921956306586599161856"
+    },
+    {
+      "u_degree": 18,
+      "s_degree": 2,
+      "coefficient": "1163636300621581123584"
+    },
+    {
+      "u_degree": 18,
+      "s_degree": 1,
+      "coefficient": "369610372929119322112"
+    },
+    {
+      "u_degree": 18,
+      "s_degree": 0,
+      "coefficient": "67084391904345587712"
+    },
+    {
+      "u_degree": 17,
+      "s_degree": 7,
+      "coefficient": "66163461287772684288"
+    },
+    {
+      "u_degree": 17,
+      "s_degree": 6,
+      "coefficient": "620375158690368454656"
+    },
+    {
+      "u_degree": 17,
+      "s_degree": 5,
+      "coefficient": "2447094312100681482240"
+    },
+    {
+      "u_degree": 17,
+      "s_degree": 4,
+      "coefficient": "5011824631750642892800"
+    },
+    {
+      "u_degree": 17,
+      "s_degree": 3,
+      "coefficient": "5591756662569921675264"
+    },
+    {
+      "u_degree": 17,
+      "s_degree": 2,
+      "coefficient": "3342927582469375918080"
+    },
+    {
+      "u_degree": 17,
+      "s_degree": 1,
+      "coefficient": "1067381070658487189504"
+    },
+    {
+      "u_degree": 17,
+      "s_degree": 0,
+      "coefficient": "201630611648969048064"
+    },
+    {
+      "u_degree": 16,
+      "s_degree": 7,
+      "coefficient": "165801619044566040576"
+    },
+    {
+      "u_degree": 16,
+      "s_degree": 6,
+      "coefficient": "1529920570647379968000"
+    },
+    {
+      "u_degree": 16,
+      "s_degree": 5,
+      "coefficient": "5944893756808095596544"
+    },
+    {
+      "u_degree": 16,
+      "s_degree": 4,
+      "coefficient": "11984605240120290836480"
+    },
+    {
+      "u_degree": 16,
+      "s_degree": 3,
+      "coefficient": "13155440642487264215040"
+    },
+    {
+      "u_degree": 16,
+      "s_degree": 2,
+      "coefficient": "7754548511157579153408"
+    },
+    {
+      "u_degree": 16,
+      "s_degree": 1,
+      "coefficient": "2479219605253028577280"
+    },
+    {
+      "u_degree": 16,
+      "s_degree": 0,
+      "coefficient": "483722058488939741184"
+    },
+    {
+      "u_degree": 15,
+      "s_degree": 7,
+      "coefficient": "341929811936513359872"
+    },
+    {
+      "u_degree": 15,
+      "s_degree": 6,
+      "coefficient": "3105371512912383836160"
+    },
+    {
+      "u_degree": 15,
+      "s_degree": 5,
+      "coefficient": "11888341991417331056640"
+    },
+    {
+      "u_degree": 15,
+      "s_degree": 4,
+      "coefficient": "23589613797223620935680"
+    },
+    {
+      "u_degree": 15,
+      "s_degree": 3,
+      "coefficient": "25466289511064810815488"
+    },
+    {
+      "u_degree": 15,
+      "s_degree": 2,
+      "coefficient": "14781449657342606966784"
+    },
+    {
+      "u_degree": 15,
+      "s_degree": 1,
+      "coefficient": "4716142201403766210560"
+    },
+    {
+      "u_degree": 15,
+      "s_degree": 0,
+      "coefficient": "945303143363998580736"
+    },
+    {
+      "u_degree": 14,
+      "s_degree": 7,
+      "coefficient": "587243935390010179584"
+    },
+    {
+      "u_degree": 14,
+      "s_degree": 6,
+      "coefficient": "5249989472568536465408"
+    },
+    {
+      "u_degree": 14,
+      "s_degree": 5,
+      "coefficient": "19804701212234089496576"
+    },
+    {
+      "u_degree": 14,
+      "s_degree": 4,
+      "coefficient": "38680621828456566489088"
+    },
+    {
+      "u_degree": 14,
+      "s_degree": 3,
+      "coefficient": "41054839711984917676032"
+    },
+    {
+      "u_degree": 14,
+      "s_degree": 2,
+      "coefficient": "23436378726237384212480"
+    },
+    {
+      "u_degree": 14,
+      "s_degree": 1,
+      "coefficient": "7440294866044838346752"
+    },
+    {
+      "u_degree": 14,
+      "s_degree": 0,
+      "coefficient": "1526195420237352566784"
+    },
+    {
+      "u_degree": 13,
+      "s_degree": 7,
+      "coefficient": "846660883711059296256"
+    },
+    {
+      "u_degree": 13,
+      "s_degree": 6,
+      "coefficient": "7452357917814416211968"
+    },
+    {
+      "u_degree": 13,
+      "s_degree": 5,
+      "coefficient": "27707080905747951779840"
+    },
+    {
+      "u_degree": 13,
+      "s_degree": 4,
+      "coefficient": "53268018942747235844096"
+    },
+    {
+      "u_degree": 13,
+      "s_degree": 3,
+      "coefficient": "55571589545449586950144"
+    },
+    {
+      "u_degree": 13,
+      "s_degree": 2,
+      "coefficient": "31164769834786668412928"
+    },
+    {
+      "u_degree": 13,
+      "s_degree": 1,
+      "coefficient": "9818146959508649934848"
+    },
+    {
+      "u_degree": 13,
+      "s_degree": 0,
+      "coefficient": "2055427987174944522240"
+    },
+    {
+      "u_degree": 12,
+      "s_degree": 7,
+      "coefficient": "1029835939251493011456"
+    },
+    {
+      "u_degree": 12,
+      "s_degree": 6,
+      "coefficient": "8926716300507069022208"
+    },
+    {
+      "u_degree": 12,
+      "s_degree": 5,
+      "coefficient": "32717187753589684043776"
+    },
+    {
+      "u_degree": 12,
+      "s_degree": 4,
+      "coefficient": "61922126305768948891648"
+    },
+    {
+      "u_degree": 12,
+      "s_degree": 3,
+      "coefficient": "63483539809207595302912"
+    },
+    {
+      "u_degree": 12,
+      "s_degree": 2,
+      "coefficient": "34937669785498561937408"
+    },
+    {
+      "u_degree": 12,
+      "s_degree": 1,
+      "coefficient": "10895210851512003657728"
+    },
+    {
+      "u_degree": 12,
+      "s_degree": 0,
+      "coefficient": "2323488745119503032320"
+    },
+    {
+      "u_degree": 11,
+      "s_degree": 7,
+      "coefficient": "1059339422754611920896"
+    },
+    {
+      "u_degree": 11,
+      "s_degree": 6,
+      "coefficient": "9044978308888827789312"
+    },
+    {
+      "u_degree": 11,
+      "s_degree": 5,
+      "coefficient": "32688368729509054119936"
+    },
+    {
+      "u_degree": 11,
+      "s_degree": 4,
+      "coefficient": "60914209303511707418624"
+    },
+    {
+      "u_degree": 11,
+      "s_degree": 3,
+      "coefficient": "61361978696285252222976"
+    },
+    {
+      "u_degree": 11,
+      "s_degree": 2,
+      "coefficient": "33106239532990042865664"
+    },
+    {
+      "u_degree": 11,
+      "s_degree": 1,
+      "coefficient": "10194722425082042564608"
+    },
+    {
+      "u_degree": 11,
+      "s_degree": 0,
+      "coefficient": "2211941751635614666752"
+    },
+    {
+      "u_degree": 10,
+      "s_degree": 7,
+      "coefficient": "921561650268286746624"
+    },
+    {
+      "u_degree": 10,
+      "s_degree": 6,
+      "coefficient": "7752980601200965582848"
+    },
+    {
+      "u_degree": 10,
+      "s_degree": 5,
+      "coefficient": "27636565593315477553152"
+    },
+    {
+      "u_degree": 10,
+      "s_degree": 4,
+      "coefficient": "50715837245734197133312"
+    },
+    {
+      "u_degree": 10,
+      "s_degree": 3,
+      "coefficient": "50193568662689551220736"
+    },
+    {
+      "u_degree": 10,
+      "s_degree": 2,
+      "coefficient": "26521967434819120201728"
+    },
+    {
+      "u_degree": 10,
+      "s_degree": 1,
+      "coefficient": "8045425274964287823872"
+    },
+    {
+      "u_degree": 10,
+      "s_degree": 0,
+      "coefficient": "1774717489979519318016"
+    },
+    {
+      "u_degree": 9,
+      "s_degree": 7,
+      "coefficient": "676428845014415572992"
+    },
+    {
+      "u_degree": 9,
+      "s_degree": 6,
+      "coefficient": "5608870418552293687296"
+    },
+    {
+      "u_degree": 9,
+      "s_degree": 5,
+      "coefficient": "19727042329699499900928"
+    },
+    {
+      "u_degree": 9,
+      "s_degree": 4,
+      "coefficient": "35657538938066967068672"
+    },
+    {
+      "u_degree": 9,
+      "s_degree": 3,
+      "coefficient": "34670414513928496742400"
+    },
+    {
+      "u_degree": 9,
+      "s_degree": 2,
+      "coefficient": "17924307898286242430976"
+    },
+    {
+      "u_degree": 9,
+      "s_degree": 1,
+      "coefficient": "5343117265986303311872"
+    },
+    {
+      "u_degree": 9,
+      "s_degree": 0,
+      "coefficient": "1197944063822046434304"
+    },
+    {
+      "u_degree": 8,
+      "s_degree": 7,
+      "coefficient": "416866824315457241088"
+    },
+    {
+      "u_degree": 8,
+      "s_degree": 6,
+      "coefficient": "3408085134129846288384"
+    },
+    {
+      "u_degree": 8,
+      "s_degree": 5,
+      "coefficient": "11831032462185052766208"
+    },
+    {
+      "u_degree": 8,
+      "s_degree": 4,
+      "coefficient": "21069507527523691724800"
+    },
+    {
+      "u_degree": 8,
+      "s_degree": 3,
+      "coefficient": "20126384412442001276928"
+    },
+    {
+      "u_degree": 8,
+      "s_degree": 2,
+      "coefficient": "10170898907725881655296"
+    },
+    {
+      "u_degree": 8,
+      "s_degree": 1,
+      "coefficient": "2971680397227178459136"
+    },
+    {
+      "u_degree": 8,
+      "s_degree": 0,
+      "coefficient": "677255351438296708608"
+    },
+    {
+      "u_degree": 7,
+      "s_degree": 7,
+      "coefficient": "213993825724438413312"
+    },
+    {
+      "u_degree": 7,
+      "s_degree": 6,
+      "coefficient": "1725593912876967395328"
+    },
+    {
+      "u_degree": 7,
+      "s_degree": 5,
+      "coefficient": "5914845041805490126848"
+    },
+    {
+      "u_degree": 7,
+      "s_degree": 4,
+      "coefficient": "10381178590715048886272"
+    },
+    {
+      "u_degree": 7,
+      "s_degree": 3,
+      "coefficient": "9742795479532128362496"
+    },
+    {
+      "u_degree": 7,
+      "s_degree": 2,
+      "coefficient": "4808129079505060558848"
+    },
+    {
+      "u_degree": 7,
+      "s_degree": 1,
+      "coefficient": "1373135529242458785280"
+    },
+    {
+      "u_degree": 7,
+      "s_degree": 0,
+      "coefficient": "318252466805978023296"
+    },
+    {
+      "u_degree": 6,
+      "s_degree": 7,
+      "coefficient": "90428496400424632320"
+    },
+    {
+      "u_degree": 6,
+      "s_degree": 6,
+      "coefficient": "719523221859968483328"
+    },
+    {
+      "u_degree": 6,
+      "s_degree": 5,
+      "coefficient": "2436245948961461895168"
+    },
+    {
+      "u_degree": 6,
+      "s_degree": 4,
+      "coefficient": "4215430497017288458240"
+    },
+    {
+      "u_degree": 6,
+      "s_degree": 3,
+      "coefficient": "3887301519493924491264"
+    },
+    {
+      "u_degree": 6,
+      "s_degree": 2,
+      "coefficient": "1871683165607280104448"
+    },
+    {
+      "u_degree": 6,
+      "s_degree": 1,
+      "coefficient": "520909440669779673344"
+    },
+    {
+      "u_degree": 6,
+      "s_degree": 0,
+      "coefficient": "122877763729482818880"
+    },
+    {
+      "u_degree": 5,
+      "s_degree": 7,
+      "coefficient": "30922209278444961792"
+    },
+    {
+      "u_degree": 5,
+      "s_degree": 6,
+      "coefficient": "242886467821099810816"
+    },
+    {
+      "u_degree": 5,
+      "s_degree": 5,
+      "coefficient": "812721679939045163008"
+    },
+    {
+      "u_degree": 5,
+      "s_degree": 4,
+      "coefficient": "1386893244547867607040"
+    },
+    {
+      "u_degree": 5,
+      "s_degree": 3,
+      "coefficient": "1256856175050682073088"
+    },
+    {
+      "u_degree": 5,
+      "s_degree": 2,
+      "coefficient": "589873519991222270464"
+    },
+    {
+      "u_degree": 5,
+      "s_degree": 1,
+      "coefficient": "159456579458492016384"
+    },
+    {
+      "u_degree": 5,
+      "s_degree": 0,
+      "coefficient": "38326089487617736416"
+    },
+    {
+      "u_degree": 4,
+      "s_degree": 7,
+      "coefficient": "8344776831978700800"
+    },
+    {
+      "u_degree": 4,
+      "s_degree": 6,
+      "coefficient": "64735874280658567168"
+    },
+    {
+      "u_degree": 4,
+      "s_degree": 5,
+      "coefficient": "214164631888215408640"
+    },
+    {
+      "u_degree": 4,
+      "s_degree": 4,
+      "coefficient": "360586416402159501312"
+    },
+    {
+      "u_degree": 4,
+      "s_degree": 3,
+      "coefficient": "321202972614632812544"
+    },
+    {
+      "u_degree": 4,
+      "s_degree": 2,
+      "coefficient": "146807276224378167040"
+    },
+    {
+      "u_degree": 4,
+      "s_degree": 1,
+      "coefficient": "38403791918166909824"
+    },
+    {
+      "u_degree": 4,
+      "s_degree": 0,
+      "coefficient": "9418958985712966800"
+    },
+    {
+      "u_degree": 3,
+      "s_degree": 7,
+      "coefficient": "1710893922181447680"
+    },
+    {
+      "u_degree": 3,
+      "s_degree": 6,
+      "coefficient": "13114986016572178432"
+    },
+    {
+      "u_degree": 3,
+      "s_degree": 5,
+      "coefficient": "42918820034178449408"
+    },
+    {
+      "u_degree": 3,
+      "s_degree": 4,
+      "coefficient": "71329200043690819584"
+    },
+    {
+      "u_degree": 3,
+      "s_degree": 3,
+      "coefficient": "62471637599558131712"
+    },
+    {
+      "u_degree": 3,
+      "s_degree": 2,
+      "coefficient": "27782014314758496256"
+    },
+    {
+      "u_degree": 3,
+      "s_degree": 1,
+      "coefficient": "7003437756338770272"
+    },
+    {
+      "u_degree": 3,
+      "s_degree": 0,
+      "coefficient": "1755937221038272296"
+    },
+    {
+      "u_degree": 2,
+      "s_degree": 7,
+      "coefficient": "250473933101334528"
+    },
+    {
+      "u_degree": 2,
+      "s_degree": 6,
+      "coefficient": "1898240353455046656"
+    },
+    {
+      "u_degree": 2,
+      "s_degree": 5,
+      "coefficient": "6147974485710471168"
+    },
+    {
+      "u_degree": 2,
+      "s_degree": 4,
+      "coefficient": "10090787582084382720"
+    },
+    {
+      "u_degree": 2,
+      "s_degree": 3,
+      "coefficient": "8692248062143623168"
+    },
+    {
+      "u_degree": 2,
+      "s_degree": 2,
+      "coefficient": "3758057606267966976"
+    },
+    {
+      "u_degree": 2,
+      "s_degree": 1,
+      "coefficient": "908558053839558672"
+    },
+    {
+      "u_degree": 2,
+      "s_degree": 0,
+      "coefficient": "233390100864375276"
+    },
+    {
+      "u_degree": 1,
+      "s_degree": 7,
+      "coefficient": "23327834621607936"
+    },
+    {
+      "u_degree": 1,
+      "s_degree": 6,
+      "coefficient": "174883416708218880"
+    },
+    {
+      "u_degree": 1,
+      "s_degree": 5,
+      "coefficient": "560873000543453184"
+    },
+    {
+      "u_degree": 1,
+      "s_degree": 4,
+      "coefficient": "909630054654148608"
+    },
+    {
+      "u_degree": 1,
+      "s_degree": 3,
+      "coefficient": "770975294777769984"
+    },
+    {
+      "u_degree": 1,
+      "s_degree": 2,
+      "coefficient": "323809030171055616"
+    },
+    {
+      "u_degree": 1,
+      "s_degree": 1,
+      "coefficient": "74667056481166080"
+    },
+    {
+      "u_degree": 1,
+      "s_degree": 0,
+      "coefficient": "19703600908394562"
+    },
+    {
+      "u_degree": 0,
+      "s_degree": 7,
+      "coefficient": "1038784816742400"
+    },
+    {
+      "u_degree": 0,
+      "s_degree": 6,
+      "coefficient": "7707947169742848"
+    },
+    {
+      "u_degree": 0,
+      "s_degree": 5,
+      "coefficient": "24492549891686400"
+    },
+    {
+      "u_degree": 0,
+      "s_degree": 4,
+      "coefficient": "39273013055913984"
+    },
+    {
+      "u_degree": 0,
+      "s_degree": 3,
+      "coefficient": "32767950381797376"
+    },
+    {
+      "u_degree": 0,
+      "s_degree": 2,
+      "coefficient": "13360509072449280"
+    },
+    {
+      "u_degree": 0,
+      "s_degree": 1,
+      "coefficient": "2919758597670096"
+    },
+    {
+      "u_degree": 0,
+      "s_degree": 0,
+      "coefficient": "794008104013215"
+    }
+  ],
+  "scope": "q in [1/4,1/2), x>=3q^2; q=1/2 separately evaluated exactly below",
+  "endpoint_terms": [
+    {
+      "s_degree": 7,
+      "coefficient": "3885/512"
+    },
+    {
+      "s_degree": 6,
+      "coefficient": "160517/2048"
+    },
+    {
+      "s_degree": 5,
+      "coefficient": "2772389/8192"
+    },
+    {
+      "s_degree": 4,
+      "coefficient": "24879461/32768"
+    },
+    {
+      "s_degree": 3,
+      "coefficient": "120854319/131072"
+    },
+    {
+      "s_degree": 2,
+      "coefficient": "302564519/524288"
+    },
+    {
+      "s_degree": 1,
+      "coefficient": "338438911/2097152"
+    },
+    {
+      "s_degree": 0,
+      "coefficient": "138168303/8388608"
+    }
+  ],
+  "endpoint_passed": true,
+  "full_compact_interval_passed": true
+}

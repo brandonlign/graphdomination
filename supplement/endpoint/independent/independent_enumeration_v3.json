@@ -1,0 +1,13 @@
+{
+  "all_passed": true,
+  "full_views": 231816,
+  "full_views_by_degree": {
+    "2": 2713,
+    "3": 229103
+  },
+  "distinct_combinatorial_views": 52609,
+  "columns": 9853,
+  "actual_exposures_covered": 160,
+  "schema": "c,53 V2 zero features,60 star zero features,20 exterior inequalities,7 association inequalities",
+  "elapsed_seconds": 24.668731689453125
+}

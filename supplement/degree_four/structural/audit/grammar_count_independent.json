@@ -1,0 +1,55 @@
+{
+  "all_passed": true,
+  "by_degree_tuple": {
+    "2:22": 90,
+    "2:23": 96,
+    "2:24": 306,
+    "2:32": 96,
+    "2:33": 161,
+    "2:34": 639,
+    "2:42": 306,
+    "2:43": 639,
+    "2:44": 2883,
+    "3:222": 977,
+    "4:2222": 11360
+  },
+  "by_neighbor_edge_count": {
+    "2:0": 5191,
+    "2:1": 25,
+    "3:0": 950,
+    "3:1": 27,
+    "4:0": 10823,
+    "4:1": 534,
+    "4:2": 3
+  },
+  "by_root": {
+    "2": 5216,
+    "3": 977,
+    "4": 11360
+  },
+  "independent_partition_weights": [
+    1,
+    9,
+    89,
+    950,
+    10823
+  ],
+  "primary_count_sha256": "d93b8d7b91f443eb2ec2409b815467cbea5951b60437aea94b569b30afc5dd9e",
+  "primary_generator_sha256": "a61ac76f4f6cdaca04297543e3883d04c7d7dd1424b866573ad113fae8b7ad7f",
+  "primary_protocol_sha256": "a68d7df0f380d2dde631c0a4c981c3146e03481e9200cc2518ca87ff99c2e6b0",
+  "row_dimensions": {
+    "association_patterns": 8,
+    "boundary_classes": 23,
+    "degree_m_q": 6,
+    "equalities": 124,
+    "exterior_rows": 46,
+    "exterior_rows_identically_zero_from_h_eq_k": 6,
+    "mixed_edge": 2,
+    "rooted_stars": 60,
+    "two_step_reversal": 56
+  },
+  "scope": "Independent count and prospective raw dimensions only; no certificate or rank computation.",
+  "source_sha256": "7543d88c111611519edba61a85181ec0e3acda179f730a72cc278cf45004a1b1",
+  "stored_descriptions_independently_checked": 17553,
+  "total": 17553
+}

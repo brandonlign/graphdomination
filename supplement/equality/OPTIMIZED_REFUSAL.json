@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "-O",
+    "check_cycle_exposures.py"
+  ],
+  "expected_rejection": true,
+  "returncode": 1,
+  "error": "Cycle exposure audit refuses optimized Python"
+}
